@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Odometer Snap</string>
+	<string name="title_activity_test">OCR Testing</string>
+	<string name="title_activity_home">Home</string>
+    <string name="start_camera">Scan New Odometer</string>
+    <string name="start_gallery">Read From Gallery</string>
+    <string name="main_reading">138,534 miles</string>
+    <string name="main_cars">Cars</string>
+    <string name="main_date">Last run on 5/3/13</string>
+    <string name="menu_camera">Take Photo</string>
+    <string name="menu_gallery">Open From Gallery</string>
+    <string name="menu_dialog">Open With Prompt</string>
+    <string name="open_test">Open Test</string>
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>  
+	<string-array name="home_screen_items">
+		<item>Take a Photo</item>
+		<item>Open from Gallery</item>
+		<item>Open with Prompt</item>
+	</string-array>
+	<string-array name="nav_drawer_items">
+		<item>Home</item>
+		<item>Test Suite</item>
+	</string-array>	
+	<string-array name="main_screen_popup">
+	    <item>Select an input method</item>
+	    <item></item>
+		<item>Take a Photo</item>
+		<item>Open from Gallery</item>
+		<item>Open with Prompt</item>
+	</string-array>
+	<string-array name="input_popup">
+	    <item>Enter Odometer Value</item>
+	    <item>Please Enter Your Odometer\'s Value</item>
+	    <item>Continue</item>
+	</string-array>
+	<string-array name="sucess_popup">
+	    <item>Thank You!</item>
+	    <item>Thank you for entering your odometer. We are processing your image, and will notify you of any changes in your account</item>
+	   <item>Continue</item>
+	</string-array>
+	<string-array name="failure_popup">
+	    <item>That Didn\'t Work</item>
+	    <item>We couldn\'t find any numbers in that photo. Please try again.</item>
+	    <item>Retake Photo</item>
+	</string-array>
+	<string-array name="cars_default">
+	    <item>Car 1</item>
+	    <item>Car 2</item>
+	    <item>Car 3</item>
+	</string-array>
+	<string-array name="test_cases">
+	    <item>Run Whitespace Check</item>
+	    <item>Run Image Size Check</item>
+	    <item>Run History Check</item>
+	    <item>Run Item Stats</item>
+	    <item>Run Accuracy Test</item>
+	    <item>Run Adjacency Matrix Test</item>
+	    <item>Run Test Notification</item>
+	    <item>Run Voting Test</item>
+	    <item>Run Barry Run</item>
+	</string-array>
+</resources>

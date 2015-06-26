@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sf.autounlock"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-permission android:name="android.permission.CONTROL_KEYGUARD" />
+    <uses-permission android:name="android.permission.PROVIDE_TRUST_AGENT" />
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+	    <service android:exported="true"
+	        android:label="@string/app_name"
+	        android:name=".AutoUnlockTrustAgent"
+	        android:permission="android.permission.BIND_TRUST_AGENT">
+	        <intent-filter>
+				<action android:name="android.service.trust.TrustAgentService"/>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<meta-data android:name="android.service.trust.trustagent"
+			    android:resource="@xml/settings"/>
+	    </service>
+    </application>
+</manifest>
