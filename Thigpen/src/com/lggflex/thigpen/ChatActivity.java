@@ -2,7 +2,7 @@ package com.lggflex.thigpen;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-
+import android.support.design.widget.FloatingActionButton;
 import org.json.JSONObject;
 
 import com.github.nkzawa.emitter.Emitter;
@@ -36,7 +36,7 @@ public class ChatActivity extends ActionBarActivity {
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<String> chatHistory;
 	
-	Button chatButton;
+	FloatingActionButton chatButton;
 	EditText textEntry;
 	
 	private final String SERVER_URL="http://52.27.36.219:3000";
@@ -72,7 +72,7 @@ public class ChatActivity extends ActionBarActivity {
 			
 		});
 		
-		chatButton = (Button) findViewById(R.id.send);
+		chatButton = (FloatingActionButton) findViewById(R.id.send);
 		textEntry = (EditText) findViewById(R.id.entry);
 		chatButton.setOnClickListener(new OnClickListener(){
 

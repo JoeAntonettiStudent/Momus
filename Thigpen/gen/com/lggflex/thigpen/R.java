@@ -19,6 +19,10 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040007;
         public static final int abc_slide_out_bottom=0x7f040008;
         public static final int abc_slide_out_top=0x7f040009;
+        public static final int fab_in=0x7f04000a;
+        public static final int fab_out=0x7f04000b;
+        public static final int snackbar_in=0x7f04000c;
+        public static final int snackbar_out=0x7f04000d;
     }
     public static final class array {
         public static final int home_screen_sports_list=0x7f0c0001;
@@ -322,6 +326,28 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int barSize=0x7f0100ba;
+        /**  The amount that the scrolling view should overlap the bottom of any AppBarLayout 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behavior_overlapTop=0x7f0100ef;
+        /**  The width of the border around the FAB. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int borderWidth=0x7f0100cc;
         /**  Style for buttons without an explicit border, often used in groups. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -375,7 +401,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardBackgroundColor=0x7f0100d9;
+        public static final int cardBackgroundColor=0x7f01010c;
         /**  Corner radius for CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -386,7 +412,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardCornerRadius=0x7f0100da;
+        public static final int cardCornerRadius=0x7f01010d;
         /**  Elevation for CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -397,7 +423,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardElevation=0x7f0100db;
+        public static final int cardElevation=0x7f01010e;
         /**  Maximum Elevation for CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -408,7 +434,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardMaxElevation=0x7f0100dc;
+        public static final int cardMaxElevation=0x7f01010f;
         /**  Add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -417,7 +443,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardPreventCornerOverlap=0x7f0100de;
+        public static final int cardPreventCornerOverlap=0x7f010111;
         /**  Add padding in API v21+ as well to have the same measurements with previous versions. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -426,7 +452,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int cardUseCompatPadding=0x7f0100dd;
+        public static final int cardUseCompatPadding=0x7f010110;
         /**  Default Checkbox style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -460,6 +486,12 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int collapseIcon=0x7f0100ae;
+        /**  The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int collapsedTitleTextAppearance=0x7f0100f6;
         /**  The drawing color for the bars 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -564,7 +596,7 @@ containing a value of this type.
 <tr><td><code>top</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_auxiliary_view_position=0x7f0100d3;
+        public static final int com_facebook_auxiliary_view_position=0x7f010106;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -572,7 +604,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_confirm_logout=0x7f0100c9;
+        public static final int com_facebook_confirm_logout=0x7f0100fc;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -581,7 +613,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_foreground_color=0x7f0100cf;
+        public static final int com_facebook_foreground_color=0x7f010102;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -593,7 +625,7 @@ containing a value of this type.
 <tr><td><code>right</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_horizontal_alignment=0x7f0100d4;
+        public static final int com_facebook_horizontal_alignment=0x7f010107;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -601,7 +633,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_is_cropped=0x7f0100ce;
+        public static final int com_facebook_is_cropped=0x7f010101;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -609,7 +641,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_login_text=0x7f0100ca;
+        public static final int com_facebook_login_text=0x7f0100fd;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -617,7 +649,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_logout_text=0x7f0100cb;
+        public static final int com_facebook_logout_text=0x7f0100fe;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -625,7 +657,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int com_facebook_object_id=0x7f0100d0;
+        public static final int com_facebook_object_id=0x7f010103;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -637,7 +669,7 @@ containing a value of this type.
 <tr><td><code>page</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_object_type=0x7f0100d1;
+        public static final int com_facebook_object_type=0x7f010104;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -649,7 +681,7 @@ containing a value of this type.
 <tr><td><code>large</code></td><td>-4</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_preset_size=0x7f0100cd;
+        public static final int com_facebook_preset_size=0x7f010100;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -661,7 +693,7 @@ containing a value of this type.
 <tr><td><code>box_count</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_style=0x7f0100d2;
+        public static final int com_facebook_style=0x7f010105;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -673,7 +705,7 @@ containing a value of this type.
 <tr><td><code>never_display</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int com_facebook_tooltip_mode=0x7f0100cc;
+        public static final int com_facebook_tooltip_mode=0x7f0100ff;
         /**  Commit icon shown in the query suggestion row 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -737,7 +769,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int contentPadding=0x7f0100df;
+        public static final int contentPadding=0x7f010112;
         /**  Inner padding between the bottom edge of the Card and children of the CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -748,7 +780,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int contentPaddingBottom=0x7f0100e3;
+        public static final int contentPaddingBottom=0x7f010116;
         /**  Inner padding between the left edge of the Card and children of the CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -759,7 +791,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int contentPaddingLeft=0x7f0100e0;
+        public static final int contentPaddingLeft=0x7f010113;
         /**  Inner padding between the right edge of the Card and children of the CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -770,7 +802,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int contentPaddingRight=0x7f0100e1;
+        public static final int contentPaddingRight=0x7f010114;
         /**  Inner padding between the top edge of the Card and children of the CardView. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -781,7 +813,18 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int contentPaddingTop=0x7f0100e2;
+        public static final int contentPaddingTop=0x7f010115;
+        /**  The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int contentScrim=0x7f0100f7;
         /**  Specifies a layout for custom navigation. Overrides navigationMode. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -925,6 +968,20 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int elevation=0x7f010082;
+        /**  Whether the layout is laid out as if an error will be displayed 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int errorEnabled=0x7f0100ea;
+        /**  TextAppearance of any error message displayed 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int errorTextAppearance=0x7f0100eb;
         /**  The drawable to show in the button for expanding the activities overflow popup.
              <strong>Note:</strong> Clients would like to set this drawable
              as a clue about the action the chosen activity will perform. For
@@ -935,6 +992,84 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int expandActivityOverflowButtonDrawable=0x7f0100a1;
+        /**   Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text. Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMargin=0x7f0100f0;
+        /**   Specifies extra space on the bottom side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginBottom=0x7f0100f4;
+        /**   Specifies extra space on the end side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginEnd=0x7f0100f3;
+        /**   Specifies extra space on the start side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginStart=0x7f0100f1;
+        /**   Specifies extra space on the top side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginTop=0x7f0100f2;
+        /**  The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int expandedTitleTextAppearance=0x7f0100f5;
+        /**  Size for the FAB. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int fabSize=0x7f0100ca;
         /**  The max gap between the bars when they are parallel to each other 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -951,6 +1086,11 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int goIcon=0x7f010098;
+        /**  Layout resource to inflate as the header 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int headerLayout=0x7f0100d2;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -970,6 +1110,10 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int hideOnContentScroll=0x7f01007d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int hintTextAppearance=0x7f0100e9;
         /**  Specifies a drawable to use for the 'home as up' indicator. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1009,6 +1153,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int initialActivityCount=0x7f0100a0;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int insetForeground=0x7f0100cd;
         /**  Specifies whether the theme is light, otherwise it is dark. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1018,6 +1168,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int isLightTheme=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int itemBackground=0x7f0100d1;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int itemIconTint=0x7f0100cf;
         /**  Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1030,6 +1193,24 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int itemPadding=0x7f01007c;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int itemTextColor=0x7f0100d0;
+        /**  A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.
+             Child views can refer to these keylines for alignment using
+             layout_keyline="index" where index is a 0-based index into
+             this array. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int keylines=0x7f0100e3;
         /**  The layout to use for the search view. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1051,7 +1232,114 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int layoutManager=0x7f0100d5;
+        public static final int layoutManager=0x7f010108;
+        /**  The id of an anchor view that this view should position relative to. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int layout_anchor=0x7f0100e6;
+        /**  Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.  
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push object to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
+</table>
+         */
+        public static final int layout_anchorGravity=0x7f0100e8;
+        /**  The class name of a Behavior class defining special runtime behavior
+             for this child view. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_behavior=0x7f0100e5;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td> The view will act as normal with no collapsing behavior. </td></tr>
+<tr><td><code>pin</code></td><td>1</td><td> The view will pin in place. </td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td> The view will scroll in a parallax fashion. See the
+                 layout_collapseParallaxMultiplier attribute to change the multiplier. </td></tr>
+</table>
+         */
+        public static final int layout_collapseMode=0x7f0100fa;
+        /**  The multiplier used when layout_collapseMode is set to 'parallax'. The value should
+             be between 0.0 and 1.0. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_collapseParallaxMultiplier=0x7f0100fb;
+        /**  The index of a keyline this view should position relative to.
+             android:layout_gravity will affect how the view aligns to the
+             specified keyline. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_keyline=0x7f0100e7;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td> The view will be scroll in direct relation to scroll events. This flag needs to be
+                 set for any of the other flags to take effect. If any sibling views
+                 before this one do not have this flag, then this value has no effect. </td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td> When exiting (scrolling off screen) the view will be scrolled until it is
+                 'collapsed'. The collapsed height is defined by the view's minimum height. </td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td> When entering (scrolling on screen) the view will scroll on any downwards
+                 scroll event, regardless of whether the scrolling view is also scrolling. This
+                 is commonly referred to as the 'quick return' pattern. </td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td> An additional flag for 'enterAlways' which modifies the returning view to
+                 only initially scroll back to it's collapsed height. Once the scrolling view has
+                 reached the end of it's scroll range, the remainder of this view will be scrolled
+                 into view. </td></tr>
+</table>
+         */
+        public static final int layout_scrollFlags=0x7f0100ed;
+        /**  An interpolator to use when scrolling this View. Only takes effect when View
+             is scrollable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int layout_scrollInterpolator=0x7f0100ee;
         /**  Drawable used as a background for selected list items. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1143,6 +1431,16 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int maxActionInlineWidth=0x7f0100ec;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int maxButtonHeight=0x7f0100ad;
         /**  When set to true, all children with a weight will be considered having
              the minimum size of the largest child. If false, all children are
@@ -1155,6 +1453,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int measureWithLargestChild=0x7f0100a3;
+        /**  The menu resource to inflate and populate items from. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int menu=0x7f0100ce;
         /**  The size of the middle bar when top and bottom bars merge into middle bar to form an arrow 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -1283,6 +1586,17 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int preserveIconSpacing=0x7f01008a;
+        /**  TranslationZ value for the FAB when pressed
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int pressedTranslationZ=0x7f0100cb;
         /**  Specifies the horizontal padding on either end for an embedded progress bar. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -1335,7 +1649,17 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int reverseLayout=0x7f0100d7;
+        public static final int reverseLayout=0x7f01010a;
+        /**  Ripple color for the FAB. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleColor=0x7f0100c9;
         /**  Search icon displayed as a text field hint 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1421,7 +1745,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int spanCount=0x7f0100d6;
+        public static final int spanCount=0x7f010109;
         /**  Whether bars should rotate or not during transition 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1470,7 +1794,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int stackFromEnd=0x7f0100d8;
+        public static final int stackFromEnd=0x7f01010b;
         /**  State identifier indicating the popup will be above the anchor. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1480,6 +1804,23 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int state_above_anchor=0x7f0100b2;
+        /**  Drawable to display behind the status bar when the view is set to draw behind it. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int statusBarBackground=0x7f0100e4;
+        /**  The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen. Only works on
+             Lollipop with the correct setup. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int statusBarScrim=0x7f0100f8;
         /**  Background for the section containing the action (e.g. voice search) 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1540,6 +1881,156 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int switchTextAppearance=0x7f0100bf;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tabBackground=0x7f0100d6;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabContentStart=0x7f0100d5;
+        /**  Standard gravity constant that a child supplies to its parent.
+             Defines how the child view should be positioned, on both the X and Y axes,
+             within its enclosing layout. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>fill</code></td><td>0</td><td></td></tr>
+<tr><td><code>center</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tabGravity=0x7f0100d8;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabIndicatorColor=0x7f0100d3;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabIndicatorHeight=0x7f0100d4;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabMaxWidth=0x7f0100da;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabMinWidth=0x7f0100d9;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scrollable</code></td><td>0</td><td></td></tr>
+<tr><td><code>fixed</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tabMode=0x7f0100d7;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPadding=0x7f0100e2;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingBottom=0x7f0100e1;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingEnd=0x7f0100e0;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingStart=0x7f0100de;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingTop=0x7f0100df;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabSelectedTextColor=0x7f0100dd;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tabTextAppearance=0x7f0100db;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabTextColor=0x7f0100dc;
         /**  Present the text in ALL CAPS. This may use a small-caps form when available. 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1684,6 +2175,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f01006f;
+        /**  The id of the primary Toolbar child that you wish to use for the purpose of collapsing.
+             If you do not set this then the first Toolbar child found will be used. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int toolbarId=0x7f0100f9;
         /**  Default Toolar NavigationButtonStyle 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1875,20 +2372,20 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050003;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f060047;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f060048;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f060050;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f060051;
         public static final int abc_input_method_navigation_guard=0x7f060003;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f060049;
-        public static final int abc_primary_text_disable_only_material_light=0x7f06004a;
-        public static final int abc_primary_text_material_dark=0x7f06004b;
-        public static final int abc_primary_text_material_light=0x7f06004c;
-        public static final int abc_search_url_text=0x7f06004d;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f060052;
+        public static final int abc_primary_text_disable_only_material_light=0x7f060053;
+        public static final int abc_primary_text_material_dark=0x7f060054;
+        public static final int abc_primary_text_material_light=0x7f060055;
+        public static final int abc_search_url_text=0x7f060056;
         public static final int abc_search_url_text_normal=0x7f060000;
         public static final int abc_search_url_text_pressed=0x7f060002;
         public static final int abc_search_url_text_selected=0x7f060001;
-        public static final int abc_secondary_text_material_dark=0x7f06004e;
-        public static final int abc_secondary_text_material_light=0x7f06004f;
-        public static final int accent=0x7f060046;
+        public static final int abc_secondary_text_material_dark=0x7f060057;
+        public static final int abc_secondary_text_material_light=0x7f060058;
+        public static final int accent=0x7f06004f;
         public static final int accent_material_dark=0x7f06000f;
         public static final int accent_material_light=0x7f06000e;
         public static final int background_floating_material_dark=0x7f060006;
@@ -1909,33 +2406,46 @@ containing a value of this type.
         public static final int button_material_light=0x7f060011;
         /**  Background color for dark CardView. 
          */
-        public static final int cardview_dark_background=0x7f060041;
+        public static final int cardview_dark_background=0x7f06004a;
         /**  Background color for light CardView. 
          */
-        public static final int cardview_light_background=0x7f060040;
+        public static final int cardview_light_background=0x7f060049;
         /**  Shadow color for the furthest pixels around CardView. 
          */
-        public static final int cardview_shadow_end_color=0x7f060043;
+        public static final int cardview_shadow_end_color=0x7f06004c;
         /**  Shadow color for the first pixels around CardView. 
          */
-        public static final int cardview_shadow_start_color=0x7f060042;
-        public static final int com_facebook_blue=0x7f060033;
-        public static final int com_facebook_button_background_color=0x7f060038;
-        public static final int com_facebook_button_background_color_disabled=0x7f060039;
-        public static final int com_facebook_button_background_color_pressed=0x7f06003a;
-        public static final int com_facebook_button_like_background_color_selected=0x7f06003b;
-        public static final int com_facebook_button_login_silver_background_color=0x7f06003c;
-        public static final int com_facebook_button_login_silver_background_color_pressed=0x7f06003d;
-        public static final int com_facebook_button_send_background_color=0x7f06003e;
-        public static final int com_facebook_button_send_background_color_pressed=0x7f06003f;
-        public static final int com_facebook_likeboxcountview_border_color=0x7f060035;
-        public static final int com_facebook_likeboxcountview_text_color=0x7f060036;
-        public static final int com_facebook_likeview_text_color=0x7f060034;
-        public static final int com_facebook_share_button_text_color=0x7f060037;
+        public static final int cardview_shadow_start_color=0x7f06004b;
+        public static final int com_facebook_blue=0x7f06003c;
+        public static final int com_facebook_button_background_color=0x7f060041;
+        public static final int com_facebook_button_background_color_disabled=0x7f060042;
+        public static final int com_facebook_button_background_color_pressed=0x7f060043;
+        public static final int com_facebook_button_like_background_color_selected=0x7f060044;
+        public static final int com_facebook_button_login_silver_background_color=0x7f060045;
+        public static final int com_facebook_button_login_silver_background_color_pressed=0x7f060046;
+        public static final int com_facebook_button_send_background_color=0x7f060047;
+        public static final int com_facebook_button_send_background_color_pressed=0x7f060048;
+        public static final int com_facebook_likeboxcountview_border_color=0x7f06003e;
+        public static final int com_facebook_likeboxcountview_text_color=0x7f06003f;
+        public static final int com_facebook_likeview_text_color=0x7f06003d;
+        public static final int com_facebook_share_button_text_color=0x7f060040;
         public static final int dim_foreground_disabled_material_dark=0x7f06001e;
         public static final int dim_foreground_disabled_material_light=0x7f06001f;
         public static final int dim_foreground_material_dark=0x7f06001c;
         public static final int dim_foreground_material_light=0x7f06001d;
+        public static final int error_color=0x7f06003a;
+        /**  Color for the bottom inner pixels in the stroke: 4% black (these are multiplied) 
+         */
+        public static final int fab_stroke_end_inner_color=0x7f060036;
+        /**  Color for the bottom outer pixels in the stroke: 6% black (these are multiplied) 
+         */
+        public static final int fab_stroke_end_outer_color=0x7f060035;
+        /**  Color for the top inner pixels in the stroke: 10% white (these are multiplied) 
+         */
+        public static final int fab_stroke_top_inner_color=0x7f060034;
+        /**  Color for the top outer pixels in the stroke: 18% white (these are multiplied) 
+         */
+        public static final int fab_stroke_top_outer_color=0x7f060033;
         /**  TODO: This is 40% alpha on the default accent color. 
          */
         public static final int highlighted_text_material_dark=0x7f060022;
@@ -1951,8 +2461,8 @@ containing a value of this type.
         public static final int material_blue_grey_950=0x7f060032;
         public static final int material_deep_teal_200=0x7f06002e;
         public static final int material_deep_teal_500=0x7f06002f;
-        public static final int primary=0x7f060044;
-        public static final int primary_dark=0x7f060045;
+        public static final int primary=0x7f06004d;
+        public static final int primary_dark=0x7f06004e;
         public static final int primary_dark_material_dark=0x7f06000a;
         public static final int primary_dark_material_light=0x7f06000b;
         public static final int primary_material_dark=0x7f060008;
@@ -1971,11 +2481,21 @@ containing a value of this type.
         public static final int secondary_text_default_material_light=0x7f060027;
         public static final int secondary_text_disabled_material_dark=0x7f06002d;
         public static final int secondary_text_disabled_material_light=0x7f06002b;
-        public static final int selector=0x7f060050;
+        public static final int selector=0x7f060059;
+        /**  Shadow color for the furthest pixels of a shadow 
+         */
+        public static final int shadow_end_color=0x7f060039;
+        /**  Shadow color for the middle pixels of a shadow 
+         */
+        public static final int shadow_mid_color=0x7f060038;
+        /**  Shadow color for the first pixels of a shadow 
+         */
+        public static final int shadow_start_color=0x7f060037;
+        public static final int snackbar_background_color=0x7f06003b;
         public static final int switch_thumb_disabled_material_dark=0x7f060014;
         public static final int switch_thumb_disabled_material_light=0x7f060015;
-        public static final int switch_thumb_material_dark=0x7f060051;
-        public static final int switch_thumb_material_light=0x7f060052;
+        public static final int switch_thumb_material_dark=0x7f06005a;
+        public static final int switch_thumb_material_light=0x7f06005b;
         public static final int switch_thumb_normal_material_dark=0x7f060012;
         public static final int switch_thumb_normal_material_light=0x7f060013;
     }
@@ -2131,37 +2651,38 @@ containing a value of this type.
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f07005c;
-        public static final int activity_vertical_margin=0x7f07005d;
+        public static final int activity_horizontal_margin=0x7f070076;
+        public static final int activity_vertical_margin=0x7f070077;
+        public static final int appbar_elevation=0x7f07005e;
         /**  Inset shadow for RoundRectDrawableWithShadow. It is used to avoid gaps between the card
      and the shadow. 
          */
-        public static final int cardview_compat_inset_shadow=0x7f07005b;
+        public static final int cardview_compat_inset_shadow=0x7f070075;
         /**  Elevation value to use for CardViews. Pre-L, it is equal to shadow size. 
          */
-        public static final int cardview_default_elevation=0x7f07005a;
+        public static final int cardview_default_elevation=0x7f070074;
         /**  Default radius for CardView corners. 
          */
-        public static final int cardview_default_radius=0x7f070059;
-        public static final int com_facebook_likeboxcountview_border_radius=0x7f07004a;
-        public static final int com_facebook_likeboxcountview_border_width=0x7f07004b;
-        public static final int com_facebook_likeboxcountview_caret_height=0x7f070049;
-        public static final int com_facebook_likeboxcountview_caret_width=0x7f070048;
-        public static final int com_facebook_likeboxcountview_text_padding=0x7f07004d;
-        public static final int com_facebook_likeboxcountview_text_size=0x7f07004c;
-        public static final int com_facebook_likeview_edge_padding=0x7f070046;
-        public static final int com_facebook_likeview_internal_padding=0x7f070047;
-        public static final int com_facebook_likeview_text_size=0x7f070045;
-        public static final int com_facebook_profilepictureview_preset_size_large=0x7f070050;
-        public static final int com_facebook_profilepictureview_preset_size_normal=0x7f07004f;
-        public static final int com_facebook_profilepictureview_preset_size_small=0x7f07004e;
-        public static final int com_facebook_share_button_compound_drawable_padding=0x7f070051;
-        public static final int com_facebook_share_button_padding_bottom=0x7f070052;
-        public static final int com_facebook_share_button_padding_left=0x7f070053;
-        public static final int com_facebook_share_button_padding_right=0x7f070054;
-        public static final int com_facebook_share_button_padding_top=0x7f070055;
-        public static final int com_facebook_share_button_text_size=0x7f070056;
-        public static final int com_facebook_tooltip_horizontal_padding=0x7f070057;
+        public static final int cardview_default_radius=0x7f070073;
+        public static final int com_facebook_likeboxcountview_border_radius=0x7f070064;
+        public static final int com_facebook_likeboxcountview_border_width=0x7f070065;
+        public static final int com_facebook_likeboxcountview_caret_height=0x7f070063;
+        public static final int com_facebook_likeboxcountview_caret_width=0x7f070062;
+        public static final int com_facebook_likeboxcountview_text_padding=0x7f070067;
+        public static final int com_facebook_likeboxcountview_text_size=0x7f070066;
+        public static final int com_facebook_likeview_edge_padding=0x7f070060;
+        public static final int com_facebook_likeview_internal_padding=0x7f070061;
+        public static final int com_facebook_likeview_text_size=0x7f07005f;
+        public static final int com_facebook_profilepictureview_preset_size_large=0x7f07006a;
+        public static final int com_facebook_profilepictureview_preset_size_normal=0x7f070069;
+        public static final int com_facebook_profilepictureview_preset_size_small=0x7f070068;
+        public static final int com_facebook_share_button_compound_drawable_padding=0x7f07006b;
+        public static final int com_facebook_share_button_padding_bottom=0x7f07006c;
+        public static final int com_facebook_share_button_padding_left=0x7f07006d;
+        public static final int com_facebook_share_button_padding_right=0x7f07006e;
+        public static final int com_facebook_share_button_padding_top=0x7f07006f;
+        public static final int com_facebook_share_button_text_size=0x7f070070;
+        public static final int com_facebook_tooltip_horizontal_padding=0x7f070071;
         /**  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the major axis
@@ -2196,11 +2717,24 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f07000d;
         public static final int disabled_alpha_material_dark=0x7f070001;
         public static final int disabled_alpha_material_light=0x7f070000;
+        public static final int fab_border_width=0x7f07004a;
+        public static final int fab_content_size=0x7f070047;
+        public static final int fab_elevation=0x7f070045;
+        public static final int fab_size_mini=0x7f070049;
+        public static final int fab_size_normal=0x7f070048;
+        public static final int fab_translation_z_pressed=0x7f070046;
         /**  The max amount of scroll ItemTouchHelper will trigger if dragged view is out of
     RecyclerView's bounds.
          */
-        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f070058;
-        public static final int list_item_height=0x7f07005e;
+        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f070072;
+        public static final int list_item_height=0x7f070078;
+        public static final int navigation_elevation=0x7f07004c;
+        public static final int navigation_icon_padding=0x7f07004d;
+        public static final int navigation_icon_size=0x7f07004e;
+        public static final int navigation_max_width=0x7f07004b;
+        public static final int navigation_padding_bottom=0x7f070051;
+        public static final int navigation_padding_top_default=0x7f070050;
+        public static final int navigation_separator_vertical_padding=0x7f07004f;
         /**  The width of the big icons in notifications. 
          */
         public static final int notification_large_icon_height=0x7f070022;
@@ -2211,7 +2745,24 @@ containing a value of this type.
          Time) 
          */
         public static final int notification_subtext_size=0x7f070023;
-        public static final int toolbar_elevation=0x7f07005f;
+        /**  The maximum width for a Snackbar's inline action. If the view is width than this then
+         the Snackbar will change to vertical stacking 
+         */
+        public static final int snackbar_action_inline_max_width=0x7f07005c;
+        public static final int snackbar_background_corner_radius=0x7f070057;
+        public static final int snackbar_elevation=0x7f070056;
+        /**  Extra spacing between the action and message views 
+         */
+        public static final int snackbar_extra_spacing_horizontal=0x7f07005b;
+        public static final int snackbar_max_width=0x7f070055;
+        public static final int snackbar_min_width=0x7f070054;
+        public static final int snackbar_padding_horizontal=0x7f070058;
+        public static final int snackbar_padding_vertical=0x7f070059;
+        public static final int snackbar_padding_vertical_2lines=0x7f07005a;
+        public static final int snackbar_text_size=0x7f07005d;
+        public static final int tab_max_width=0x7f070053;
+        public static final int tab_min_width=0x7f070052;
+        public static final int toolbar_elevation=0x7f070079;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha=0x7f020000;
@@ -2292,154 +2843,176 @@ containing a value of this type.
         public static final int com_facebook_tooltip_blue_bottomnub=0x7f02004b;
         public static final int com_facebook_tooltip_blue_topnub=0x7f02004c;
         public static final int com_facebook_tooltip_blue_xout=0x7f02004d;
-        public static final int ic_launcher=0x7f02004e;
-        public static final int messenger_bubble_large_blue=0x7f02004f;
-        public static final int messenger_bubble_large_white=0x7f020050;
-        public static final int messenger_bubble_small_blue=0x7f020051;
-        public static final int messenger_bubble_small_white=0x7f020052;
-        public static final int messenger_button_blue_bg_round=0x7f020053;
-        public static final int messenger_button_blue_bg_selector=0x7f020054;
-        public static final int messenger_button_send_round_shadow=0x7f020055;
-        public static final int messenger_button_white_bg_round=0x7f020056;
-        public static final int messenger_button_white_bg_selector=0x7f020057;
-        public static final int notification_template_icon_bg=0x7f020058;
+        public static final int fab_background=0x7f02004e;
+        public static final int ic_launcher=0x7f02004f;
+        public static final int messenger_bubble_large_blue=0x7f020050;
+        public static final int messenger_bubble_large_white=0x7f020051;
+        public static final int messenger_bubble_small_blue=0x7f020052;
+        public static final int messenger_bubble_small_white=0x7f020053;
+        public static final int messenger_button_blue_bg_round=0x7f020054;
+        public static final int messenger_button_blue_bg_selector=0x7f020055;
+        public static final int messenger_button_send_round_shadow=0x7f020056;
+        public static final int messenger_button_white_bg_round=0x7f020057;
+        public static final int messenger_button_white_bg_selector=0x7f020058;
+        public static final int notification_template_icon_bg=0x7f02005a;
+        public static final int snackbar_background=0x7f020059;
     }
     public static final class id {
-        public static final int action0=0x7f090076;
-        public static final int action_bar=0x7f090052;
+        public static final int action0=0x7f09008a;
+        public static final int action_bar=0x7f090064;
         public static final int action_bar_activity_content=0x7f090003;
-        public static final int action_bar_container=0x7f090051;
-        public static final int action_bar_root=0x7f09004d;
+        public static final int action_bar_container=0x7f090063;
+        public static final int action_bar_root=0x7f09005f;
         public static final int action_bar_spinner=0x7f090002;
-        public static final int action_bar_subtitle=0x7f090036;
-        public static final int action_bar_title=0x7f090035;
-        public static final int action_context_bar=0x7f090053;
-        public static final int action_divider=0x7f09007a;
+        public static final int action_bar_subtitle=0x7f090048;
+        public static final int action_bar_title=0x7f090047;
+        public static final int action_context_bar=0x7f090065;
+        public static final int action_divider=0x7f09008e;
         public static final int action_menu_divider=0x7f090005;
         public static final int action_menu_presenter=0x7f090006;
-        public static final int action_mode_bar=0x7f09004f;
-        public static final int action_mode_bar_stub=0x7f09004e;
-        public static final int action_mode_close_button=0x7f090037;
-        public static final int action_settings=0x7f090084;
-        public static final int activity_chooser_view_content=0x7f090038;
-        public static final int alertTitle=0x7f090042;
-        public static final int always=0x7f09001a;
-        public static final int automatic=0x7f090024;
-        public static final int beginning=0x7f090021;
-        public static final int bottom=0x7f09002f;
-        public static final int box_count=0x7f09002c;
-        public static final int button=0x7f09002d;
-        public static final int buttonPanel=0x7f090048;
-        public static final int cancel_action=0x7f090077;
-        public static final int center=0x7f090032;
-        public static final int checkbox=0x7f09004a;
-        public static final int chronometer=0x7f09007d;
-        public static final int collapseActionView=0x7f09001b;
-        public static final int com_facebook_body_frame=0x7f09006e;
-        public static final int com_facebook_button_xout=0x7f090070;
-        public static final int com_facebook_fragment_container=0x7f09006c;
-        public static final int com_facebook_login_activity_progress_bar=0x7f09006d;
-        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f090072;
-        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f090071;
-        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f09006f;
-        public static final int container=0x7f090065;
-        public static final int content=0x7f090069;
-        public static final int contentPanel=0x7f090043;
-        public static final int custom=0x7f090047;
-        public static final int customPanel=0x7f090046;
-        public static final int decor_content_parent=0x7f090050;
-        public static final int default_activity_button=0x7f09003b;
-        public static final int dialog=0x7f09001f;
-        public static final int disableHome=0x7f09000e;
-        public static final int display_always=0x7f090025;
-        public static final int dropdown=0x7f090020;
-        public static final int edit_query=0x7f090054;
-        public static final int end=0x7f090022;
-        public static final int end_padder=0x7f090082;
-        public static final int entry=0x7f090063;
-        public static final int expand_activities_button=0x7f090039;
-        public static final int expanded_menu=0x7f090049;
+        public static final int action_mode_bar=0x7f090061;
+        public static final int action_mode_bar_stub=0x7f090060;
+        public static final int action_mode_close_button=0x7f090049;
+        public static final int action_settings=0x7f090098;
+        public static final int activity_chooser_view_content=0x7f09004a;
+        public static final int alertTitle=0x7f090054;
+        public static final int always=0x7f09001b;
+        public static final int automatic=0x7f09003b;
+        public static final int beginning=0x7f090022;
+        public static final int bottom=0x7f09002a;
+        public static final int box_count=0x7f090043;
+        public static final int button=0x7f090044;
+        public static final int buttonPanel=0x7f09005a;
+        public static final int cancel_action=0x7f09008b;
+        public static final int center=0x7f090028;
+        public static final int center_horizontal=0x7f09002b;
+        public static final int center_vertical=0x7f09002c;
+        public static final int checkbox=0x7f09005c;
+        public static final int chronometer=0x7f090091;
+        public static final int clip_horizontal=0x7f09002d;
+        public static final int clip_vertical=0x7f09002e;
+        public static final int collapseActionView=0x7f09001c;
+        public static final int com_facebook_body_frame=0x7f090080;
+        public static final int com_facebook_button_xout=0x7f090082;
+        public static final int com_facebook_fragment_container=0x7f09007e;
+        public static final int com_facebook_login_activity_progress_bar=0x7f09007f;
+        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f090084;
+        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f090083;
+        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f090081;
+        public static final int container=0x7f090077;
+        public static final int content=0x7f09007b;
+        public static final int contentPanel=0x7f090055;
+        public static final int custom=0x7f090059;
+        public static final int customPanel=0x7f090058;
+        public static final int decor_content_parent=0x7f090062;
+        public static final int default_activity_button=0x7f09004d;
+        public static final int dialog=0x7f090020;
+        public static final int disableHome=0x7f09000f;
+        public static final int display_always=0x7f09003c;
+        public static final int dropdown=0x7f090021;
+        public static final int edit_query=0x7f090066;
+        public static final int end=0x7f090023;
+        public static final int end_padder=0x7f090096;
+        public static final int enterAlways=0x7f090035;
+        public static final int enterAlwaysCollapsed=0x7f090036;
+        public static final int entry=0x7f090075;
+        public static final int exitUntilCollapsed=0x7f090037;
+        public static final int expand_activities_button=0x7f09004b;
+        public static final int expanded_menu=0x7f09005b;
+        public static final int fill=0x7f090029;
+        public static final int fill_horizontal=0x7f09002f;
+        public static final int fill_vertical=0x7f090030;
+        public static final int fixed=0x7f090026;
         public static final int home=0x7f090000;
-        public static final int homeAsUp=0x7f09000f;
-        public static final int icon=0x7f09003d;
-        public static final int ifRoom=0x7f09001c;
-        public static final int image=0x7f09003a;
-        public static final int info=0x7f090081;
-        public static final int inline=0x7f090030;
+        public static final int homeAsUp=0x7f090010;
+        public static final int icon=0x7f09004f;
+        public static final int ifRoom=0x7f09001d;
+        public static final int image=0x7f09004c;
+        public static final int info=0x7f090095;
+        public static final int inline=0x7f090046;
         /**  ItemTouchHelper uses this id to save a View's original elevation. 
          */
-        public static final int item_touch_helper_previous_elevation=0x7f090009;
-        public static final int large=0x7f090027;
-        public static final int left=0x7f090033;
-        public static final int line1=0x7f09007b;
-        public static final int line3=0x7f09007f;
-        public static final int listMode=0x7f09000b;
-        public static final int list_item=0x7f09003c;
-        public static final int login_button=0x7f090068;
-        public static final int mainList=0x7f090062;
-        public static final int main_card=0x7f09006a;
-        public static final int main_list=0x7f090074;
-        public static final int media_actions=0x7f090079;
-        public static final int messenger_send_button=0x7f090075;
-        public static final int middle=0x7f090023;
-        public static final int multiply=0x7f090015;
-        public static final int never=0x7f09001d;
-        public static final int never_display=0x7f090026;
-        public static final int none=0x7f090010;
-        public static final int normal=0x7f09000c;
-        public static final int open_graph=0x7f090029;
-        public static final int page=0x7f09002a;
-        public static final int parentPanel=0x7f09003f;
+        public static final int item_touch_helper_previous_elevation=0x7f09000a;
+        public static final int large=0x7f09003e;
+        public static final int left=0x7f090031;
+        public static final int line1=0x7f09008f;
+        public static final int line3=0x7f090093;
+        public static final int listMode=0x7f09000c;
+        public static final int list_item=0x7f09004e;
+        public static final int login_button=0x7f09007a;
+        public static final int mainList=0x7f090074;
+        public static final int main_card=0x7f09007c;
+        public static final int main_list=0x7f090088;
+        public static final int media_actions=0x7f09008d;
+        public static final int messenger_send_button=0x7f090089;
+        public static final int middle=0x7f090024;
+        public static final int mini=0x7f090025;
+        public static final int multiply=0x7f090016;
+        public static final int never=0x7f09001e;
+        public static final int never_display=0x7f09003d;
+        public static final int none=0x7f090011;
+        public static final int normal=0x7f09000d;
+        public static final int open_graph=0x7f090040;
+        public static final int page=0x7f090041;
+        public static final int parallax=0x7f090039;
+        public static final int parentPanel=0x7f090051;
+        public static final int pin=0x7f09003a;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
-        public static final int radio=0x7f09004c;
-        public static final int recyclerView=0x7f090073;
-        public static final int right=0x7f090034;
-        public static final int screen=0x7f090016;
-        public static final int scrollView=0x7f090044;
-        public static final int search_badge=0x7f090056;
-        public static final int search_bar=0x7f090055;
-        public static final int search_button=0x7f090057;
-        public static final int search_close_btn=0x7f09005c;
-        public static final int search_edit_frame=0x7f090058;
-        public static final int search_go_btn=0x7f09005e;
-        public static final int search_mag_icon=0x7f090059;
-        public static final int search_plate=0x7f09005a;
-        public static final int search_src_text=0x7f09005b;
-        public static final int search_voice_btn=0x7f09005f;
-        public static final int select_dialog_listview=0x7f090060;
-        public static final int send=0x7f090064;
-        public static final int shortcut=0x7f09004b;
-        public static final int showCustom=0x7f090011;
-        public static final int showHome=0x7f090012;
-        public static final int showTitle=0x7f090013;
-        public static final int small=0x7f090028;
+        public static final int radio=0x7f09005e;
+        public static final int recyclerView=0x7f090085;
+        public static final int right=0x7f090032;
+        public static final int screen=0x7f090017;
+        public static final int scroll=0x7f090038;
+        public static final int scrollView=0x7f090056;
+        public static final int scrollable=0x7f090027;
+        public static final int search_badge=0x7f090068;
+        public static final int search_bar=0x7f090067;
+        public static final int search_button=0x7f090069;
+        public static final int search_close_btn=0x7f09006e;
+        public static final int search_edit_frame=0x7f09006a;
+        public static final int search_go_btn=0x7f090070;
+        public static final int search_mag_icon=0x7f09006b;
+        public static final int search_plate=0x7f09006c;
+        public static final int search_src_text=0x7f09006d;
+        public static final int search_voice_btn=0x7f090071;
+        public static final int select_dialog_listview=0x7f090072;
+        public static final int send=0x7f090076;
+        public static final int shortcut=0x7f09005d;
+        public static final int showCustom=0x7f090012;
+        public static final int showHome=0x7f090013;
+        public static final int showTitle=0x7f090014;
+        public static final int small=0x7f09003f;
+        public static final int snackbar_action=0x7f090087;
+        public static final int snackbar_text=0x7f090086;
         public static final int split_action_bar=0x7f090004;
-        public static final int src_atop=0x7f090017;
-        public static final int src_in=0x7f090018;
-        public static final int src_over=0x7f090019;
-        public static final int standard=0x7f09002e;
-        public static final int status_bar_latest_event_content=0x7f090078;
-        public static final int submit_area=0x7f09005d;
-        public static final int tabMode=0x7f09000d;
-        public static final int tab_layout=0x7f090066;
-        public static final int text=0x7f090080;
-        public static final int text2=0x7f09007e;
-        public static final int textSpacerNoButtons=0x7f090045;
-        public static final int textView=0x7f090083;
-        public static final int textView1=0x7f09006b;
-        public static final int time=0x7f09007c;
-        public static final int title=0x7f09003e;
-        public static final int title_template=0x7f090041;
-        public static final int toolbar=0x7f090061;
-        public static final int top=0x7f090031;
-        public static final int topPanel=0x7f090040;
-        public static final int unknown=0x7f09002b;
+        public static final int src_atop=0x7f090018;
+        public static final int src_in=0x7f090019;
+        public static final int src_over=0x7f09001a;
+        public static final int standard=0x7f090045;
+        public static final int start=0x7f090033;
+        public static final int status_bar_latest_event_content=0x7f09008c;
+        public static final int submit_area=0x7f09006f;
+        public static final int tabMode=0x7f09000e;
+        public static final int tab_layout=0x7f090078;
+        public static final int text=0x7f090094;
+        public static final int text2=0x7f090092;
+        public static final int textSpacerNoButtons=0x7f090057;
+        public static final int textView=0x7f090097;
+        public static final int textView1=0x7f09007d;
+        public static final int time=0x7f090090;
+        public static final int title=0x7f090050;
+        public static final int title_template=0x7f090053;
+        public static final int toolbar=0x7f090073;
+        public static final int top=0x7f090034;
+        public static final int topPanel=0x7f090052;
+        public static final int unknown=0x7f090042;
         public static final int up=0x7f090001;
-        public static final int useLogo=0x7f090014;
-        public static final int view_pager=0x7f090067;
-        public static final int withText=0x7f09001e;
-        public static final int wrap_content=0x7f09000a;
+        public static final int useLogo=0x7f090015;
+        public static final int view_offset_helper=0x7f090009;
+        public static final int view_pager=0x7f090079;
+        public static final int withText=0x7f09001f;
+        public static final int wrap_content=0x7f09000b;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur=0x7f080001;
@@ -2470,6 +3043,7 @@ containing a value of this type.
          */
         public static final int abc_max_action_buttons=0x7f080004;
         public static final int cancel_button_image_alpha=0x7f080003;
+        public static final int snackbar_text_max_lines=0x7f080005;
         /**  Maximum numerical value that will be shown in a status bar
          notification icon or in the notification itself. Will be replaced
          with @string/status_bar_notification_info_overflow when shown in the
@@ -2510,28 +3084,35 @@ containing a value of this type.
         public static final int com_facebook_activity_layout=0x7f03001d;
         public static final int com_facebook_login_fragment=0x7f03001e;
         public static final int com_facebook_tooltip_bubble=0x7f03001f;
-        public static final int fragment_recycler_view=0x7f030020;
-        public static final int list=0x7f030021;
-        public static final int messenger_button_send_blue_large=0x7f030022;
-        public static final int messenger_button_send_blue_round=0x7f030023;
-        public static final int messenger_button_send_blue_small=0x7f030024;
-        public static final int messenger_button_send_white_large=0x7f030025;
-        public static final int messenger_button_send_white_round=0x7f030026;
-        public static final int messenger_button_send_white_small=0x7f030027;
-        public static final int notification_media_action=0x7f030028;
-        public static final int notification_media_cancel_action=0x7f030029;
-        public static final int notification_template_big_media=0x7f03002a;
-        public static final int notification_template_big_media_narrow=0x7f03002b;
-        public static final int notification_template_lines=0x7f03002c;
-        public static final int notification_template_media=0x7f03002d;
-        public static final int notification_template_part_chronometer=0x7f03002e;
-        public static final int notification_template_part_time=0x7f03002f;
-        public static final int select_dialog_item_material=0x7f030030;
-        public static final int select_dialog_multichoice_material=0x7f030031;
-        public static final int select_dialog_singlechoice_material=0x7f030032;
-        public static final int support_simple_spinner_dropdown_item=0x7f030033;
-        public static final int text_row_item=0x7f030034;
-        public static final int toolbar=0x7f030035;
+        public static final int design_navigation_item=0x7f030020;
+        public static final int design_navigation_item_header=0x7f030021;
+        public static final int design_navigation_item_separator=0x7f030022;
+        public static final int design_navigation_item_subheader=0x7f030023;
+        public static final int design_navigation_menu=0x7f030024;
+        public static final int fragment_recycler_view=0x7f030025;
+        public static final int layout_snackbar=0x7f030026;
+        public static final int layout_snackbar_include=0x7f030027;
+        public static final int list=0x7f030028;
+        public static final int messenger_button_send_blue_large=0x7f030029;
+        public static final int messenger_button_send_blue_round=0x7f03002a;
+        public static final int messenger_button_send_blue_small=0x7f03002b;
+        public static final int messenger_button_send_white_large=0x7f03002c;
+        public static final int messenger_button_send_white_round=0x7f03002d;
+        public static final int messenger_button_send_white_small=0x7f03002e;
+        public static final int notification_media_action=0x7f03002f;
+        public static final int notification_media_cancel_action=0x7f030030;
+        public static final int notification_template_big_media=0x7f030031;
+        public static final int notification_template_big_media_narrow=0x7f030032;
+        public static final int notification_template_lines=0x7f030033;
+        public static final int notification_template_media=0x7f030034;
+        public static final int notification_template_part_chronometer=0x7f030035;
+        public static final int notification_template_part_time=0x7f030036;
+        public static final int select_dialog_item_material=0x7f030037;
+        public static final int select_dialog_multichoice_material=0x7f030038;
+        public static final int select_dialog_singlechoice_material=0x7f030039;
+        public static final int support_simple_spinner_dropdown_item=0x7f03003a;
+        public static final int text_row_item=0x7f03003b;
+        public static final int toolbar=0x7f03003c;
     }
     public static final class menu {
         public static final int chat=0x7f0d0000;
@@ -2599,29 +3180,32 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int action_settings=0x7f0a0025;
-        public static final int app_name=0x7f0a0023;
-        public static final int chat_button_msg=0x7f0a0029;
-        public static final int com_facebook_image_download_unknown_error=0x7f0a0020;
-        public static final int com_facebook_internet_permission_error_message=0x7f0a001e;
-        public static final int com_facebook_internet_permission_error_title=0x7f0a001d;
-        public static final int com_facebook_like_button_liked=0x7f0a0014;
-        public static final int com_facebook_like_button_not_liked=0x7f0a0013;
-        public static final int com_facebook_loading=0x7f0a001c;
-        public static final int com_facebook_loginview_cancel_action=0x7f0a001b;
-        public static final int com_facebook_loginview_log_in_button=0x7f0a0016;
-        public static final int com_facebook_loginview_log_in_button_long=0x7f0a0017;
-        public static final int com_facebook_loginview_log_out_action=0x7f0a001a;
-        public static final int com_facebook_loginview_log_out_button=0x7f0a0015;
-        public static final int com_facebook_loginview_logged_in_as=0x7f0a0018;
-        public static final int com_facebook_loginview_logged_in_using_facebook=0x7f0a0019;
-        public static final int com_facebook_send_button_text=0x7f0a0022;
-        public static final int com_facebook_share_button_text=0x7f0a0021;
-        public static final int com_facebook_tooltip_default=0x7f0a001f;
-        public static final int facebook_app_id=0x7f0a002b;
-        public static final int hello_world=0x7f0a0024;
-        public static final int home_sentence=0x7f0a0028;
-        public static final int messenger_send_button_text=0x7f0a0012;
+        public static final int action_settings=0x7f0a0026;
+        public static final int app_name=0x7f0a0024;
+        /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
+         */
+        public static final int appbar_scrolling_view_behavior=0x7f0a0012;
+        public static final int chat_button_msg=0x7f0a002a;
+        public static final int com_facebook_image_download_unknown_error=0x7f0a0021;
+        public static final int com_facebook_internet_permission_error_message=0x7f0a001f;
+        public static final int com_facebook_internet_permission_error_title=0x7f0a001e;
+        public static final int com_facebook_like_button_liked=0x7f0a0015;
+        public static final int com_facebook_like_button_not_liked=0x7f0a0014;
+        public static final int com_facebook_loading=0x7f0a001d;
+        public static final int com_facebook_loginview_cancel_action=0x7f0a001c;
+        public static final int com_facebook_loginview_log_in_button=0x7f0a0017;
+        public static final int com_facebook_loginview_log_in_button_long=0x7f0a0018;
+        public static final int com_facebook_loginview_log_out_action=0x7f0a001b;
+        public static final int com_facebook_loginview_log_out_button=0x7f0a0016;
+        public static final int com_facebook_loginview_logged_in_as=0x7f0a0019;
+        public static final int com_facebook_loginview_logged_in_using_facebook=0x7f0a001a;
+        public static final int com_facebook_send_button_text=0x7f0a0023;
+        public static final int com_facebook_share_button_text=0x7f0a0022;
+        public static final int com_facebook_tooltip_default=0x7f0a0020;
+        public static final int facebook_app_id=0x7f0a002c;
+        public static final int hello_world=0x7f0a0025;
+        public static final int home_sentence=0x7f0a0029;
+        public static final int messenger_send_button_text=0x7f0a0013;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
@@ -2629,10 +3213,10 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f0a0011;
-        public static final int title_activity_chat=0x7f0a0027;
-        public static final int title_activity_list_view=0x7f0a0026;
-        public static final int title_activity_login=0x7f0a002a;
-        public static final int username=0x7f0a002c;
+        public static final int title_activity_chat=0x7f0a0028;
+        public static final int title_activity_list_view=0x7f0a0027;
+        public static final int title_activity_login=0x7f0a002b;
+        public static final int username=0x7f0a002d;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0b0040;
@@ -2651,10 +3235,10 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0b013c;
+        public static final int AppBaseTheme=0x7f0b014c;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f0b013d;
+        public static final int AppTheme=0x7f0b014d;
         public static final int Base_AlertDialog_AppCompat=0x7f0b00c4;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0b00c5;
         public static final int Base_Animation_AppCompat_Dialog=0x7f0b00c0;
@@ -2832,23 +3416,24 @@ containing a value of this type.
     
          */
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b00a9;
-        public static final int CardView=0x7f0b0139;
-        public static final int CardView_Dark=0x7f0b013b;
-        public static final int CardView_Light=0x7f0b013a;
-        public static final int MessengerButton=0x7f0b0124;
-        public static final int MessengerButton_Blue=0x7f0b0125;
-        public static final int MessengerButton_Blue_Large=0x7f0b0126;
-        public static final int MessengerButton_Blue_Small=0x7f0b0127;
-        public static final int MessengerButton_White=0x7f0b0128;
-        public static final int MessengerButton_White_Large=0x7f0b0129;
-        public static final int MessengerButton_White_Small=0x7f0b012a;
-        public static final int MessengerButtonText=0x7f0b012b;
-        public static final int MessengerButtonText_Blue=0x7f0b012c;
-        public static final int MessengerButtonText_Blue_Large=0x7f0b012d;
-        public static final int MessengerButtonText_Blue_Small=0x7f0b012e;
-        public static final int MessengerButtonText_White=0x7f0b012f;
-        public static final int MessengerButtonText_White_Large=0x7f0b0130;
-        public static final int MessengerButtonText_White_Small=0x7f0b0131;
+        public static final int Base_Widget_Design_TabLayout=0x7f0b0128;
+        public static final int CardView=0x7f0b0149;
+        public static final int CardView_Dark=0x7f0b014b;
+        public static final int CardView_Light=0x7f0b014a;
+        public static final int MessengerButton=0x7f0b0134;
+        public static final int MessengerButton_Blue=0x7f0b0135;
+        public static final int MessengerButton_Blue_Large=0x7f0b0136;
+        public static final int MessengerButton_Blue_Small=0x7f0b0137;
+        public static final int MessengerButton_White=0x7f0b0138;
+        public static final int MessengerButton_White_Large=0x7f0b0139;
+        public static final int MessengerButton_White_Small=0x7f0b013a;
+        public static final int MessengerButtonText=0x7f0b013b;
+        public static final int MessengerButtonText_Blue=0x7f0b013c;
+        public static final int MessengerButtonText_Blue_Large=0x7f0b013d;
+        public static final int MessengerButtonText_Blue_Small=0x7f0b013e;
+        public static final int MessengerButtonText_White=0x7f0b013f;
+        public static final int MessengerButtonText_White_Large=0x7f0b0140;
+        public static final int MessengerButtonText_White_Small=0x7f0b0141;
         public static final int Platform_AppCompat=0x7f0b00ff;
         public static final int Platform_AppCompat_Light=0x7f0b0100;
         public static final int Platform_ThemeOverlay_AppCompat_Dark=0x7f0b0114;
@@ -2913,6 +3498,12 @@ containing a value of this type.
         public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0b002a;
         public static final int TextAppearance_AppCompat_Widget_Switch=0x7f0b005e;
         public static final int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f0b005f;
+        public static final int TextAppearance_Design_CollapsingToolbar_Expanded=0x7f0b0133;
+        public static final int TextAppearance_Design_Error=0x7f0b012c;
+        public static final int TextAppearance_Design_Hint=0x7f0b012b;
+        public static final int TextAppearance_Design_Snackbar_Action=0x7f0b012e;
+        public static final int TextAppearance_Design_Snackbar_Message=0x7f0b012d;
+        public static final int TextAppearance_Design_Tab=0x7f0b0129;
         /**  These styles didn't exist on v7. Since we only use the media template in later versions
          (ICS+), just define it here and use the correct references in values/v14 
  Use platform styles 
@@ -3060,13 +3651,22 @@ containing a value of this type.
          */
         public static final int Widget_AppCompat_Toolbar=0x7f0b0042;
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b0043;
-        public static final int com_facebook_button=0x7f0b0133;
-        public static final int com_facebook_button_like=0x7f0b0134;
-        public static final int com_facebook_button_send=0x7f0b0137;
-        public static final int com_facebook_button_share=0x7f0b0138;
-        public static final int com_facebook_loginview_default_style=0x7f0b0135;
-        public static final int com_facebook_loginview_silver_style=0x7f0b0136;
-        public static final int tooltip_bubble_text=0x7f0b0132;
+        public static final int Widget_Design_AppBarLayout=0x7f0b0131;
+        public static final int Widget_Design_CollapsingToolbar=0x7f0b0130;
+        public static final int Widget_Design_CoordinatorLayout=0x7f0b0132;
+        public static final int Widget_Design_FloatingActionButton=0x7f0b0124;
+        public static final int Widget_Design_NavigationView=0x7f0b0126;
+        public static final int Widget_Design_ScrimInsetsFrameLayout=0x7f0b0125;
+        public static final int Widget_Design_Snackbar=0x7f0b012f;
+        public static final int Widget_Design_TabLayout=0x7f0b0127;
+        public static final int Widget_Design_TextInputLayout=0x7f0b012a;
+        public static final int com_facebook_button=0x7f0b0143;
+        public static final int com_facebook_button_like=0x7f0b0144;
+        public static final int com_facebook_button_send=0x7f0b0147;
+        public static final int com_facebook_button_share=0x7f0b0148;
+        public static final int com_facebook_loginview_default_style=0x7f0b0145;
+        public static final int com_facebook_loginview_silver_style=0x7f0b0146;
+        public static final int tooltip_bubble_text=0x7f0b0142;
     }
     public static final class styleable {
         /**  ============================================ 
@@ -3838,6 +4438,100 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.lggflex.thigpen:singleChoiceItemLayout
         */
         public static final int AlertDialog_singleChoiceItemLayout = 4;
+        /** Attributes that can be used with a AppBarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_elevation com.lggflex.thigpen:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           </table>
+           @see #AppBarLayout_android_background
+           @see #AppBarLayout_elevation
+         */
+        public static final int[] AppBarLayout = {
+            0x010100d4, 0x7f010082
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #AppBarLayout} array.
+          @attr name android:background
+        */
+        public static final int AppBarLayout_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:elevation
+        */
+        public static final int AppBarLayout_elevation = 1;
+        /** Attributes that can be used with a AppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_layout_scrollFlags com.lggflex.thigpen:layout_scrollFlags}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_layout_scrollInterpolator com.lggflex.thigpen:layout_scrollInterpolator}</code></td><td> An interpolator to use when scrolling this View.</td></tr>
+           </table>
+           @see #AppBarLayout_LayoutParams_layout_scrollFlags
+           @see #AppBarLayout_LayoutParams_layout_scrollInterpolator
+         */
+        public static final int[] AppBarLayout_LayoutParams = {
+            0x7f0100ed, 0x7f0100ee
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#layout_scrollFlags}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td> The view will be scroll in direct relation to scroll events. This flag needs to be
+                 set for any of the other flags to take effect. If any sibling views
+                 before this one do not have this flag, then this value has no effect. </td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td> When exiting (scrolling off screen) the view will be scrolled until it is
+                 'collapsed'. The collapsed height is defined by the view's minimum height. </td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td> When entering (scrolling on screen) the view will scroll on any downwards
+                 scroll event, regardless of whether the scrolling view is also scrolling. This
+                 is commonly referred to as the 'quick return' pattern. </td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td> An additional flag for 'enterAlways' which modifies the returning view to
+                 only initially scroll back to it's collapsed height. Once the scrolling view has
+                 reached the end of it's scroll range, the remainder of this view will be scrolled
+                 into view. </td></tr>
+</table>
+          @attr name com.lggflex.thigpen:layout_scrollFlags
+        */
+        public static final int AppBarLayout_LayoutParams_layout_scrollFlags = 0;
+        /**
+          <p>
+          @attr description
+           An interpolator to use when scrolling this View. Only takes effect when View
+             is scrollable. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_scrollInterpolator
+        */
+        public static final int AppBarLayout_LayoutParams_layout_scrollInterpolator = 1;
         /** Attributes that can be used with a AppCompatTextView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3903,9 +4597,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #CardView_contentPaddingTop
          */
         public static final int[] CardView = {
-            0x7f0100d9, 0x7f0100da, 0x7f0100db, 0x7f0100dc,
-            0x7f0100dd, 0x7f0100de, 0x7f0100df, 0x7f0100e0,
-            0x7f0100e1, 0x7f0100e2, 0x7f0100e3
+            0x7f01010c, 0x7f01010d, 0x7f01010e, 0x7f01010f,
+            0x7f010110, 0x7f010111, 0x7f010112, 0x7f010113,
+            0x7f010114, 0x7f010115, 0x7f010116
         };
         /**
           <p>
@@ -4100,6 +4794,425 @@ containing a value of this type.
           @attr name com.lggflex.thigpen:contentPaddingTop
         */
         public static final int CardView_contentPaddingTop = 9;
+        /** Attributes that can be used with a CollapsingAppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_layout_collapseMode com.lggflex.thigpen:layout_collapseMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier com.lggflex.thigpen:layout_collapseParallaxMultiplier}</code></td><td> The multiplier used when layout_collapseMode is set to 'parallax'.</td></tr>
+           </table>
+           @see #CollapsingAppBarLayout_LayoutParams_layout_collapseMode
+           @see #CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier
+         */
+        public static final int[] CollapsingAppBarLayout_LayoutParams = {
+            0x7f0100fa, 0x7f0100fb
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#layout_collapseMode}
+          attribute's value can be found in the {@link #CollapsingAppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td> The view will act as normal with no collapsing behavior. </td></tr>
+<tr><td><code>pin</code></td><td>1</td><td> The view will pin in place. </td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td> The view will scroll in a parallax fashion. See the
+                 layout_collapseParallaxMultiplier attribute to change the multiplier. </td></tr>
+</table>
+          @attr name com.lggflex.thigpen:layout_collapseMode
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_layout_collapseMode = 0;
+        /**
+          <p>
+          @attr description
+           The multiplier used when layout_collapseMode is set to 'parallax'. The value should
+             be between 0.0 and 1.0. 
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_collapseParallaxMultiplier
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier = 1;
+        /** Attributes that can be used with a CollapsingToolbarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.lggflex.thigpen:collapsedTitleTextAppearance}</code></td><td> The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' </td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.lggflex.thigpen:contentScrim}</code></td><td> The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.lggflex.thigpen:expandedTitleMargin}</code></td><td>  Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.lggflex.thigpen:expandedTitleMarginBottom}</code></td><td>  Specifies extra space on the bottom side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.lggflex.thigpen:expandedTitleMarginEnd}</code></td><td>  Specifies extra space on the end side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.lggflex.thigpen:expandedTitleMarginStart}</code></td><td>  Specifies extra space on the start side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.lggflex.thigpen:expandedTitleMarginTop}</code></td><td>  Specifies extra space on the top side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.lggflex.thigpen:expandedTitleTextAppearance}</code></td><td> The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' </td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.lggflex.thigpen:statusBarScrim}</code></td><td> The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.lggflex.thigpen:toolbarId}</code></td><td> The id of the primary Toolbar child that you wish to use for the purpose of collapsing.</td></tr>
+           </table>
+           @see #CollapsingToolbarLayout_collapsedTitleTextAppearance
+           @see #CollapsingToolbarLayout_contentScrim
+           @see #CollapsingToolbarLayout_expandedTitleMargin
+           @see #CollapsingToolbarLayout_expandedTitleMarginBottom
+           @see #CollapsingToolbarLayout_expandedTitleMarginEnd
+           @see #CollapsingToolbarLayout_expandedTitleMarginStart
+           @see #CollapsingToolbarLayout_expandedTitleMarginTop
+           @see #CollapsingToolbarLayout_expandedTitleTextAppearance
+           @see #CollapsingToolbarLayout_statusBarScrim
+           @see #CollapsingToolbarLayout_toolbarId
+         */
+        public static final int[] CollapsingToolbarLayout = {
+            0x7f0100f0, 0x7f0100f1, 0x7f0100f2, 0x7f0100f3,
+            0x7f0100f4, 0x7f0100f5, 0x7f0100f6, 0x7f0100f7,
+            0x7f0100f8, 0x7f0100f9
+        };
+        /**
+          <p>
+          @attr description
+           The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:collapsedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_collapsedTitleTextAppearance = 6;
+        /**
+          <p>
+          @attr description
+           The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:contentScrim
+        */
+        public static final int CollapsingToolbarLayout_contentScrim = 7;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text. Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleMargin
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMargin = 0;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the bottom side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleMarginBottom
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginBottom = 4;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the end side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleMarginEnd
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginEnd = 3;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the start side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleMarginStart
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginStart = 1;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the top side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleMarginTop
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginTop = 2;
+        /**
+          <p>
+          @attr description
+           The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:expandedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleTextAppearance = 5;
+        /**
+          <p>
+          @attr description
+           The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen. Only works on
+             Lollipop with the correct setup. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:statusBarScrim
+        */
+        public static final int CollapsingToolbarLayout_statusBarScrim = 8;
+        /**
+          <p>
+          @attr description
+           The id of the primary Toolbar child that you wish to use for the purpose of collapsing.
+             If you do not set this then the first Toolbar child found will be used. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:toolbarId
+        */
+        public static final int CollapsingToolbarLayout_toolbarId = 9;
+        /** Attributes that can be used with a CoordinatorLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_keylines com.lggflex.thigpen:keylines}</code></td><td> A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.lggflex.thigpen:statusBarBackground}</code></td><td> Drawable to display behind the status bar when the view is set to draw behind it.</td></tr>
+           </table>
+           @see #CoordinatorLayout_keylines
+           @see #CoordinatorLayout_statusBarBackground
+         */
+        public static final int[] CoordinatorLayout = {
+            0x7f0100e3, 0x7f0100e4
+        };
+        /**
+          <p>
+          @attr description
+           A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.
+             Child views can refer to these keylines for alignment using
+             layout_keyline="index" where index is a 0-based index into
+             this array. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:keylines
+        */
+        public static final int CoordinatorLayout_keylines = 0;
+        /**
+          <p>
+          @attr description
+           Drawable to display behind the status bar when the view is set to draw behind it. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:statusBarBackground
+        */
+        public static final int CoordinatorLayout_statusBarBackground = 1;
+        /** Attributes that can be used with a CoordinatorLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_anchor com.lggflex.thigpen:layout_anchor}</code></td><td> The id of an anchor view that this view should position relative to.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_anchorGravity com.lggflex.thigpen:layout_anchorGravity}</code></td><td> Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_behavior com.lggflex.thigpen:layout_behavior}</code></td><td> The class name of a Behavior class defining special runtime behavior
+             for this child view.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_keyline com.lggflex.thigpen:layout_keyline}</code></td><td> The index of a keyline this view should position relative to.</td></tr>
+           </table>
+           @see #CoordinatorLayout_LayoutParams_android_layout_gravity
+           @see #CoordinatorLayout_LayoutParams_layout_anchor
+           @see #CoordinatorLayout_LayoutParams_layout_anchorGravity
+           @see #CoordinatorLayout_LayoutParams_layout_behavior
+           @see #CoordinatorLayout_LayoutParams_layout_keyline
+         */
+        public static final int[] CoordinatorLayout_LayoutParams = {
+            0x010100b3, 0x7f0100e5, 0x7f0100e6, 0x7f0100e7,
+            0x7f0100e8
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+          @attr name android:layout_gravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_android_layout_gravity = 0;
+        /**
+          <p>
+          @attr description
+           The id of an anchor view that this view should position relative to. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_anchor
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_anchor = 2;
+        /**
+          <p>
+          @attr description
+           Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.  
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push object to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_anchorGravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_anchorGravity = 4;
+        /**
+          <p>
+          @attr description
+           The class name of a Behavior class defining special runtime behavior
+             for this child view. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_behavior
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_behavior = 1;
+        /**
+          <p>
+          @attr description
+           The index of a keyline this view should position relative to.
+             android:layout_gravity will affect how the view aligns to the
+             specified keyline. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:layout_keyline
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_keyline = 3;
         /** Attributes that can be used with a DrawerArrowToggle.
            <p>Includes the following attributes:</p>
            <table>
@@ -4269,6 +5382,176 @@ containing a value of this type.
           @attr name com.lggflex.thigpen:topBottomBarArrowSize
         */
         public static final int DrawerArrowToggle_topBottomBarArrowSize = 4;
+        /** Attributes that can be used with a FloatingActionButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #FloatingActionButton_android_background android:background}</code></td><td> Background for the FloatingActionButton </td></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTint com.lggflex.thigpen:backgroundTint}</code></td><td> Tint to apply to the background.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.lggflex.thigpen:backgroundTintMode}</code></td><td> Blending mode used to apply the background tint.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_borderWidth com.lggflex.thigpen:borderWidth}</code></td><td> The width of the border around the FAB.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_elevation com.lggflex.thigpen:elevation}</code></td><td> Elevation value for the FAB </td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fabSize com.lggflex.thigpen:fabSize}</code></td><td> Size for the FAB.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.lggflex.thigpen:pressedTranslationZ}</code></td><td> TranslationZ value for the FAB when pressed</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_rippleColor com.lggflex.thigpen:rippleColor}</code></td><td> Ripple color for the FAB.</td></tr>
+           </table>
+           @see #FloatingActionButton_android_background
+           @see #FloatingActionButton_backgroundTint
+           @see #FloatingActionButton_backgroundTintMode
+           @see #FloatingActionButton_borderWidth
+           @see #FloatingActionButton_elevation
+           @see #FloatingActionButton_fabSize
+           @see #FloatingActionButton_pressedTranslationZ
+           @see #FloatingActionButton_rippleColor
+         */
+        public static final int[] FloatingActionButton = {
+            0x010100d4, 0x7f010082, 0x7f010088, 0x7f010089,
+            0x7f0100c9, 0x7f0100ca, 0x7f0100cb, 0x7f0100cc
+        };
+        /**
+          <p>
+          @attr description
+           Background for the FloatingActionButton 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int FloatingActionButton_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Tint to apply to the background. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:backgroundTint
+        */
+        public static final int FloatingActionButton_backgroundTint = 2;
+        /**
+          <p>
+          @attr description
+           Blending mode used to apply the background tint. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>src_over</code></td><td>3</td><td> The tint is drawn on top of the drawable.
+                 [Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc] </td></tr>
+<tr><td><code>src_in</code></td><td>5</td><td> The tint is masked by the alpha channel of the drawable. The drawable’s
+                 color channels are thrown out. [Sa * Da, Sc * Da] </td></tr>
+<tr><td><code>src_atop</code></td><td>9</td><td> The tint is drawn above the drawable, but with the drawable’s alpha
+                 channel masking the result. [Da, Sc * Da + (1 - Sa) * Dc] </td></tr>
+<tr><td><code>multiply</code></td><td>14</td><td> Multiplies the color and alpha channels of the drawable with those of
+                 the tint. [Sa * Da, Sc * Dc] </td></tr>
+<tr><td><code>screen</code></td><td>15</td><td> [Sa + Da - Sa * Da, Sc + Dc - Sc * Dc] </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:backgroundTintMode
+        */
+        public static final int FloatingActionButton_backgroundTintMode = 3;
+        /**
+          <p>
+          @attr description
+           The width of the border around the FAB. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:borderWidth
+        */
+        public static final int FloatingActionButton_borderWidth = 7;
+        /**
+          <p>
+          @attr description
+           Elevation value for the FAB 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:elevation
+        */
+        public static final int FloatingActionButton_elevation = 1;
+        /**
+          <p>
+          @attr description
+           Size for the FAB. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:fabSize
+        */
+        public static final int FloatingActionButton_fabSize = 5;
+        /**
+          <p>
+          @attr description
+           TranslationZ value for the FAB when pressed
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:pressedTranslationZ
+        */
+        public static final int FloatingActionButton_pressedTranslationZ = 6;
+        /**
+          <p>
+          @attr description
+           Ripple color for the FAB. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:rippleColor
+        */
+        public static final int FloatingActionButton_rippleColor = 4;
         /** Attributes that can be used with a LinearLayoutCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -4948,6 +6231,137 @@ containing a value of this type.
           @attr name com.lggflex.thigpen:preserveIconSpacing
         */
         public static final int MenuView_preserveIconSpacing = 7;
+        /** Attributes that can be used with a NavigationView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_elevation com.lggflex.thigpen:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           <tr><td><code>{@link #NavigationView_headerLayout com.lggflex.thigpen:headerLayout}</code></td><td> Layout resource to inflate as the header </td></tr>
+           <tr><td><code>{@link #NavigationView_itemBackground com.lggflex.thigpen:itemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemIconTint com.lggflex.thigpen:itemIconTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemTextColor com.lggflex.thigpen:itemTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_menu com.lggflex.thigpen:menu}</code></td><td> The menu resource to inflate and populate items from.</td></tr>
+           </table>
+           @see #NavigationView_android_background
+           @see #NavigationView_android_fitsSystemWindows
+           @see #NavigationView_android_maxWidth
+           @see #NavigationView_elevation
+           @see #NavigationView_headerLayout
+           @see #NavigationView_itemBackground
+           @see #NavigationView_itemIconTint
+           @see #NavigationView_itemTextColor
+           @see #NavigationView_menu
+         */
+        public static final int[] NavigationView = {
+            0x010100d4, 0x010100dd, 0x0101011f, 0x7f010082,
+            0x7f0100ce, 0x7f0100cf, 0x7f0100d0, 0x7f0100d1,
+            0x7f0100d2
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:background
+        */
+        public static final int NavigationView_android_background = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fitsSystemWindows}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:fitsSystemWindows
+        */
+        public static final int NavigationView_android_fitsSystemWindows = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:maxWidth
+        */
+        public static final int NavigationView_android_maxWidth = 2;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:elevation
+        */
+        public static final int NavigationView_elevation = 3;
+        /**
+          <p>
+          @attr description
+           Layout resource to inflate as the header 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:headerLayout
+        */
+        public static final int NavigationView_headerLayout = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#itemBackground}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.lggflex.thigpen:itemBackground
+        */
+        public static final int NavigationView_itemBackground = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#itemIconTint}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:itemIconTint
+        */
+        public static final int NavigationView_itemIconTint = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#itemTextColor}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:itemTextColor
+        */
+        public static final int NavigationView_itemTextColor = 6;
+        /**
+          <p>
+          @attr description
+           The menu resource to inflate and populate items from. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:menu
+        */
+        public static final int NavigationView_menu = 4;
         /** Attributes that can be used with a PopupWindow.
            <p>Includes the following attributes:</p>
            <table>
@@ -5033,8 +6447,8 @@ containing a value of this type.
            @see #RecyclerView_stackFromEnd
          */
         public static final int[] RecyclerView = {
-            0x010100c4, 0x7f0100d5, 0x7f0100d6, 0x7f0100d7,
-            0x7f0100d8
+            0x010100c4, 0x7f010108, 0x7f010109, 0x7f01010a,
+            0x7f01010b
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#orientation}
@@ -5108,6 +6522,62 @@ containing a value of this type.
           @attr name com.lggflex.thigpen:stackFromEnd
         */
         public static final int RecyclerView_stackFromEnd = 4;
+        /** Attributes that can be used with a ScrimInsetsFrameLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.lggflex.thigpen:insetForeground}</code></td><td></td></tr>
+           </table>
+           @see #ScrimInsetsFrameLayout_insetForeground
+         */
+        public static final int[] ScrimInsetsFrameLayout = {
+            0x7f0100cd
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#insetForeground}
+          attribute's value can be found in the {@link #ScrimInsetsFrameLayout} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.lggflex.thigpen:insetForeground
+        */
+        public static final int ScrimInsetsFrameLayout_insetForeground = 0;
+        /** Attributes that can be used with a ScrollingViewBehavior_Params.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrollingViewBehavior_Params_behavior_overlapTop com.lggflex.thigpen:behavior_overlapTop}</code></td><td> The amount that the scrolling view should overlap the bottom of any AppBarLayout </td></tr>
+           </table>
+           @see #ScrollingViewBehavior_Params_behavior_overlapTop
+         */
+        public static final int[] ScrollingViewBehavior_Params = {
+            0x7f0100ef
+        };
+        /**
+          <p>
+          @attr description
+           The amount that the scrolling view should overlap the bottom of any AppBarLayout 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:behavior_overlapTop
+        */
+        public static final int ScrollingViewBehavior_Params_behavior_overlapTop = 0;
         /** Attributes that can be used with a SearchView.
            <p>Includes the following attributes:</p>
            <table>
@@ -5361,6 +6831,63 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.lggflex.thigpen:voiceIcon
         */
         public static final int SearchView_voiceIcon = 12;
+        /** Attributes that can be used with a SnackbarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SnackbarLayout_elevation com.lggflex.thigpen:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.lggflex.thigpen:maxActionInlineWidth}</code></td><td></td></tr>
+           </table>
+           @see #SnackbarLayout_android_maxWidth
+           @see #SnackbarLayout_elevation
+           @see #SnackbarLayout_maxActionInlineWidth
+         */
+        public static final int[] SnackbarLayout = {
+            0x0101011f, 0x7f010082, 0x7f0100ec
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
+          attribute's value can be found in the {@link #SnackbarLayout} array.
+          @attr name android:maxWidth
+        */
+        public static final int SnackbarLayout_android_maxWidth = 0;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:elevation
+        */
+        public static final int SnackbarLayout_elevation = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#maxActionInlineWidth}
+          attribute's value can be found in the {@link #SnackbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:maxActionInlineWidth
+        */
+        public static final int SnackbarLayout_maxActionInlineWidth = 2;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
@@ -5695,6 +7222,299 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.lggflex.thigpen:track
         */
         public static final int SwitchCompat_track = 3;
+        /** Attributes that can be used with a TabLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TabLayout_tabBackground com.lggflex.thigpen:tabBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabContentStart com.lggflex.thigpen:tabContentStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabGravity com.lggflex.thigpen:tabGravity}</code></td><td> Standard gravity constant that a child supplies to its parent.</td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorColor com.lggflex.thigpen:tabIndicatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.lggflex.thigpen:tabIndicatorHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMaxWidth com.lggflex.thigpen:tabMaxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMinWidth com.lggflex.thigpen:tabMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMode com.lggflex.thigpen:tabMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPadding com.lggflex.thigpen:tabPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingBottom com.lggflex.thigpen:tabPaddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingEnd com.lggflex.thigpen:tabPaddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingStart com.lggflex.thigpen:tabPaddingStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingTop com.lggflex.thigpen:tabPaddingTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.lggflex.thigpen:tabSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextAppearance com.lggflex.thigpen:tabTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextColor com.lggflex.thigpen:tabTextColor}</code></td><td></td></tr>
+           </table>
+           @see #TabLayout_tabBackground
+           @see #TabLayout_tabContentStart
+           @see #TabLayout_tabGravity
+           @see #TabLayout_tabIndicatorColor
+           @see #TabLayout_tabIndicatorHeight
+           @see #TabLayout_tabMaxWidth
+           @see #TabLayout_tabMinWidth
+           @see #TabLayout_tabMode
+           @see #TabLayout_tabPadding
+           @see #TabLayout_tabPaddingBottom
+           @see #TabLayout_tabPaddingEnd
+           @see #TabLayout_tabPaddingStart
+           @see #TabLayout_tabPaddingTop
+           @see #TabLayout_tabSelectedTextColor
+           @see #TabLayout_tabTextAppearance
+           @see #TabLayout_tabTextColor
+         */
+        public static final int[] TabLayout = {
+            0x7f0100d3, 0x7f0100d4, 0x7f0100d5, 0x7f0100d6,
+            0x7f0100d7, 0x7f0100d8, 0x7f0100d9, 0x7f0100da,
+            0x7f0100db, 0x7f0100dc, 0x7f0100dd, 0x7f0100de,
+            0x7f0100df, 0x7f0100e0, 0x7f0100e1, 0x7f0100e2
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabBackground}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.lggflex.thigpen:tabBackground
+        */
+        public static final int TabLayout_tabBackground = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabContentStart}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabContentStart
+        */
+        public static final int TabLayout_tabContentStart = 2;
+        /**
+          <p>
+          @attr description
+           Standard gravity constant that a child supplies to its parent.
+             Defines how the child view should be positioned, on both the X and Y axes,
+             within its enclosing layout. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>fill</code></td><td>0</td><td></td></tr>
+<tr><td><code>center</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:tabGravity
+        */
+        public static final int TabLayout_tabGravity = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabIndicatorColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabIndicatorColor
+        */
+        public static final int TabLayout_tabIndicatorColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabIndicatorHeight}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabIndicatorHeight
+        */
+        public static final int TabLayout_tabIndicatorHeight = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabMaxWidth}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabMaxWidth
+        */
+        public static final int TabLayout_tabMaxWidth = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabMinWidth}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabMinWidth
+        */
+        public static final int TabLayout_tabMinWidth = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabMode}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scrollable</code></td><td>0</td><td></td></tr>
+<tr><td><code>fixed</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.lggflex.thigpen:tabMode
+        */
+        public static final int TabLayout_tabMode = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabPadding}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabPadding
+        */
+        public static final int TabLayout_tabPadding = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabPaddingBottom}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabPaddingBottom
+        */
+        public static final int TabLayout_tabPaddingBottom = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabPaddingEnd}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabPaddingEnd
+        */
+        public static final int TabLayout_tabPaddingEnd = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabPaddingStart}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabPaddingStart
+        */
+        public static final int TabLayout_tabPaddingStart = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabPaddingTop}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabPaddingTop
+        */
+        public static final int TabLayout_tabPaddingTop = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabSelectedTextColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabSelectedTextColor
+        */
+        public static final int TabLayout_tabSelectedTextColor = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabTextAppearance}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.lggflex.thigpen:tabTextAppearance
+        */
+        public static final int TabLayout_tabTextAppearance = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#tabTextColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.lggflex.thigpen:tabTextColor
+        */
+        public static final int TabLayout_tabTextColor = 9;
         /** Attributes that can be used with a TextAppearance.
            <p>Includes the following attributes:</p>
            <table>
@@ -5754,6 +7574,72 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.lggflex.thigpen:textAllCaps
         */
         public static final int TextAppearance_textAllCaps = 4;
+        /** Attributes that can be used with a TextInputLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextInputLayout_android_hint android:hint}</code></td><td> The hint to display in the floating label </td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorEnabled com.lggflex.thigpen:errorEnabled}</code></td><td> Whether the layout is laid out as if an error will be displayed </td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.lggflex.thigpen:errorTextAppearance}</code></td><td> TextAppearance of any error message displayed </td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.lggflex.thigpen:hintTextAppearance}</code></td><td></td></tr>
+           </table>
+           @see #TextInputLayout_android_hint
+           @see #TextInputLayout_errorEnabled
+           @see #TextInputLayout_errorTextAppearance
+           @see #TextInputLayout_hintTextAppearance
+         */
+        public static final int[] TextInputLayout = {
+            0x01010150, 0x7f0100e9, 0x7f0100ea, 0x7f0100eb
+        };
+        /**
+          <p>
+          @attr description
+           The hint to display in the floating label 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#hint}.
+          @attr name android:hint
+        */
+        public static final int TextInputLayout_android_hint = 0;
+        /**
+          <p>
+          @attr description
+           Whether the layout is laid out as if an error will be displayed 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:errorEnabled
+        */
+        public static final int TextInputLayout_errorEnabled = 2;
+        /**
+          <p>
+          @attr description
+           TextAppearance of any error message displayed 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.lggflex.thigpen:errorTextAppearance
+        */
+        public static final int TextInputLayout_errorTextAppearance = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#hintTextAppearance}
+          attribute's value can be found in the {@link #TextInputLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.lggflex.thigpen:hintTextAppearance
+        */
+        public static final int TextInputLayout_hintTextAppearance = 1;
         /**  These are the standard attributes that make up a complete theme. 
            <p>Includes the following attributes:</p>
            <table>
@@ -8069,8 +9955,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #com_facebook_like_view_com_facebook_style
          */
         public static final int[] com_facebook_like_view = {
-            0x7f0100cf, 0x7f0100d0, 0x7f0100d1, 0x7f0100d2,
-            0x7f0100d3, 0x7f0100d4
+            0x7f010102, 0x7f010103, 0x7f010104, 0x7f010105,
+            0x7f010106, 0x7f010107
         };
         /**
           <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#com_facebook_auxiliary_view_position}
@@ -8190,7 +10076,7 @@ containing a value of this type.
            @see #com_facebook_login_view_com_facebook_tooltip_mode
          */
         public static final int[] com_facebook_login_view = {
-            0x7f0100c9, 0x7f0100ca, 0x7f0100cb, 0x7f0100cc
+            0x7f0100fc, 0x7f0100fd, 0x7f0100fe, 0x7f0100ff
         };
         /**
           <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#com_facebook_confirm_logout}
@@ -8265,7 +10151,7 @@ containing a value of this type.
            @see #com_facebook_profile_picture_view_com_facebook_preset_size
          */
         public static final int[] com_facebook_profile_picture_view = {
-            0x7f0100cd, 0x7f0100ce
+            0x7f010100, 0x7f010101
         };
         /**
           <p>This symbol is the offset where the {@link com.lggflex.thigpen.R.attr#com_facebook_is_cropped}

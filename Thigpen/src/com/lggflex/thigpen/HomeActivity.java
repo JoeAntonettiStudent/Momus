@@ -66,7 +66,6 @@ public class HomeActivity extends ActionBarActivity {
 			return true;
 		return super.onOptionsItemSelected(item);
 	}
-	
 	public int getStatusBarHeight() {
 	    int result = 0;
 	    int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
