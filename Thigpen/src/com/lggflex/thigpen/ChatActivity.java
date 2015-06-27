@@ -36,7 +36,7 @@ public class ChatActivity extends ActionBarActivity {
 	Button chatButton;
 	EditText textEntry;
 	
-	private final String SERVER_URL="http://52.27.80.78:3000";
+	private final String SERVER_URL="http://52.27.52.17:3000";
 	private Socket socket;
 
 	@Override
@@ -81,6 +81,7 @@ public class ChatActivity extends ActionBarActivity {
 	public void addMessage(String message){
 		chatHistory.add(message);
 		chatHistoryAdapter.notifyDataSetChanged();
+		socket.emit("messageSent", message);
 	}
 
 	@Override
@@ -126,7 +127,8 @@ public class ChatActivity extends ActionBarActivity {
 				@Override
 				public void call(Object... arg0) {
 					Log.i("SERVER", "Connected");
-					socket.emit("setRoom", room);
+					socket.emit("userConnected", "Joe");
+					socket.emit("changeRoom", room);
 				}
 				
 			});

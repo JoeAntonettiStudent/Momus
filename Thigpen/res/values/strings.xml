@@ -27,10 +27,16 @@
 
     <string-array name="nfl_list">
         <item>Cleveland Browns</item>
+        <item>Detroit Lions</item>
+        <item>New England Patriots</item>
+        <item>Tebow is Love, Tebow is Life</item>
     </string-array>
 
     <string name="title_activity_chat">ChatActivity</string>
     <string name="home_sentence">Welcome to the Thunderdome</string>
     <string name="chat_button_msg">Send</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="facebook_app_id">1449562488698812</string>
+    <string name="username">Barry Allen</string>
 
 </resources>
