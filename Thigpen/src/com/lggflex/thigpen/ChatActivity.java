@@ -9,6 +9,8 @@ import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +30,7 @@ public class ChatActivity extends ActionBarActivity {
 	
 	private static int CHAT_LINE_LAYOUT = android.R.layout.simple_list_item_1;
 	
+	String username;
 	String room;
 	
 	ArrayAdapter<String> chatHistoryAdapter;
@@ -36,7 +39,7 @@ public class ChatActivity extends ActionBarActivity {
 	Button chatButton;
 	EditText textEntry;
 	
-	private final String SERVER_URL="http://52.27.52.17:3000";
+	private final String SERVER_URL="http://52.27.36.219:3000";
 	private Socket socket;
 
 	@Override
@@ -50,6 +53,10 @@ public class ChatActivity extends ActionBarActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		room = name;
+		
+		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
+		username = prefs.getString("username", "Barry Allen");
+		Log.i("Facebook", username);
 		
 		chatHistory = new ArrayList<String>();
 		chatHistoryAdapter = new ArrayAdapter<String>(this, CHAT_LINE_LAYOUT, chatHistory);
@@ -71,17 +78,21 @@ public class ChatActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View v) {
-				addMessage(textEntry.getText().toString());
+				sendMessage(textEntry.getText().toString());
 			}
 			
 		});
 		configureSocket();
 	}
 	
+	public void sendMessage(String message){
+		socket.emit("messageSent", message);
+	//	addMessage(message);
+	}
+	
 	public void addMessage(String message){
 		chatHistory.add(message);
 		chatHistoryAdapter.notifyDataSetChanged();
-		socket.emit("messageSent", message);
 	}
 
 	@Override
@@ -127,10 +138,23 @@ public class ChatActivity extends ActionBarActivity {
 				@Override
 				public void call(Object... arg0) {
 					Log.i("SERVER", "Connected");
-					socket.emit("userConnected", "Joe");
+					socket.emit("userConnected", username);
 					socket.emit("changeRoom", room);
 				}
 				
+			});
+			socket.on("update", new Emitter.Listener() {
+				
+				@Override
+				public void call(final Object... args) {
+					runOnUiThread(new Runnable() {
+					     @Override
+					     public void run() {
+					    	 addMessage((String)args[0] + ": " + (String)args[1]);
+					    }
+					});
+					
+				}
 			});
 			socket.connect();
 			Log.i("SERVER", "Connecting...");

@@ -27,7 +27,7 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		boolean alreadyLoggedIn = prefs.getBoolean("completed", false);
 		
 		if(alreadyLoggedIn){
@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void save(String name){
-		SharedPreferences prefs = this.getPreferences(this.MODE_PRIVATE);
+		SharedPreferences prefs = this.getSharedPreferences("USER_DETAILS", this.MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString("username", name);
 		editor.putBoolean("completed", true);
