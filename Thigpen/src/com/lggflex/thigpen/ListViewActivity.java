@@ -25,20 +25,30 @@ public class ListViewActivity extends ActionBarActivity {
 		createToolbar();
 		String name = getIntent().getStringExtra("name");
 	    int resId = getResources().getIdentifier(name.toLowerCase() + "_list", "array", getPackageName());
-		makeList(R.id.main_list, android.R.layout.simple_list_item_1, resId, new OnItemClickListener(){
+	    if(resId == 0){
+	    	startChatActivity(name);
+	    	finish();
+	    }else{
+	    	makeList(R.id.main_list, android.R.layout.simple_list_item_1, resId, new OnItemClickListener(){
 
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				TextView text = (TextView) arg1.findViewById(android.R.id.text1);
-				Intent i = new Intent(context, ChatActivity.class);
-				i.putExtra("name", text.getText());
-				context.startActivity(i);
-			}
+	    		@Override
+	    		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+	    				long arg3) {
+	    			TextView text = (TextView) arg1.findViewById(android.R.id.text1);
+					startChatActivity(text.getText());
+	    		}
 			
-		});
-		getSupportActionBar().setTitle(name);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	    	});
+	    	getSupportActionBar().setTitle(name);
+	    	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	    }
+	}
+	
+	public void startChatActivity(CharSequence charSequence){
+		Intent i = new Intent(context, ChatActivity.class);
+		i.putExtra("name", charSequence);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(i);
 	}
 
 	protected void createToolbar(){
