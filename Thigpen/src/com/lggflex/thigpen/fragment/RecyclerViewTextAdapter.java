@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lggflex.thigpen.ListViewActivity;
+import com.lggflex.thigpen.R;
 
 public class RecyclerViewTextAdapter extends RecyclerView.Adapter<RecyclerViewTextAdapter.ViewHolder> {
  
@@ -27,7 +28,7 @@ public class RecyclerViewTextAdapter extends RecyclerView.Adapter<RecyclerViewTe
     }
     
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(android.R.layout.simple_list_item_1, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.text_row_item, viewGroup, false);
         return new ViewHolder(v);
     }
     
@@ -57,7 +58,7 @@ public class RecyclerViewTextAdapter extends RecyclerView.Adapter<RecyclerViewTe
                 }
                 
             });
-            textView = (TextView) v.findViewById(android.R.id.text1);
+            textView = (TextView) v.findViewById(R.id.textView);
         }
  
         public TextView getTextView() {
