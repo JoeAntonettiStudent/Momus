@@ -1,10 +1,18 @@
 package com.lggflex.thigpen;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+
+import org.json.JSONObject;
+
+import com.github.nkzawa.emitter.Emitter;
+import com.github.nkzawa.socketio.client.IO;
+import com.github.nkzawa.socketio.client.Socket;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,11 +28,16 @@ public class ChatActivity extends ActionBarActivity {
 	
 	private static int CHAT_LINE_LAYOUT = android.R.layout.simple_list_item_1;
 	
+	String room;
+	
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<String> chatHistory;
 	
 	Button chatButton;
 	EditText textEntry;
+	
+	private final String SERVER_URL="http://52.27.80.78:3000";
+	private Socket socket;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +48,8 @@ public class ChatActivity extends ActionBarActivity {
 		String name = getIntent().getStringExtra("name");
 		getSupportActionBar().setTitle(name);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		room = name;
 		
 		chatHistory = new ArrayList<String>();
 		chatHistoryAdapter = new ArrayAdapter<String>(this, CHAT_LINE_LAYOUT, chatHistory);
@@ -60,6 +75,7 @@ public class ChatActivity extends ActionBarActivity {
 			}
 			
 		});
+		configureSocket();
 	}
 	
 	public void addMessage(String message){
@@ -100,5 +116,24 @@ public class ChatActivity extends ActionBarActivity {
 		list.setAdapter(chatHistoryAdapter);
 		if(listener != null)
 			list.setOnItemClickListener(listener);
+	}
+	
+	public void configureSocket(){
+		try {
+			socket = IO.socket(SERVER_URL);
+			socket.on(Socket.EVENT_CONNECT, new Emitter.Listener(){
+
+				@Override
+				public void call(Object... arg0) {
+					Log.i("SERVER", "Connected");
+					socket.emit("setRoom", room);
+				}
+				
+			});
+			socket.connect();
+			Log.i("SERVER", "Connecting...");
+		} catch (URISyntaxException e) {
+			Log.i("Server", e.toString());
+		}
 	}
 }
