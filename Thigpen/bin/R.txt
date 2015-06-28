@@ -15,7 +15,10 @@ int anim snackbar_out 0x7f04000d
 int array home_screen_sports_list 0x7f0d0001
 int array home_screen_tabs 0x7f0d0000
 int array home_screen_television_list 0x7f0d0002
+int array mlb_list 0x7f0d0005
+int array nba_list 0x7f0d0004
 int array nfl_list 0x7f0d0003
+int array nhl_list 0x7f0d0006
 int attr actionBarDivider 0x7f010018
 int attr actionBarItemBackground 0x7f010019
 int attr actionBarPopupTheme 0x7f010012

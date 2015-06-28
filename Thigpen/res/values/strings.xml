@@ -31,6 +31,18 @@
         <item>New England Patriots</item>
         <item>Tebow is Love, Tebow is Life</item>
     </string-array>
+    
+    <string-array name="nba_list">
+        <item>Tebow is Love, Tebow is Life</item>
+    </string-array>
+    
+    <string-array name="mlb_list">
+        <item>Tebow is Love, Tebow is Life</item>
+    </string-array>
+    
+    <string-array name="nhl_list">
+        <item>Tebow is Love, Tebow is Life</item>
+    </string-array>
 
     <string name="title_activity_chat">ChatActivity</string>
     <string name="home_sentence">Welcome to the Thunderdome</string>

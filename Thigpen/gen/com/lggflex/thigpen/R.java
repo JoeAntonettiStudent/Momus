@@ -28,7 +28,10 @@ public final class R {
         public static final int home_screen_sports_list=0x7f0d0001;
         public static final int home_screen_tabs=0x7f0d0000;
         public static final int home_screen_television_list=0x7f0d0002;
+        public static final int mlb_list=0x7f0d0005;
+        public static final int nba_list=0x7f0d0004;
         public static final int nfl_list=0x7f0d0003;
+        public static final int nhl_list=0x7f0d0006;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 

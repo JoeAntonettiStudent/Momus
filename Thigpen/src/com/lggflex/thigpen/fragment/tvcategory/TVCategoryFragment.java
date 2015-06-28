@@ -45,7 +45,7 @@ public class TVCategoryFragment extends Fragment implements TVCategoryOnItemClic
 
         
         String[] tvShowNames = getResources().getStringArray(R.array.home_screen_television_list);
-        
+        shows.clear();
         for(final String show : tvShowNames){
         		shows.add(new TVCategoryViewModel(show));
         }
