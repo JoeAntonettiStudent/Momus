@@ -11,6 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
      />
+
+    <ImageView
+        android:id="@+id/headerImage"
+        android:transitionName="@string/sports_transition"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="250dp"
+        android:src="@color/primary_dark" />
    
 	<ListView
        		android:id="@+id/main_list"

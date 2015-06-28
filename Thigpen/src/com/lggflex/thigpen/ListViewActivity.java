@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ public class ListViewActivity extends ActionBarActivity {
 	    	startChatActivity(name);
 	    	finish();
 	    }else{
+	    	int drawableID = getResources().getIdentifier(name.toLowerCase() + "", "drawable", getPackageName());
+	    	ImageView image = (ImageView) findViewById(R.id.headerImage);
+	    	image.setImageDrawable(getResources().getDrawable(drawableID));
 	    	makeList(R.id.main_list, android.R.layout.simple_list_item_1, resId, new OnItemClickListener(){
 
 	    		@Override

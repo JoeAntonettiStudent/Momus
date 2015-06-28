@@ -40,7 +40,8 @@
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
-                android:src="@color/primary_dark"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/sports_transition"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true" />

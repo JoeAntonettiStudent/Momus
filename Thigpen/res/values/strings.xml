@@ -38,5 +38,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="facebook_app_id">1449562488698812</string>
     <string name="username">Barry Allen</string>
+    <string name="sports_transition">Sports Header Transition</string>
 
 </resources>

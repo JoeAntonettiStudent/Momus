@@ -30,7 +30,7 @@ public class RecyclerViewFragment extends Fragment {
  
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new RecyclerViewTextAdapter(data, getActivity()));
+        recyclerView.setAdapter(new RecyclerViewTextAdapter(data, getActivity(), this));
         
         return rootView;
     }
