@@ -40,7 +40,7 @@ public class HomeActivity extends ActionBarActivity {
         tabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.accent);
+                return getResources().getColor(R.color.accent_light);
             }
         });
         tabLayout.setViewPager(pager);

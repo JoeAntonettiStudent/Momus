@@ -33,6 +33,8 @@ public class ChatActivity extends ToolbarActivity {
 	FloatingActionButton chatButton;
 	EditText textEntry;
 	
+	boolean isReallyInArrow = false;
+	
 	private final String SERVER_URL="http://52.26.146.218:3000";
 	private Socket socket;
 
@@ -45,7 +47,13 @@ public class ChatActivity extends ToolbarActivity {
 		isChildOfRoot();
 		
 		currentChatroom = getIntent().getStringExtra("name");
+		
 		setTitle(currentChatroom);
+		
+		if(currentChatroom.equals("Arrow")){
+			currentChatroom = "Cleveland Browns";
+			setTitle("Arrow");
+		}
 		
 		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		username = prefs.getString("username", "Barry Allen");
