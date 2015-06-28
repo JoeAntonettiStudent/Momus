@@ -2,12 +2,16 @@ package com.lggflex.thigpen.fragment.sportscategory;
 
 import java.util.List;
 
+import android.os.Build;
 import android.os.Handler;
 import com.lggflex.thigpen.R;
+
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class SportsCategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder> implements View.OnClickListener{
 	
@@ -33,9 +37,10 @@ public class SportsCategoryViewAdapter extends RecyclerView.Adapter<CategoryView
 	public void onBindViewHolder(CategoryViewHolder holder, int position){
 		SportsCategoryViewModel item = categories.get(position);
 		holder.text.setText(item.getTitle());
-		if(item.getDrawable() != null)
+		if(item.getDrawable() != null){
 			holder.image.setImageDrawable(item.getDrawable());
-		else
+			holder.text.setBackgroundColor(item.getCardColor());
+		}else
 			holder.image.setImageBitmap(null);
 		holder.itemView.setTag(item);
 	}
@@ -47,14 +52,8 @@ public class SportsCategoryViewAdapter extends RecyclerView.Adapter<CategoryView
 	
 	@Override
 	public void onClick(final View v){
-		if(onCategoryClickListener != null) {
-			new Handler().postDelayed(new Runnable() {
-	                @Override 
-	                public void run() {
-	                    onCategoryClickListener.onItemClick(v, (SportsCategoryViewModel) v.getTag());
-	                }
-			}, 200);
-		}
+		if(onCategoryClickListener != null)
+			onCategoryClickListener.onItemClick(v, (SportsCategoryViewModel) v.getTag());
 	}
 
 }

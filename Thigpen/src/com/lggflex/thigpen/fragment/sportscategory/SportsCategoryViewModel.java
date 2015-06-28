@@ -6,10 +6,14 @@ public class SportsCategoryViewModel {
 	
 	private String title;
 	private Drawable drawable;
+	private int drawableID;
+	private int cardColor;
 	
-	public SportsCategoryViewModel(String t, Drawable id){
+	public SportsCategoryViewModel(String t, Drawable draw, int drawID, int color){
 		title = t;
-		drawable = id;
+		drawable = draw;
+		drawableID = drawID;
+		cardColor = color;
 	}
 	
 	public String getTitle(){
@@ -18,6 +22,14 @@ public class SportsCategoryViewModel {
 	
 	public Drawable getDrawable(){
 		return drawable;
+	}
+	
+	public int getDrawableID(){
+		return drawableID;
+	}
+	
+	public int getCardColor(){
+		return cardColor;
 	}
 
 }
