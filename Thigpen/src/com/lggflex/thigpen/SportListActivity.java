@@ -31,6 +31,12 @@ public class SportListActivity extends AppCompatActivity {
 	
 	private static final String EXTRA_IMAGE = "com.lggflex.thigpen.extraImage";
 	private static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
+	private static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
+	private static final String EXTRA_ACCENT_COLOR = "com.lggflex.thigpen.extraAccent";
+	
+	int primaryColor = -1;
+	int accentColor = -1;
+	
 	private Toolbar toolbar;
 
 	@Override
@@ -81,6 +87,8 @@ public class SportListActivity extends AppCompatActivity {
 	        int primaryDark = getResources().getColor(R.color.primary_dark);
 	        int primary = getResources().getColor(R.color.primary);
 	        toolbar.setBackgroundColor(palette.getVibrantColor(primary));
+	        primaryColor = palette.getVibrantColor(primary);
+	        accentColor = palette.getLightMutedColor(primary);
 	        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 	            getWindow().setStatusBarColor(palette.getDarkMutedColor(primaryDark));
 	        }
@@ -93,14 +101,6 @@ public class SportListActivity extends AppCompatActivity {
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		setTitle(title);
-	}
-
-	public static void navigate(FragmentActivity activity, View transitionImage, SportsCategoryViewModel model){
-		Intent intent = new Intent(activity, SportListActivity.class);
-		intent.putExtra(EXTRA_IMAGE, model.getDrawableID());
-		intent.putExtra(EXTRA_TITLE, model.getTitle());
-		ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, transitionImage, activity.getString(R.string.sports_transition));
-		ActivityCompat.startActivity(activity, intent, options.toBundle());
 	}
 	
 	private void initActivityTransitions() {
@@ -132,6 +132,8 @@ public class SportListActivity extends AppCompatActivity {
 	public void startChatActivity(CharSequence charSequence){
 		Intent i = new Intent(this, ChatActivity.class);
 		i.putExtra("name", charSequence);
+		i.putExtra(EXTRA_PRIMARY_COLOR, primaryColor);
+		i.putExtra(EXTRA_ACCENT_COLOR, accentColor);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		getApplicationContext().startActivity(i);
 		overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
