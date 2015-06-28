@@ -36,11 +36,7 @@ public class ToolbarActivity extends ActionBarActivity{
 		if(Build.VERSION.SDK_INT >= 21)
 			setStatusBarColor();
 	}
-	
-	public boolean onOptionsItemSelected(MenuItem item){
-	    finish();
-	    return true;
-	}
+
 	
 	private int getStatusBarHeight(){
 		int result = 0;

@@ -136,6 +136,6 @@ public class SportListActivity extends AppCompatActivity {
 		i.putExtra(EXTRA_ACCENT_COLOR, accentColor);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		getApplicationContext().startActivity(i);
-		overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
+		//overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
 	}
 }

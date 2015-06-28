@@ -50,8 +50,6 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
         
         packageName = getActivity().getPackageName();
         
-       // categories.clear();
-        
         String[] categoryNames = getResources().getStringArray(R.array.home_screen_sports_list);
         for(final String category : categoryNames){
         	final int drawableID = getResources().getIdentifier(category.toLowerCase(), "drawable", packageName);
@@ -84,6 +82,7 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
     	categoryView.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 2));
     	SportsCategoryViewAdapter adapter = new SportsCategoryViewAdapter(categories);
     	adapter.setOnCategoryClickListener(this);
+    	adapter.notifyDataSetChanged();
     	categoryView.setAdapter(adapter);
     }
 

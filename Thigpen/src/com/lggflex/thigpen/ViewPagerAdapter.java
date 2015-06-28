@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.lggflex.thigpen.fragment.HomeScreenMainViewFragment;
 import com.lggflex.thigpen.fragment.HomeScreenSportsViewFragment;
 import com.lggflex.thigpen.fragment.RecyclerViewFragment;
+import com.lggflex.thigpen.fragment.favoritecategory.FavoriteCategoryFragment;
 import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
 import com.lggflex.thigpen.fragment.tvcategory.TVCategoryFragment;
 
@@ -17,7 +18,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 			new HomeScreenMainViewFragment(),
 			new SportsCategoryFragment(),
 			new TVCategoryFragment(),
-			new RecyclerViewFragment()
+			new FavoriteCategoryFragment()
 	};
     
     public ViewPagerAdapter(FragmentManager manager, String names[]) {

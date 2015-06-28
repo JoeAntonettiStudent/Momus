@@ -9,19 +9,19 @@ import com.github.nkzawa.socketio.client.Socket;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.transition.Explode;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class ChatActivity extends ToolbarActivity {
 	
 	private final String SERVER_URL="http://52.26.146.218:3000";
@@ -35,6 +35,9 @@ public class ChatActivity extends ToolbarActivity {
 	
 	String currentChatroom;
 	
+	boolean favorited = false;
+	MenuItem favoriteButton;
+	
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<String> chatHistory;
 
@@ -47,7 +50,7 @@ public class ChatActivity extends ToolbarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
 		
-		setupWindowAnimations();
+		initActivityTransitions();
 		
 		createToolbar();
 		isChildOfRoot();
@@ -57,6 +60,9 @@ public class ChatActivity extends ToolbarActivity {
 		
 		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		username = prefs.getString("username", "Barry Allen");
+		
+		prefs = getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
+		favorited = prefs.getBoolean(currentChatroom, false);
 		
 		chatHistory = new ArrayList<String>();
 		chatHistoryAdapter = new ArrayAdapter<String>(this, CHAT_LINE_LAYOUT, chatHistory);
@@ -79,6 +85,47 @@ public class ChatActivity extends ToolbarActivity {
 		themeToColors(primaryColor, accentColor);
 		
 		configureSocket();
+	}
+	
+
+	private void initActivityTransitions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Slide transition = new Slide();
+            transition.excludeTarget(android.R.id.statusBarBackground, true);
+            getWindow().setEnterTransition(transition);
+            getWindow().setReturnTransition(transition);
+        }
+    }
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.chat, menu);
+		favoriteButton = menu.findItem(R.id.action_favorite);
+		if(favorited)
+			favoriteButton.setIcon(R.drawable.ic_favorite_white_36dp);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_favorite)
+			favorite();
+		return super.onOptionsItemSelected(item);
+	}
+	
+	public void favorite(){
+		if(!favorited){
+			favoriteButton.setIcon(R.drawable.ic_favorite_white_36dp);
+			favorited = true;
+		}else{
+			favoriteButton.setIcon(R.drawable.ic_favorite_border_white_36dp);
+			favorited = false;
+		}
+		SharedPreferences prefs = this.getSharedPreferences("FAVORITE_ITEMS", this.MODE_PRIVATE);
+		SharedPreferences.Editor editor = prefs.edit();
+		editor.putBoolean(currentChatroom, favorited);
+		editor.commit();
 	}
 	
 	public void sendMessage(String message){
