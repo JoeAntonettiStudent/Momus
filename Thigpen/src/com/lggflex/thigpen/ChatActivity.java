@@ -33,7 +33,7 @@ public class ChatActivity extends ToolbarActivity {
 	FloatingActionButton chatButton;
 	EditText textEntry;
 	
-	private final String SERVER_URL="http://52.26.146.218:3000";
+	private final String SERVER_URL="http://52.27.36.219:3000";
 	private Socket socket;
 
 	@Override
