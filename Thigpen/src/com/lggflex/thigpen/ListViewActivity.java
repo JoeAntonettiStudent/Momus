@@ -1,10 +1,16 @@
 package com.lggflex.thigpen;
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +29,7 @@ public class ListViewActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		context = this;
 		setContentView(R.layout.list);
+		setupWindowAnimations();
 		createToolbar();
 		String name = getIntent().getStringExtra("name");
 	    int resId = getResources().getIdentifier(name.toLowerCase() + "_list", "array", getPackageName());
@@ -48,11 +55,21 @@ public class ListViewActivity extends ActionBarActivity {
 	    }
 	}
 	
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void setupWindowAnimations() {
+		if(Build.VERSION.SDK_INT >= 21){
+			Transition explode = TransitionInflater.from(this).inflateTransition(R.transition.explode);
+			explode.setDuration(200);
+			getWindow().setExitTransition(explode);
+		}
+	}
+	
 	public void startChatActivity(CharSequence charSequence){
 		Intent i = new Intent(context, ChatActivity.class);
 		i.putExtra("name", charSequence);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(i);
+		overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
 	}
 
 	protected void createToolbar(){

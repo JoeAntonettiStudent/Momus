@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Explode;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
@@ -34,6 +37,8 @@ public class HomeActivity extends ActionBarActivity {
 		if(Build.VERSION.SDK_INT >= 21)
 			setStatusBarColor();
 		
+	//	setupWindowAnimations();
+		
 		String[] tabNames = getResources().getStringArray(R.array.home_screen_tabs);
         pagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(), tabNames);
         pager = (ViewPager) findViewById(R.id.view_pager);
@@ -49,6 +54,15 @@ public class HomeActivity extends ActionBarActivity {
         });
         tabLayout.setViewPager(pager);
  
+	}
+	
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void setupWindowAnimations() {
+		if(Build.VERSION.SDK_INT >= 21){
+			Transition explode = TransitionInflater.from(this).inflateTransition(R.transition.explode);
+			explode.setDuration(200);
+			getWindow().setExitTransition(explode);
+		}
 	}
 	
 	@TargetApi(Build.VERSION_CODES.LOLLIPOP)

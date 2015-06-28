@@ -2,22 +2,24 @@ package com.lggflex.thigpen;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import android.support.design.widget.FloatingActionButton;
+
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.transition.Explode;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 
 public class ChatActivity extends ToolbarActivity {
 	
@@ -42,6 +44,8 @@ public class ChatActivity extends ToolbarActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
+		
+		setupWindowAnimations();
 		
 		createToolbar();
 		isChildOfRoot();
@@ -81,6 +85,13 @@ public class ChatActivity extends ToolbarActivity {
 			
 		});
 		configureSocket();
+	}
+	
+	 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void setupWindowAnimations() {
+	        Explode explode = new Explode();
+	        explode.setDuration(2000);
+	        getWindow().setEnterTransition(explode);
 	}
 	
 	public void sendMessage(String message){
