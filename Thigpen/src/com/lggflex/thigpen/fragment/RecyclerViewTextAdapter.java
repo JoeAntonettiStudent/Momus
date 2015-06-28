@@ -42,7 +42,7 @@ public class RecyclerViewTextAdapter extends RecyclerView.Adapter<RecyclerViewTe
         return data.length;
     }
     
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
     	
         private final TextView textView;
  

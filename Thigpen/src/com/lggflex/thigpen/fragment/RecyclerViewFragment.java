@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 public class RecyclerViewFragment extends Fragment {
  
-    private static final String TAG = "RecyclerViewFragment";
+    protected static final String TAG = "RecyclerViewFragment";
  
     protected RecyclerView recyclerView;
     protected String[] data;
