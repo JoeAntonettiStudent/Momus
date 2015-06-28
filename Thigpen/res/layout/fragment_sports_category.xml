@@ -1,0 +1,17 @@
+<android.support.design.widget.CoordinatorLayout
+        android:id="@+id/content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:app="http://schemas.android.com/apk/res-auto"
+    	xmlns:tools="http://schemas.android.com/tools"
+    	tools:context=".HomeActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/categoryRecyclerView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

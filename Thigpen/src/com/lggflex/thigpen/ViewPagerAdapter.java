@@ -8,13 +8,14 @@ import com.lggflex.thigpen.fragment.HomeScreenMainViewFragment;
 import com.lggflex.thigpen.fragment.HomeScreenSportsViewFragment;
 import com.lggflex.thigpen.fragment.HomeScreenTelevisionViewFragment;
 import com.lggflex.thigpen.fragment.RecyclerViewFragment;
+import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 	
 	String tabNames[];
 	Fragment[] tabs = {
 			new HomeScreenMainViewFragment(),
-			new HomeScreenSportsViewFragment(),
+			new SportsCategoryFragment(),
 			new HomeScreenTelevisionViewFragment(),
 			new RecyclerViewFragment()
 	};
