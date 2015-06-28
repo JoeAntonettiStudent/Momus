@@ -1,8 +1,6 @@
 package com.lggflex.thigpen.fragment;
 
 import java.util.ArrayList;
-
-import com.lggflex.thigpen.ListViewActivity;
 import com.lggflex.thigpen.R;
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
@@ -65,11 +63,11 @@ public class RecyclerViewTextAdapter extends RecyclerView.Adapter<RecyclerViewTe
                 @SuppressLint("NewApi")
 				@Override
                 public void onClick(View v) {
-                	Intent i = new Intent(fragment.getActivity(), ListViewActivity.class);
+                	/*Intent i = new Intent(fragment.getActivity(), ListViewActivity.class);
                 	i.putExtra("name", textView.getText());
                 	@SuppressWarnings("unchecked")
 					ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(fragment.getActivity(), v.findViewById(R.id.imageView), "Sports Header Transition");
-                	ActivityCompat.startActivity(fragment.getActivity(), i, transitionActivityOptions.toBundle());
+                	ActivityCompat.startActivity(fragment.getActivity(), i, transitionActivityOptions.toBundle());*/
                 	//context.startActivity(i);
                 }
                 

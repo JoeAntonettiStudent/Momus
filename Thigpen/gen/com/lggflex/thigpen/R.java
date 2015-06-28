@@ -4372,7 +4372,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0a0061;
         public static final int action_mode_bar_stub=0x7f0a0060;
         public static final int action_mode_close_button=0x7f0a0049;
-        public static final int action_settings=0x7f0a009f;
+        public static final int action_settings=0x7f0a00a1;
         public static final int activity_chooser_view_content=0x7f0a004a;
         public static final int alertTitle=0x7f0a0054;
         public static final int always=0x7f0a001b;
@@ -4512,6 +4512,8 @@ containing a value of this type.
         public static final int toolbar=0x7f0a0073;
         public static final int top=0x7f0a0034;
         public static final int topPanel=0x7f0a0052;
+        public static final int tv_row_color=0x7f0a00a0;
+        public static final int tv_title=0x7f0a009f;
         public static final int unknown=0x7f0a0042;
         public static final int up=0x7f0a0001;
         public static final int useLogo=0x7f0a0015;
@@ -4623,6 +4625,7 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f03003e;
         public static final int text_row_item=0x7f03003f;
         public static final int toolbar=0x7f030040;
+        public static final int tv_category_item=0x7f030041;
     }
     public static final class menu {
         public static final int chat=0x7f0e0000;

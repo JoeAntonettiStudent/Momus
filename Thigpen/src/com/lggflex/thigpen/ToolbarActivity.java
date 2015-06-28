@@ -1,11 +1,13 @@
 package com.lggflex.thigpen;
 
 import android.annotation.TargetApi;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Explode;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,6 +17,8 @@ import android.widget.AdapterView.OnItemClickListener;
 public class ToolbarActivity extends ActionBarActivity{
 	
 	protected Toolbar toolbar;
+	
+	protected FloatingActionButton fab;
 	
 	protected void setTitle(String title){
 		getSupportActionBar().setTitle(title);
@@ -57,6 +61,21 @@ public class ToolbarActivity extends ActionBarActivity{
 		list.setAdapter(adapter);
 		if(listener != null)
 			list.setOnItemClickListener(listener);
+	}
+	
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	protected void themeToColors(int primary, int accent){
+		if(primary != -1)
+			toolbar.setBackgroundColor(primary);
+		if(accent != -1)
+			fab.setBackgroundTintList(ColorStateList.valueOf(accent));
+	}
+	
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	protected void setupWindowAnimations() {
+	        Explode explode = new Explode();
+	        explode.setDuration(2000);
+	        getWindow().setEnterTransition(explode);
 	}
 
 }

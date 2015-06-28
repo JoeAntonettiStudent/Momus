@@ -2121,7 +2121,7 @@ int id action_menu_presenter 0x7f0a0006
 int id action_mode_bar 0x7f0a0061
 int id action_mode_bar_stub 0x7f0a0060
 int id action_mode_close_button 0x7f0a0049
-int id action_settings 0x7f0a009f
+int id action_settings 0x7f0a00a1
 int id activity_chooser_view_content 0x7f0a004a
 int id alertTitle 0x7f0a0054
 int id always 0x7f0a001b
@@ -2259,6 +2259,8 @@ int id title_template 0x7f0a0053
 int id toolbar 0x7f0a0073
 int id top 0x7f0a0034
 int id topPanel 0x7f0a0052
+int id tv_row_color 0x7f0a00a0
+int id tv_title 0x7f0a009f
 int id unknown 0x7f0a0042
 int id up 0x7f0a0001
 int id useLogo 0x7f0a0015
@@ -2337,6 +2339,7 @@ int layout sports_category_item 0x7f03003d
 int layout support_simple_spinner_dropdown_item 0x7f03003e
 int layout text_row_item 0x7f03003f
 int layout toolbar 0x7f030040
+int layout tv_category_item 0x7f030041
 int menu chat 0x7f0e0000
 int menu home 0x7f0e0001
 int menu list_view 0x7f0e0002

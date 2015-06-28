@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" 
+    android:background="@android:color/white"
+    android:clipToPadding="false"
+    android:layout_height="72dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/tv_title"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/black"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_row_color"
+                android:layout_toEndOf="@+id/tv_row_color"
+                android:layout_marginLeft="5dp" />
+
+            <ImageView
+                android:id="@+id/tv_row_color"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/circle"
+                android:transitionName="@string/sports_transition" />
+            
+        </RelativeLayout>
+
+</LinearLayout>

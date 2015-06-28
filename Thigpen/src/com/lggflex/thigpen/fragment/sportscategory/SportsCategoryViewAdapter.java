@@ -13,28 +13,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class SportsCategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder> implements View.OnClickListener{
+public class SportsCategoryViewAdapter extends RecyclerView.Adapter<SportsCategoryViewHolder> implements View.OnClickListener{
 	
 	private List<SportsCategoryViewModel> categories;
-	private OnItemClickListener onCategoryClickListener;
+	private SportsCategoryOnItemClickListener onCategoryClickListener;
 	
 	public SportsCategoryViewAdapter(List<SportsCategoryViewModel> items){
 		categories = items;
 	}
 	
-	public void setOnCategoryClickListener(OnItemClickListener listener){
+	public void setOnCategoryClickListener(SportsCategoryOnItemClickListener listener){
 		onCategoryClickListener = listener;
 	}
 	
 	@Override
-	public CategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+	public SportsCategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sports_category_item, parent, false);
 		v.setOnClickListener(this);
-		return new CategoryViewHolder(v);
+		return new SportsCategoryViewHolder(v);
 	}
 	
 	@Override
-	public void onBindViewHolder(CategoryViewHolder holder, int position){
+	public void onBindViewHolder(SportsCategoryViewHolder holder, int position){
 		SportsCategoryViewModel item = categories.get(position);
 		holder.text.setText(item.getTitle());
 		if(item.getDrawable() != null){

@@ -24,6 +24,8 @@ import android.widget.EditText;
 
 public class ChatActivity extends ToolbarActivity {
 	
+	private final String SERVER_URL="http://52.26.146.218:3000";
+	
 	private static int CHAT_LINE_LAYOUT = android.R.layout.simple_list_item_1;
 	
 	private static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
@@ -35,16 +37,11 @@ public class ChatActivity extends ToolbarActivity {
 	
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<String> chatHistory;
-	
-	FloatingActionButton chatButton;
+
 	EditText textEntry;
 	
-	boolean isReallyInArrow = false;
-	
-	private final String SERVER_URL="http://52.26.146.218:3000";
 	private Socket socket;
 
-	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,18 +53,7 @@ public class ChatActivity extends ToolbarActivity {
 		isChildOfRoot();
 		
 		currentChatroom = getIntent().getStringExtra("name");
-		
 		setTitle(currentChatroom);
-		
-		if(currentChatroom.equals("Arrow")){
-			currentChatroom = "Cleveland Browns";
-			setTitle("Arrow");
-		}
-		
-		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
-		if(primaryColor != -1){
-			toolbar.setBackgroundColor(primaryColor);
-		}
 		
 		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		username = prefs.getString("username", "Barry Allen");
@@ -75,18 +61,11 @@ public class ChatActivity extends ToolbarActivity {
 		chatHistory = new ArrayList<String>();
 		chatHistoryAdapter = new ArrayAdapter<String>(this, CHAT_LINE_LAYOUT, chatHistory);
 		
-		makeList(R.id.mainList, android.R.layout.simple_list_item_1, chatHistoryAdapter, new OnItemClickListener(){
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				Log.i("ChatActivity", "Clicked Message");
-			}
-			
-		});
+		makeList(R.id.mainList, android.R.layout.simple_list_item_1, chatHistoryAdapter, null);
 		
-		chatButton = (FloatingActionButton) findViewById(R.id.send);
+		fab = (FloatingActionButton) findViewById(R.id.send);
 		textEntry = (EditText) findViewById(R.id.entry);
-		chatButton.setOnClickListener(new OnClickListener(){
+		fab.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
@@ -95,19 +74,11 @@ public class ChatActivity extends ToolbarActivity {
 			
 		});
 		
+		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
 		int accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, -1);
-		if(accentColor != -1){
-			chatButton.setBackgroundTintList(ColorStateList.valueOf(accentColor));
-		}
+		themeToColors(primaryColor, accentColor);
 		
 		configureSocket();
-	}
-	
-	 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	private void setupWindowAnimations() {
-	        Explode explode = new Explode();
-	        explode.setDuration(2000);
-	        getWindow().setEnterTransition(explode);
 	}
 	
 	public void sendMessage(String message){
