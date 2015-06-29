@@ -76,6 +76,7 @@ public class ChatActivity extends ToolbarActivity {
 			@Override
 			public void onClick(View v) {
 				sendMessage(textEntry.getText().toString());
+				textEntry.setText("");
 			}
 			
 		});
