@@ -41,7 +41,7 @@ public class FavoriteCategoryFragment extends Fragment implements FavoriteCatego
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	view = inflater.inflate(R.layout.fragment_sports_category, container, false);
+    	view = inflater.inflate(R.layout.fragment_television_view, container, false);
         view.setTag(TAG);
         
 		SharedPreferences prefs = getActivity().getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
@@ -59,7 +59,7 @@ public class FavoriteCategoryFragment extends Fragment implements FavoriteCatego
     
     
     public void initFavoritesView(){
-    	RecyclerView categoryView = (RecyclerView) view.findViewById(R.id.categoryRecyclerView);
+    	RecyclerView categoryView = (RecyclerView) view.findViewById(R.id.content);
     	categoryView.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 1));
     	FavoriteCategoryViewAdapter adapter = new FavoriteCategoryViewAdapter(favorites);
     	adapter.setOnCategoryClickListener(this);

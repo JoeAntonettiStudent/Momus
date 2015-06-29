@@ -39,7 +39,7 @@ public class TVCategoryFragment extends Fragment implements TVCategoryOnItemClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	view = inflater.inflate(R.layout.fragment_sports_category, container, false);
+    	view = inflater.inflate(R.layout.fragment_television_view, container, false);
         view.setTag(TAG);
         
 
@@ -57,7 +57,7 @@ public class TVCategoryFragment extends Fragment implements TVCategoryOnItemClic
     
     
     public void initShowView(){
-    	RecyclerView categoryView = (RecyclerView) view.findViewById(R.id.categoryRecyclerView);
+    	RecyclerView categoryView = (RecyclerView) view.findViewById(R.id.content);
     	categoryView.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 1));
     	TVCategoryViewAdapter adapter = new TVCategoryViewAdapter(shows);
     	adapter.setOnCategoryClickListener(this);

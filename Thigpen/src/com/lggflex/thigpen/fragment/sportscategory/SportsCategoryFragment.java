@@ -29,7 +29,141 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
     
 	private static final String EXTRA_IMAGE = "com.lggflex.thigpen.extraImage";
 	private static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
+	
+	public static String[] NFL_TEAMS = {
+			"New England Patriots",
+			"New York Jets",
+			"Miami Dolphins",
+			"Buffalo Bills",
+			"Pittsburgh Steelers",
+			"Baltimore Ravens",
+			"Cincinnati Bengals",
+			"Cleveland Browns",
+			"Indianapolis Colts",
+			"Houston Texans",
+			"Tennessee Titans",
+			"Jacksonville Jaguars",
+			"Denver Broncos",
+			"Kansas City Chiefs",
+			"San Diego Chargers",
+			"Oakland Raiders",
+			"New York Giants",
+			"Philadelphia Eagles",
+			"Dallas Cowboys",
+			"Washington Redskins",
+			"Detroit Lions",
+			"Green Bay Packers",
+			"Minnesota Vikings",
+			"Chicago Bears",
+			"New Orleans Saints",
+			"Carolina Panthers",
+			"Atlanta Falcons",
+			"Tampa Bay Buccaneers",
+			"Seattle Seahawks",
+			"San Francisco 49ers",
+			"Arizona Cardinals",
+			"St. Louis Rams"
+	};
+	
+	public static String[] MLB_TEAMS = {
+			"New York Yankees",
+			"Boston Red Sox",
+			"Baltimore Orioles",
+			"Tampa Bay Rays",
+			"Toronto Blue Jays",
+			"Detroit Tigers",
+			"Minnesota Twins",
+			"Cleveland Indians",
+			"Chicago White Sox",
+			"Kansas City Royals",
+			"Houston Astros",
+			"Texas Rangers",
+			"Los Angeles Angels",
+			"Seattle Mariners",
+			"Oakland Athletics",
+			"New York Mets",
+			"Atlanta Braves",
+			"Washington Nationals",
+			"Miami Marlins",
+			"Philadelphia Phillies",
+			"St. Louis Cardinals",
+			"Pittsburgh Pirates",
+			"Chicago Cubs",
+			"Milwaukee Brewers",
+			"Cincinnati Reds",
+			"Los Angeles Dodgers",
+			"San Diego Padres",
+			"San Francisco Giants",
+			"Colorado Rockies",
+			"Arizona Diamondbacks"
+	};
     
+	public static String[] NBA_TEAMS = {
+			"Toronto Rapters",
+			"Boston Celtics",
+			"Brooklyn Nets",
+			"Philadelphia 76ers",
+			"New York Knicks",
+			"Cleveland Cavaliers",
+			"Chicago Bulls",
+			"Miami Heat",
+			"Milwaukee Bucks",
+			"Indiana Pacers",
+			"Detroit Pistons",
+			"Atlanta Hawks",
+			"Washington Wizards",
+			"Charlotte Hornets",
+			"Orlando Magic",
+			"Portland Trailblazers",
+			"Oklahoma City Thunder",
+			"Utah Jazz",
+			"Denver Nuggets",
+			"Minnesota Timberwolves",
+			"Golden State Warriors",
+			"Los Angeles Clippers",
+			"Phoenix Suns",
+			"Sacramento Kings",
+			"Los Angeles Lakers",
+			"Houston Rockets",
+			"Memphis Grizzlies",
+			"San Antonio Spurs",
+			"Dallas Mavericks",
+			"New Orleans Pelicans"
+	};
+	
+	public static String[] NHL_TEAMS = {
+			"Montreal Canadiens",
+			"Tampa Bay Lightning",
+			"Detroit Red Wings",
+			"Ottowa Senators",
+			"Boston Bruins",
+			"Florida Panthers",
+			"Toronto Maple Leafs",
+			"Buffalo Bisons",
+			"New York Rangers",
+			"Washington Capitals",
+			"New York Islanders",
+			"Pittsburgh Penguins",
+			"Columbus Blue Jackets",
+			"Philadelphia Flyers",
+			"New Jersey Devils",
+			"Carolina Hurricanes",
+			"St. Louis Blues",
+			"Nashville Predators",
+			"Chicago Blackhawks",
+			"Minnesota Wild",
+			"Winnipeg Jets",
+			"Dallas Stars",
+			"Colorado Avalanche",
+			"Anahiem Ducks",
+			"Vancouver Canucks",
+			"Calgary Flames",
+			"Los Angeles Kings",
+			"San Jose Sharks",
+			"Edmonton Oilers",
+			"Arizona Coyotes"
+	};
+	
     private static String packageName;
     
     private List<SportsCategoryViewModel> categories = new ArrayList<SportsCategoryViewModel>();
@@ -54,12 +188,19 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
         for(final String category : categoryNames){
         	final int drawableID = getResources().getIdentifier(category.toLowerCase(), "drawable", packageName);
         	if(drawableID != 0){
-        		Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
+        		/*Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
         		 Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
         	            public void onGenerated(Palette p) {
         	            	applyPalleteToCard(p, drawableID, category);
         	            }
-        	        });	
+        	        });	*/
+        		boolean isRepeat = false;
+            	for(SportsCategoryViewModel model : categories){
+            		if(model.getTitle().equals(category))
+            			isRepeat = true;
+            	}
+            	if(!isRepeat)
+            		categories.add(new SportsCategoryViewModel(category, getResources().getDrawable(drawableID), drawableID, getResources().getColor(R.color.primary)));
         	}else{
         		categories.add(new SportsCategoryViewModel(category, null, 0, 0));
         	}
@@ -74,7 +215,13 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
 	public void applyPalleteToCard(Palette pallete, int drawableID, String name){
     	int primary = getResources().getColor(R.color.primary);
     	int mutedPrimary = pallete.getMutedColor(primary);
-		categories.add(new SportsCategoryViewModel(name, getResources().getDrawable(drawableID), drawableID, mutedPrimary));
+    	boolean isRepeat = false;
+    	for(SportsCategoryViewModel model : categories){
+    		if(model.getTitle().equals(name))
+    			isRepeat = true;
+    	}
+    	if(!isRepeat)
+    		categories.add(new SportsCategoryViewModel(name, getResources().getDrawable(drawableID), drawableID, mutedPrimary));
     }
     
     public void initCategoryView(){
@@ -92,7 +239,12 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
     	Intent i = new Intent(getActivity(), SportListActivity.class);
     	i.putExtra(EXTRA_IMAGE, viewModel.getDrawableID());
 		i.putExtra(EXTRA_TITLE, viewModel.getTitle());
-		ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.category_image), "Sports Header Transition");
-    	ActivityCompat.startActivity(getActivity(), i, transitionActivityOptions.toBundle());
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.category_image), "Sports Header Transition");
+			ActivityCompat.startActivity(getActivity(), i, transitionActivityOptions.toBundle());
+		}else{
+			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			getActivity().getApplicationContext().startActivity(i);
+		}
 	}
 }

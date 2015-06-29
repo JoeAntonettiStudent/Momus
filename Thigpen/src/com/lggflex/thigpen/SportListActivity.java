@@ -1,6 +1,7 @@
 package com.lggflex.thigpen;
 
 import com.lggflex.pallete.PalleteTools;
+import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
 import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryViewModel;
 
 import android.annotation.TargetApi;
@@ -61,7 +62,7 @@ public class SportListActivity extends AppCompatActivity {
 	    	startChatActivity(name);
 	    	finish();
 	    }else{
-	    	makeList(R.id.main_list, android.R.layout.simple_list_item_1, resId, new OnItemClickListener(){
+	    	OnItemClickListener listener = new OnItemClickListener(){
 
 	    		@Override
 	    		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
@@ -70,7 +71,16 @@ public class SportListActivity extends AppCompatActivity {
 					startChatActivity(text.getText());
 	    		}
 			
-	    	});
+	    	};
+	    	if(name.toLowerCase().equals("nfl")){
+	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NFL_TEAMS, listener);
+	    	}else if(name.toLowerCase().equals("mlb")){
+	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.MLB_TEAMS, listener);
+	    	}else if(name.toLowerCase().equals("nba")){
+	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NBA_TEAMS, listener);
+	    	}else if(name.toLowerCase().equals("nhl")){
+	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NHL_TEAMS, listener);
+	    	}
 	    }
         
 	    Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
@@ -96,10 +106,12 @@ public class SportListActivity extends AppCompatActivity {
 	
 	private void initToolbar(String title){
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
 		setSupportActionBar(toolbar);
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
+		if(Build.VERSION.SDK_INT >= 21){
+			toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+		}
 		setTitle(title);
 	}
 	
@@ -125,6 +137,13 @@ public class SportListActivity extends AppCompatActivity {
 		ListView list = (ListView) findViewById(id);
 		String[] data_items = getResources().getStringArray(data);
 		list.setAdapter(new ArrayAdapter<String>(this, layout, data_items));
+		if(listener != null)
+			list.setOnItemClickListener(listener);
+	}
+	
+	protected void makeList(int id, int layout, String[] data, OnItemClickListener listener){
+		ListView list = (ListView) findViewById(id);
+		list.setAdapter(new ArrayAdapter<String>(this, layout, data));
 		if(listener != null)
 			list.setOnItemClickListener(listener);
 	}

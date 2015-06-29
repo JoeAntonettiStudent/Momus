@@ -65,12 +65,19 @@ public class HomeScreenMainViewFragment extends Fragment implements SportsCatego
         for(final String category : categoryNames){
         	final int drawableID = getResources().getIdentifier(category.toLowerCase(), "drawable", packageName);
         	if(drawableID != 0){
-        		Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
+        		/*Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
         		 Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
         	            public void onGenerated(Palette p) {
         	            	applyPalleteToCard(p, drawableID, category);
         	            }
-        	        });	
+        	        });	*/
+            	boolean isRepeat = false;
+            	for(SportsCategoryViewModel model : sports){
+            		if(model.getTitle().equals(category))
+            			isRepeat = true;
+            	}
+            	if(!isRepeat)
+            		sports.add(new SportsCategoryViewModel(category, getResources().getDrawable(drawableID), drawableID, getResources().getColor(R.color.primary)));
         	}else{
         		sports.add(new SportsCategoryViewModel(category, null, 0, 0));
         	}
@@ -116,8 +123,14 @@ public class HomeScreenMainViewFragment extends Fragment implements SportsCatego
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	public void applyPalleteToCard(Palette pallete, int drawableID, String name){
     	int primary = getResources().getColor(R.color.primary);
-    	int mutedPrimary = pallete.getMutedColor(primary);
-		sports.add(new SportsCategoryViewModel(name, getResources().getDrawable(drawableID), drawableID, mutedPrimary));
+    	int mutedPrimary = pallete.getVibrantColor(primary);
+    	boolean isRepeat = false;
+    	for(SportsCategoryViewModel model : sports){
+    		if(model.getTitle().equals(name))
+    			isRepeat = true;
+    	}
+    	if(!isRepeat)
+    		sports.add(new SportsCategoryViewModel(name, getResources().getDrawable(drawableID), drawableID, mutedPrimary));
     }
     
     public void initCategoryView(){
