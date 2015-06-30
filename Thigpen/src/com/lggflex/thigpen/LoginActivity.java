@@ -10,6 +10,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.lggflex.thigpen.R;
 
 import android.app.Activity;
 import android.content.Context;

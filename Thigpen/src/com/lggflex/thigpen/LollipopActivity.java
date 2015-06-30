@@ -1,5 +1,6 @@
 package com.lggflex.thigpen;
 
+import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.RecyclerViewAdapter;
 import com.lggflex.thigpen.fragment.OnRecyclerViewClickListener;
 

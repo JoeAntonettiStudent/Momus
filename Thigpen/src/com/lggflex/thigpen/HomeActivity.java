@@ -1,6 +1,8 @@
 package com.lggflex.thigpen;
 
+import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.ui.SlidingTabLayout;
+
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;

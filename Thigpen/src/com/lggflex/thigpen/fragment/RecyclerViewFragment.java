@@ -1,6 +1,7 @@
 package com.lggflex.thigpen.fragment;
 
 import com.lggflex.thigpen.adapter.RecyclerViewAdapter;
+
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;

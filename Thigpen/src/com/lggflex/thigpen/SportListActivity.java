@@ -2,7 +2,9 @@ package com.lggflex.thigpen;
 
 import java.util.Locale;
 
+import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.backend.DAO;
+
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
