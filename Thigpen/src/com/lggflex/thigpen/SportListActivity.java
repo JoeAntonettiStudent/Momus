@@ -1,17 +1,26 @@
 package com.lggflex.thigpen;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
+import org.json.MyLinearLayoutManager;
+
+import com.lggflex.model.ChatroomModel;
+import com.lggflex.thigpen.adapter.ChatAdapter;
+import com.lggflex.thigpen.adapter.ListAdapter;
 import com.lggflex.thigpen.backend.DAO;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,17 +42,11 @@ public class SportListActivity extends LollipopActivity {
 		ActivityCompat.postponeEnterTransition(this);
 		
 		String name = getIntent().getStringExtra(EXTRA_TITLE);
-		int drawableID = getIntent().getIntExtra(EXTRA_IMAGE, 0);
+		final int drawableID = getIntent().getIntExtra(EXTRA_IMAGE, 0);
 		
 		initUIFlourishes(false, -1, -1);
 		setTitle(name);
 		makeChildOfRoot();
-		 
-		
-		final ImageView image = (ImageView) findViewById(R.id.headerImage);
-        if(drawableID != 0)
-        	image.setImageDrawable(getResources().getDrawable(drawableID, null));
-        
         
         int resId = getResources().getIdentifier(name.toLowerCase(Locale.ENGLISH) + "_list", "array", getPackageName());
 	    if(resId == 0){
@@ -60,20 +63,25 @@ public class SportListActivity extends LollipopActivity {
 	    		}
 			
 	    	};
-	    	makeList(R.id.main_list, android.R.layout.simple_list_item_1, DAO.getListForSportName(name), listener);
+	    	ArrayList<ChatroomModel> teams = new ArrayList<ChatroomModel>();
+	    	for(String team : DAO.getListForSportName(name)){
+	    		teams.add(new ChatroomModel(team));
+	    	}
+	    	adapter = new ListAdapter(teams);
+			initRecyclerView(R.id.main_list, 1);
 	    }
         
-	    Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
+	    Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             public void onGenerated(Palette palette) {
-                applyPalette(palette, image);
+                applyPalette(palette, getResources().getDrawable(drawableID));
             }
         });
-        ViewCompat.setTransitionName(image, "Sports Header Transition");
+        //ViewCompat.setTransitionName(image, "Sports Header Transition");
         ActivityCompat.startPostponedEnterTransition(this);
 	}
 	
-	 private void applyPalette(Palette palette, ImageView image) {
+	 private void applyPalette(Palette palette, Drawable image) {
 	        int primaryDark = getResources().getColor(R.color.primary_dark);
 	        primary = getResources().getColor(R.color.primary);
 	        toolbar.setBackgroundColor(palette.getVibrantColor(primary));
@@ -111,8 +119,13 @@ public class SportListActivity extends LollipopActivity {
 	}
 
 	@Override
-	public <T> void onItemClick(View view, T viewModel) {
-		// TODO Auto-generated method stub
-		
+	public <T> void onItemClick(View view, T m) {
+		Intent i = new Intent(this, ChatActivity.class);
+		ChatroomModel viewModel = (ChatroomModel) m;
+		i.putExtra("name", (CharSequence) viewModel.getTitle());
+		i.putExtra(EXTRA_PRIMARY_COLOR, viewModel.getColor()[0]);
+		i.putExtra(EXTRA_ACCENT_COLOR, viewModel.getColor()[1]);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		getApplicationContext().startActivity(i);
 	}
 }
