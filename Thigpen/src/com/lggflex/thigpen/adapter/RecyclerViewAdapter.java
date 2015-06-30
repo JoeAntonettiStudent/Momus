@@ -15,8 +15,8 @@ abstract public class RecyclerViewAdapter<VH extends RecyclerView.ViewHolder, VM
 	protected List<VM> items;
 	private OnRecyclerViewClickListener onCategoryClickListener;
 	
-	protected static final int CARD_LAYOUT = R.layout.sports_category_item;
-	protected static final int LIST_LAYOUT = R.layout.tv_category_item;
+	protected static final int CARD_LAYOUT = R.layout.category_item;
+	protected static final int LIST_LAYOUT = R.layout.list_item;
 	
 	public RecyclerViewAdapter(List<VM> items){
 		this.items = items;

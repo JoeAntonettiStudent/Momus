@@ -25,7 +25,7 @@ public class FavoriteCategoryFragment extends RecyclerViewFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	view = inflater.inflate(R.layout.fragment_television_view, container, false);
+    	view = inflater.inflate(R.layout.fragment_list, container, false);
         view.setTag(TAG);
         
 		SharedPreferences prefs = getActivity().getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);

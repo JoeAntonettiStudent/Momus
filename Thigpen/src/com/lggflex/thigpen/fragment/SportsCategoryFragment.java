@@ -31,7 +31,7 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	view = inflater.inflate(R.layout.fragment_sports_category, container, false);
+    	view = inflater.inflate(R.layout.fragment_category, container, false);
         view.setTag(TAG);
         
         packageName = getActivity().getPackageName();

@@ -20,7 +20,7 @@ public class TVCategoryFragment extends RecyclerViewFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	view = inflater.inflate(R.layout.fragment_television_view, container, false);
+    	view = inflater.inflate(R.layout.fragment_list, container, false);
         view.setTag(TAG);
         String[] tvShowNames = getResources().getStringArray(R.array.home_screen_television_list);
         shows.clear();

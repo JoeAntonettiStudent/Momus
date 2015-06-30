@@ -38,7 +38,7 @@ public class SportListActivity extends LollipopActivity {
 		super.onCreate(savedInstanceState);
 		
 		initActivityTransitions();
-		setContentView(R.layout.list);
+		setContentView(R.layout.activity_sports_category);
 		ActivityCompat.postponeEnterTransition(this);
 		
 		String name = getIntent().getStringExtra(EXTRA_TITLE);
