@@ -12,7 +12,7 @@
 		android:layout_height="match_parent"
 		android:padding="@dimen/spacing_xsmall">
 
-        <com.lggflex.thigpen.fragment.sportscategory.SportsCategoryImage
+        <com.lggflex.thigpen.holder.CategoryImage
             android:id="@+id/category_image"
             android:transitionName="@string/sports_transition"
             android:layout_width="match_parent"

@@ -1,17 +1,13 @@
 package com.lggflex.thigpen.adapter;
 
 import java.util.List;
-
 import com.lggflex.model.ChatItemModel;
 import com.lggflex.thigpen.R;
-import com.lggflex.thigpen.RecyclerViewAdapter;
-
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ChatAdapter extends RecyclerViewAdapter<ChatViewHolder, ChatItemModel>{

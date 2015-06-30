@@ -1,5 +1,8 @@
 package com.lggflex.thigpen;
 
+import com.lggflex.thigpen.adapter.RecyclerViewAdapter;
+import com.lggflex.thigpen.fragment.OnRecyclerViewClickListener;
+
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -20,6 +23,11 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	protected FloatingActionButton floatingActionButton;
 	protected int primary, accent, buildNumber;
 	protected GridLayoutManager recyclerLayoutManager;
+	
+	protected static final String EXTRA_IMAGE = "com.lggflex.thigpen.extraImage";
+	protected static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
+	protected static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
+	protected static final String EXTRA_ACCENT_COLOR = "com.lggflex.thigpen.extraAccent";
 	
 	private boolean hasFAB;
 	

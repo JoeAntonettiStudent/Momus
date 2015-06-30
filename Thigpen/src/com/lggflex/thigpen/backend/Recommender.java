@@ -15,7 +15,7 @@ public class Recommender {
 	}
 	
 	public ArrayList<ChatroomModel> recommend(){
-		recommended.add(new ChatroomModel("Arrow"));
+		recommended.add(new ChatroomModel(location));
 		return recommended;
 	}
 

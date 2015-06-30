@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void save(String name){
-		SharedPreferences prefs = this.getSharedPreferences("USER_DETAILS", this.MODE_PRIVATE);
+		SharedPreferences prefs = this.getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString("username", name);
 		editor.putBoolean("completed", true);

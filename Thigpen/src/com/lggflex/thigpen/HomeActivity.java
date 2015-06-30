@@ -1,28 +1,24 @@
 package com.lggflex.thigpen;
 
 import com.lggflex.thigpen.ui.SlidingTabLayout;
-
 import android.annotation.TargetApi;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.transition.Explode;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
-public class HomeActivity extends ActionBarActivity {
+public class HomeActivity extends LollipopActivity {
 	
 	ViewPager pager;
 	ViewPagerAdapter pagerAdapter;
 	SlidingTabLayout tabLayout;
 	Toolbar toolbar;
 
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -30,14 +26,8 @@ public class HomeActivity extends ActionBarActivity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		
-		if(Build.VERSION.SDK_INT >= 21)
-			setStatusBarColor();
-		
-	//	setupWindowAnimations();
+
+		initUIFlourishes(false, 1, 1);
 		
 		String[] tabNames = getResources().getStringArray(R.array.home_screen_tabs);
         pagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(), tabNames);
@@ -55,21 +45,6 @@ public class HomeActivity extends ActionBarActivity {
         tabLayout.setViewPager(pager);
  
 	}
-	
-	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	private void setupWindowAnimations() {
-		if(Build.VERSION.SDK_INT >= 21){
-			Transition explode = TransitionInflater.from(this).inflateTransition(R.transition.explode);
-			explode.setDuration(200);
-			getWindow().setExitTransition(explode);
-		}
-	}
-	
-	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	public void setStatusBarColor(){
-		getWindow().setStatusBarColor(Color.TRANSPARENT);
-		toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,13 +59,11 @@ public class HomeActivity extends ActionBarActivity {
 			return true;
 		return super.onOptionsItemSelected(item);
 	}
-	public int getStatusBarHeight() {
-	    int result = 0;
-	    int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-	    if (resourceId > 0) {
-	        result = getResources().getDimensionPixelSize(resourceId);
-	    }
-	    return result;
+	
+	@Override
+	public <T> void onItemClick(View view, T viewModel) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

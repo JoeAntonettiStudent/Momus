@@ -3,16 +3,17 @@ package com.lggflex.thigpen;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import com.lggflex.thigpen.fragment.HomeScreenMainViewFragment;
-import com.lggflex.thigpen.fragment.favoritecategory.FavoriteCategoryFragment;
-import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
-import com.lggflex.thigpen.fragment.tvcategory.TVCategoryFragment;
+
+import com.lggflex.thigpen.fragment.FavoriteCategoryFragment;
+import com.lggflex.thigpen.fragment.RecommendationsFragment;
+import com.lggflex.thigpen.fragment.SportsCategoryFragment;
+import com.lggflex.thigpen.fragment.TVCategoryFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 	
 	String tabNames[];
 	Fragment[] tabs = {
-			new HomeScreenMainViewFragment(),
+			new RecommendationsFragment(),
 			new SportsCategoryFragment(),
 			new TVCategoryFragment(),
 			new FavoriteCategoryFragment()

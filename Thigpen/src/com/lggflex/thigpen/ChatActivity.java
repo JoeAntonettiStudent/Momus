@@ -3,20 +3,17 @@ package com.lggflex.thigpen;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
 import com.lggflex.model.ChatItemModel;
 import com.lggflex.model.UserModel;
 import com.lggflex.thigpen.adapter.ChatAdapter;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;

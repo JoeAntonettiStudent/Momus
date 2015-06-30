@@ -1,9 +1,8 @@
 package com.lggflex.thigpen;
 
-import com.lggflex.pallete.PalleteTools;
-import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
-import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryViewModel;
+import java.util.Locale;
 
+import com.lggflex.thigpen.backend.DAO;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,13 +10,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,36 +22,30 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-public class SportListActivity extends AppCompatActivity {
-	
-	private static final String EXTRA_IMAGE = "com.lggflex.thigpen.extraImage";
-	private static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
-	private static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
-	private static final String EXTRA_ACCENT_COLOR = "com.lggflex.thigpen.extraAccent";
-	
-	int primaryColor = -1;
-	int accentColor = -1;
-	
-	private Toolbar toolbar;
+public class SportListActivity extends LollipopActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		initActivityTransitions();
 		
+		initActivityTransitions();
 		setContentView(R.layout.list);
 		ActivityCompat.postponeEnterTransition(this);
 		
 		String name = getIntent().getStringExtra(EXTRA_TITLE);
-		initToolbar(name);
+		int drawableID = getIntent().getIntExtra(EXTRA_IMAGE, 0);
+		
+		initUIFlourishes(false, -1, -1);
+		setTitle(name);
+		makeChildOfRoot();
+		 
 		
 		final ImageView image = (ImageView) findViewById(R.id.headerImage);
-        int drawableID = getIntent().getIntExtra(EXTRA_IMAGE, 0);
-        if(drawableID != 0){
-        	image.setImageDrawable(getResources().getDrawable(drawableID));
-        }
+        if(drawableID != 0)
+        	image.setImageDrawable(getResources().getDrawable(drawableID, null));
         
-        int resId = getResources().getIdentifier(name.toLowerCase() + "_list", "array", getPackageName());
+        
+        int resId = getResources().getIdentifier(name.toLowerCase(Locale.ENGLISH) + "_list", "array", getPackageName());
 	    if(resId == 0){
 	    	startChatActivity(name);
 	    	finish();
@@ -72,15 +60,7 @@ public class SportListActivity extends AppCompatActivity {
 	    		}
 			
 	    	};
-	    	if(name.toLowerCase().equals("nfl")){
-	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NFL_TEAMS, listener);
-	    	}else if(name.toLowerCase().equals("mlb")){
-	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.MLB_TEAMS, listener);
-	    	}else if(name.toLowerCase().equals("nba")){
-	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NBA_TEAMS, listener);
-	    	}else if(name.toLowerCase().equals("nhl")){
-	    		makeList(R.id.main_list, android.R.layout.simple_list_item_1, SportsCategoryFragment.NHL_TEAMS, listener);
-	    	}
+	    	makeList(R.id.main_list, android.R.layout.simple_list_item_1, DAO.getListForSportName(name), listener);
 	    }
         
 	    Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
@@ -95,26 +75,16 @@ public class SportListActivity extends AppCompatActivity {
 	
 	 private void applyPalette(Palette palette, ImageView image) {
 	        int primaryDark = getResources().getColor(R.color.primary_dark);
-	        int primary = getResources().getColor(R.color.primary);
+	        primary = getResources().getColor(R.color.primary);
 	        toolbar.setBackgroundColor(palette.getVibrantColor(primary));
-	        primaryColor = palette.getVibrantColor(primary);
-	        accentColor = palette.getLightMutedColor(primary);
+	        primary = palette.getVibrantColor(primary);
+	        accent = palette.getLightMutedColor(primary);
 	        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+	        	themeToColors();
 	            getWindow().setStatusBarColor(palette.getDarkMutedColor(primaryDark));
 	        }
 	    }
-	
-	private void initToolbar(String title){
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		ActionBar actionBar = getSupportActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		if(Build.VERSION.SDK_INT >= 21){
-			toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-		}
-		setTitle(title);
-	}
-	
+	 
 	private void initActivityTransitions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide transition = new Slide();
@@ -123,23 +93,6 @@ public class SportListActivity extends AppCompatActivity {
             getWindow().setReturnTransition(transition);
         }
     }
-	
-	public int getStatusBarHeight() {
-	    int result = 0;
-	    int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-	    if (resourceId > 0) {
-	        result = getResources().getDimensionPixelSize(resourceId);
-	    }
-	    return result;
-	}
-	
-	protected void makeList(int id, int layout, int data, OnItemClickListener listener){
-		ListView list = (ListView) findViewById(id);
-		String[] data_items = getResources().getStringArray(data);
-		list.setAdapter(new ArrayAdapter<String>(this, layout, data_items));
-		if(listener != null)
-			list.setOnItemClickListener(listener);
-	}
 	
 	protected void makeList(int id, int layout, String[] data, OnItemClickListener listener){
 		ListView list = (ListView) findViewById(id);
@@ -151,10 +104,15 @@ public class SportListActivity extends AppCompatActivity {
 	public void startChatActivity(CharSequence charSequence){
 		Intent i = new Intent(this, ChatActivity.class);
 		i.putExtra("name", charSequence);
-		i.putExtra(EXTRA_PRIMARY_COLOR, primaryColor);
-		i.putExtra(EXTRA_ACCENT_COLOR, accentColor);
+		i.putExtra(EXTRA_PRIMARY_COLOR, primary);
+		i.putExtra(EXTRA_ACCENT_COLOR, accent);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		getApplicationContext().startActivity(i);
-		//overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
+	}
+
+	@Override
+	public <T> void onItemClick(View view, T viewModel) {
+		// TODO Auto-generated method stub
+		
 	}
 }

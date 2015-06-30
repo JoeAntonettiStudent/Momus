@@ -1,8 +1,6 @@
 package com.lggflex.thigpen.ui;
 
 import com.lggflex.thigpen.R;
-import com.lggflex.thigpen.R.color;
-
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;

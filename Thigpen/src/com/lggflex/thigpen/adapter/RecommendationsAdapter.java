@@ -1,18 +1,13 @@
 package com.lggflex.thigpen.adapter;
 
 import java.util.List;
-
 import com.lggflex.model.ChatroomModel;
-import com.lggflex.thigpen.R;
-import com.lggflex.thigpen.RecyclerViewAdapter;
 import com.lggflex.thigpen.holder.CardViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 public class RecommendationsAdapter extends RecyclerViewAdapter<CardViewHolder, ChatroomModel>{
-	
-	private static final int CARD_LAYOUT = R.layout.sports_category_item;
 
 	public RecommendationsAdapter(List<ChatroomModel> items) {
 		super(items);
