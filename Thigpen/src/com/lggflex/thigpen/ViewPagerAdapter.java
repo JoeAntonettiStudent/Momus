@@ -1,13 +1,13 @@
 package com.lggflex.thigpen;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+
 import com.lggflex.thigpen.fragment.FavoriteCategoryFragment;
 import com.lggflex.thigpen.fragment.RecommendationsFragment;
 import com.lggflex.thigpen.fragment.SportsCategoryFragment;
 import com.lggflex.thigpen.fragment.TVCategoryFragment;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 	

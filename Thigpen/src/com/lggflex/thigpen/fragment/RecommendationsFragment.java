@@ -6,7 +6,6 @@ import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.RecommendationsAdapter;
 import com.lggflex.thigpen.backend.Recommender;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;

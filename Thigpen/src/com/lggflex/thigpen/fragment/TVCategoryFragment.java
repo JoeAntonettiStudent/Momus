@@ -6,7 +6,6 @@ import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.ListAdapter;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;

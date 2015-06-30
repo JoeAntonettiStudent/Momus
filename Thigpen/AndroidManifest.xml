@@ -20,21 +20,21 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name="com.lggflex.thigpen.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.lggflex.thigpen.ListViewActivity"
+            android:name=".ListViewActivity"
             android:label="@string/title_activity_list_view" >
         </activity>
         <activity
-            android:name="com.lggflex.thigpen.ChatActivity"
+            android:name=".ChatActivity"
             android:label="@string/title_activity_chat"
             android:noHistory="true"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="com.lggflex.thigpen.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,9 +48,9 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.lggflex.thigpen.SportListActivity"
+            android:name=".SportListActivity"
             android:label="@string/title_activity_sport_list"
-             android:parentActivityName="com.lggflex.thigpen.HomeActivity">
+             android:parentActivityName=".HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/> >

@@ -8,9 +8,7 @@ import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
 import com.lggflex.model.ChatItemModel;
 import com.lggflex.model.UserModel;
-import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.ChatAdapter;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;

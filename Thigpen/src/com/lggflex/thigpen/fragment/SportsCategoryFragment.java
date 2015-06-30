@@ -8,7 +8,6 @@ import com.lggflex.model.CategoryModel;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.SportListActivity;
 import com.lggflex.thigpen.adapter.CategoryAdapter;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;

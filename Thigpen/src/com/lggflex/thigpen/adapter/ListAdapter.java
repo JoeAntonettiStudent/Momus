@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.holder.ListViewHolder;
-
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;

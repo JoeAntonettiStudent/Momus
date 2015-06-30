@@ -3,7 +3,6 @@ package com.lggflex.thigpen.adapter;
 import java.util.List;
 import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.holder.CardViewHolder;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

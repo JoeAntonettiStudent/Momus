@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
      />
     
-    <cocom.monus.thigpen.ui.SlidingTabLayout        android:id="@+id/tab_layout"
+    <com.lggflex.thigpen.ui.SlidingTabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="@dimen/toolbar_elevation"
