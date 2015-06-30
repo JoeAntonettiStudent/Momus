@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="home_screen_tabs">
-        <item>Home</item>
+        <item>For You</item>
         <item>Sports</item>
         <item>Television</item>
         <item>Favorites</item>
@@ -18,9 +18,29 @@
         <item>NHL</item>
     </string-array>
     <string-array name="home_screen_television_list">
-        <item>The Flash</item>
-        <item>Arrow</item>
-        <item>Agents of S.H.I.E.L.D.</item>
+        <item >Walker, Texas Ranger</item>
+        <item >Entourage</item>
+        <item >Last Week Tonight with John Oliver</item>
+        <item >Cosby Show</item>
+        <item >One Upon a Time</item>
+        <item >Mad Men</item>
+        <item >Eureka</item>
+        <item >Tonight Show</item>
+        <item >Orange is the New Black</item>
+        <item >True Detective</item>
+        <item >Homeland</item>
+        <item >Everybody Loves Raymond</item>
+        <item >True Blood</item>
+        <item >Hard Knocks</item>
+        <item >Under the Dome</item>
+        <item >Nurse Jackie</item>
+        <item >Doogie Howser, M.D.</item>
+        <item >Everbody Hates Chris</item>
+        <item >Rizzoli &amp; Isles</item>
+        <item >Deal or No Deal</item>
+        <item >Odd Couple</item>
+        <item >MacGyver</item>
+        <item >ER</item>
     </string-array>
 
     <string name="title_activity_list_view">ListViewActivity</string>
