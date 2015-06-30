@@ -52,5 +52,7 @@
     <string name="username">Barry Allen</string>
     <string name="sports_transition">Sports Header Transition</string>
     <string name="title_activity_sport_list">SportListActivity</string>
+    
+    <string name="default_username">User</string>
 
 </resources>

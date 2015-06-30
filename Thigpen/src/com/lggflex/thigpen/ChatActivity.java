@@ -2,17 +2,21 @@ package com.lggflex.thigpen;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.lggflex.model.ChatItemModel;
+import com.lggflex.model.UserModel;
+import com.lggflex.thigpen.adapter.ChatAdapter;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.transition.Slide;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,56 +26,66 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-public class ChatActivity extends ToolbarActivity {
+
+public class ChatActivity extends LollipopActivity {
 	
-	private final String SERVER_URL="http://52.26.146.218:3000";
-	
-	private static int CHAT_LINE_LAYOUT = android.R.layout.simple_list_item_1;
-	
+	//Intent Extras
 	private static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
 	private static final String EXTRA_ACCENT_COLOR = "com.lggflex.thigpen.extraAccent";
+	private static final String EXTRA_CHATROOM_NAME = "name";
 	
-	String username;
+	//Internal State Variables
+	private String username;
+	private String currentChatroom;
+	private boolean isFavoriteChatroom;
+	private SharedPreferences userInformationPreferences, favoriteChatroomsPreferences;
+	private static HashMap<String, UserModel> currentUserMap;
 	
-	String currentChatroom;
-	
-	boolean favorited = false;
-	MenuItem favoriteButton;
-	
-	ArrayAdapter<String> chatHistoryAdapter;
-	ArrayList<String> chatHistory;
-
-	EditText textEntry;
-	
+	//Server Variables
+	private final String SERVER_URL="http://52.26.146.218:3000";
 	private Socket socket;
+	
+	//UI Variables
+	MenuItem favoriteButton;
+	ArrayAdapter<String> chatHistoryAdapter;
+	ArrayList<ChatItemModel> chatHistory;
+	private EditText textEntry;
+	
+	private static final int FAVORITED_ICON = R.drawable.ic_favorite_white_36dp;
+	private static final int UNFAVORITED_ICON = R.drawable.ic_favorite_border_white_36dp;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
 		
-		initActivityTransitions();
+		//Get Intent Extras
+		currentChatroom = getIntent().getStringExtra(EXTRA_CHATROOM_NAME);
+		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
+		int accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, -1);
 		
-		createToolbar();
-		isChildOfRoot();
-		
-		currentChatroom = getIntent().getStringExtra("name");
+		initUIFlourishes(true, primaryColor, accentColor);
+		makeChildOfRoot();
 		setTitle(currentChatroom);
 		
-		SharedPreferences prefs = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
-		username = prefs.getString("username", "Barry Allen");
+		userInformationPreferences = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
+		username = userInformationPreferences.getString("username", getResources().getString(R.string.default_username));
 		
-		prefs = getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
-		favorited = prefs.getBoolean(currentChatroom, false);
+		favoriteChatroomsPreferences = getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
+		isFavoriteChatroom = favoriteChatroomsPreferences.getBoolean(currentChatroom, false);
 		
-		chatHistory = new ArrayList<String>();
-		chatHistoryAdapter = new ArrayAdapter<String>(this, CHAT_LINE_LAYOUT, chatHistory);
+		currentUserMap = new HashMap<String, UserModel>();
+		currentUserMap.put(username, new UserModel(username));
 		
-		makeList(R.id.mainList, android.R.layout.simple_list_item_1, chatHistoryAdapter, null);
+		chatHistory = new ArrayList<ChatItemModel>();
 		
-		fab = (FloatingActionButton) findViewById(R.id.send);
+		adapter = new ChatAdapter(chatHistory);
+		initRecyclerView(R.id.chat, 1);
+		recyclerLayoutManager.setReverseLayout(true);
+		
 		textEntry = (EditText) findViewById(R.id.entry);
-		fab.setOnClickListener(new OnClickListener(){
+		
+		initFAB(R.id.send, new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
@@ -81,28 +95,16 @@ public class ChatActivity extends ToolbarActivity {
 			
 		});
 		
-		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
-		int accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, -1);
-		themeToColors(primaryColor, accentColor);
+		themeToColors();
 		
 		configureSocket();
 	}
-	
-
-	private void initActivityTransitions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Slide transition = new Slide();
-            transition.excludeTarget(android.R.id.statusBarBackground, true);
-            getWindow().setEnterTransition(transition);
-            getWindow().setReturnTransition(transition);
-        }
-    }
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.chat, menu);
 		favoriteButton = menu.findItem(R.id.action_favorite);
-		if(favorited)
+		if(isFavoriteChatroom)
 			favoriteButton.setIcon(R.drawable.ic_favorite_white_36dp);
 		return true;
 	}
@@ -116,16 +118,15 @@ public class ChatActivity extends ToolbarActivity {
 	}
 	
 	public void favorite(){
-		if(!favorited){
-			favoriteButton.setIcon(R.drawable.ic_favorite_white_36dp);
-			favorited = true;
+		if(!isFavoriteChatroom){
+			favoriteButton.setIcon(FAVORITED_ICON);
+			isFavoriteChatroom = true;
 		}else{
-			favoriteButton.setIcon(R.drawable.ic_favorite_border_white_36dp);
-			favorited = false;
+			favoriteButton.setIcon(UNFAVORITED_ICON);
+			isFavoriteChatroom = false;
 		}
-		SharedPreferences prefs = this.getSharedPreferences("FAVORITE_ITEMS", this.MODE_PRIVATE);
-		SharedPreferences.Editor editor = prefs.edit();
-		editor.putBoolean(currentChatroom, favorited);
+		SharedPreferences.Editor editor = favoriteChatroomsPreferences.edit();
+		editor.putBoolean(currentChatroom, isFavoriteChatroom);
 		editor.commit();
 	}
 	
@@ -133,9 +134,20 @@ public class ChatActivity extends ToolbarActivity {
 		socket.emit("messageSent", message);
 	}
 	
-	public void addMessage(String message){
-		chatHistory.add(message);
-		chatHistoryAdapter.notifyDataSetChanged();
+	public void addMessage(String username, String message){
+		chatHistory.add(new ChatItemModel(username, message, getUserColor(username)));
+		adapter.notifyDataSetChanged();
+	}
+	
+	private int getUserColor(String username){
+		UserModel model = currentUserMap.get(username);
+		if(model != null)
+			return model.color;
+		else{
+			model = new UserModel(username);
+			currentUserMap.put(username, model);
+			return model.color;
+		}
 	}
 	
 	@Override
@@ -169,7 +181,7 @@ public class ChatActivity extends ToolbarActivity {
 					runOnUiThread(new Runnable() {
 					     @Override
 					     public void run() {
-					    	 addMessage((String)args[0] + ": " + (String)args[1]);
+					    	 addMessage((String)args[0], (String)args[1]);
 					    }
 					});
 					
@@ -180,5 +192,11 @@ public class ChatActivity extends ToolbarActivity {
 		} catch (URISyntaxException e) {
 			Log.i("Server", e.toString());
 		}
+	}
+
+	@Override
+	public <T> void onItemClick(View view, T viewModel) {
+		// TODO Auto-generated method stub
+		
 	}
 }

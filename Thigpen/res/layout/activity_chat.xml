@@ -13,17 +13,17 @@
         android:layout_width="match_parent"
      />
 
-	<ListView
-	    android:id="@+id/mainList"
+	<android.support.v7.widget.RecyclerView
+	    android:id="@+id/chat"
 	    android:layout_width="fill_parent"
 	    android:layout_height="0dp"
 	    android:layout_weight="0.93"
 	    android:background="@null"
 	    android:divider="@null"
-	    android:stackFromBottom="true"
+	    android:stackFromBottom="false"
 	    android:transcriptMode="alwaysScroll" >
 
-    </ListView>
+    </android.support.v7.widget.RecyclerView>
 
 
 	<LinearLayout
@@ -41,8 +41,7 @@
             android:layout_weight="2.8"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:textColor="@color/primary" />
+            android:paddingRight="6dp"/>
  
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/send"

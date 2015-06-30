@@ -99,7 +99,7 @@ public class SportsCategoryFragment extends Fragment implements SportsCategoryOn
 	};
     
 	public static String[] NBA_TEAMS = {
-			"Toronto Rapters",
+			"Toronto Raptors",
 			"Boston Celtics",
 			"Brooklyn Nets",
 			"Philadelphia 76ers",
