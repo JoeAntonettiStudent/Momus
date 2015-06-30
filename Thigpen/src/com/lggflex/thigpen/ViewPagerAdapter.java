@@ -3,10 +3,7 @@ package com.lggflex.thigpen;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
 import com.lggflex.thigpen.fragment.HomeScreenMainViewFragment;
-import com.lggflex.thigpen.fragment.HomeScreenSportsViewFragment;
-import com.lggflex.thigpen.fragment.RecyclerViewFragment;
 import com.lggflex.thigpen.fragment.favoritecategory.FavoriteCategoryFragment;
 import com.lggflex.thigpen.fragment.sportscategory.SportsCategoryFragment;
 import com.lggflex.thigpen.fragment.tvcategory.TVCategoryFragment;
