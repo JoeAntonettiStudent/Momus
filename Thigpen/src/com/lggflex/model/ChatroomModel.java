@@ -46,6 +46,9 @@ public class ChatroomModel {
 		for(String name : names){
 			models.add(new ChatroomModel(name));
 		}
+		if(models.size() == 0){
+			models.add(new ChatroomModel("Loading..."));
+		}
 		return models;
 	}
 }

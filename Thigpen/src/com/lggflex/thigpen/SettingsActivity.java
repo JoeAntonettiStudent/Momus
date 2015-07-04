@@ -142,6 +142,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         setSummary(R.string.pref_location, "Current Location: " + DAO.getLocation());
         setTrueFalseSummary(R.string.pref_multicolored, R.string.pref_multicolored_des_pos, R.string.pref_multicolored_des_neg, true);
         setTrueFalseSummary(R.string.pref_twocolumn, R.string.pref_twocolumn_des_pos, R.string.pref_twocolumn_des_neg, false);
+        setTrueFalseSummary(R.string.pref_trans_nav, R.string.pref_trans_nav_des_pos, R.string.pref_trans_nav_des_neg, false);
+        setTrueFalseSummary(R.string.pref_black, R.string.pref_black_des_pos, R.string.pref_black_des_neg, false);
     }
     
     private void setTrueFalseSummary(int id, int pos, int neg, boolean d){

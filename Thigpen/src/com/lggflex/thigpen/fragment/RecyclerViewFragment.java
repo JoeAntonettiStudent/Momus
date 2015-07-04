@@ -2,6 +2,7 @@ package com.lggflex.thigpen.fragment;
 
 import com.lggflex.thigpen.adapter.RecyclerViewAdapter;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,12 +24,19 @@ public abstract class RecyclerViewFragment extends Fragment implements OnRecycle
 	protected static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
 	
 	protected void initRecyclerView(int id, int columns){
+		
 		recyclerView = (RecyclerView) view.findViewById(id);
 
 		recyclerLayoutManager = new GridLayoutManager(getActivity().getApplicationContext(), columns);
     	recyclerView.setLayoutManager(recyclerLayoutManager);
     	adapter.setOnCategoryClickListener(this);
     	recyclerView.setAdapter(adapter);
+	}
+	
+	public void showSnackbar(String msg){
+		Snackbar
+		  .make(recyclerView, msg, Snackbar.LENGTH_LONG)
+		  .show();
 	}
 
 	@Override

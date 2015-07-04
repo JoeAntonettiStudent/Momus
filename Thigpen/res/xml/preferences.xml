@@ -54,6 +54,23 @@
           android:icon="@drawable/ic_dashboard_black_36dp"
           android:summary="@string/pref_pallete_des"
           android:key="@string/pref_pallete" />
+        
+        <CheckBoxPreference
+          android:title="@string/pref_trans_nav"
+          android:defaultValue="false"
+          android:summary="@string/pref_trans_nav_des_neg"
+          android:key="@string/pref_trans_nav" />
+        
+          <CheckBoxPreference
+          android:title="@string/pref_loading_snackbar"
+          android:defaultValue="false"
+          android:key="@string/pref_loading_snackbar" />
+        
+         <SwitchPreference
+          android:title="@string/pref_black"
+          android:defaultValue="false"
+          android:summary="@string/pref_black_des_neg"
+          android:key="@string/pref_black" />   
     
     </PreferenceCategory>
     

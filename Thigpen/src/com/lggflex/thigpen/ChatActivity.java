@@ -120,9 +120,11 @@ public class ChatActivity extends LollipopActivity {
 		if(!isFavoriteChatroom){
 			favoriteButton.setIcon(FAVORITED_ICON);
 			isFavoriteChatroom = true;
+			showSnackbar("Favorited");
 		}else{
 			favoriteButton.setIcon(UNFAVORITED_ICON);
 			isFavoriteChatroom = false;
+			showSnackbar("Unfavorited");
 		}
 		SharedPreferences.Editor editor = favoriteChatroomsPreferences.edit();
 		editor.putBoolean(currentChatroom, isFavoriteChatroom);

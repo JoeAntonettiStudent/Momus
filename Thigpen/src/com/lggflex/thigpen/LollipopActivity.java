@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 public abstract class LollipopActivity extends AppCompatActivity implements OnRecyclerViewClickListener{
@@ -39,6 +42,12 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	
 	private boolean hasFAB;
 	
+	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		 setTheme(DAO.get(R.string.pref_black, false) ? R.style.AppBaseTheme_Dark : R.style.AppBaseTheme);
+	}
+	
 	//Set up the UI stuff in the app. Needs to be called after view is initialized
 	protected void initUIFlourishes(boolean includeFAB, int primary, int accent){
 		
@@ -54,6 +63,13 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 			setStatusBarColor();
 		}
 	}
+	
+	protected void showSnackbar(String msg){
+		Snackbar
+		  .make(recyclerView, msg, Snackbar.LENGTH_LONG)
+		  .show();
+	}
+	
 	protected void initFAB(int id, OnClickListener listener){
 		floatingActionButton = (FloatingActionButton) findViewById(R.id.send);
 		floatingActionButton.setOnClickListener(listener);
@@ -121,6 +137,9 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	                }
 	            }
 	        });
+	       if(buildNumber >= Build.VERSION_CODES.LOLLIPOP){
+	    	   navigationView.setPadding(0, getStatusBarHeight(), 0, 0);	
+	       }
 	   } 
 	@SuppressLint("NewApi")
 	protected void themeToColors(){
@@ -135,6 +154,10 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 		toolbar.setPadding(0, getStatusBarHeight(), 0, 0);	
 		getWindow().setStatusBarColor(Color.TRANSPARENT);
 		toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+		if(DAO.get(R.string.pref_trans_nav, false)){
+			getWindow().setNavigationBarColor(Color.TRANSPARENT);
+			getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		}
 	}
 	@SuppressLint("InlinedApi")
 	private void createToolbar(){
