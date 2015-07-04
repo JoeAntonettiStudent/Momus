@@ -14,8 +14,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.lggflex.model.ChatroomModel;
+import com.lggflex.thigpen.ChatActivity;
+import com.lggflex.thigpen.LollipopActivity;
+import com.lggflex.thigpen.SearchActivity;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 
@@ -41,6 +45,27 @@ public class NetDAO {
 	
 	public static ArrayList<ChatroomModel> getPopularTV(){
 		return popularTV;
+	}
+	
+	public static String search(String query){
+		HttpResponse searchResult;
+		query = query.replace(" ", "%20");
+		HttpGet search = new HttpGet(POST_LOC + "/3/search/tv?api_key=" + API_KEY + "&query=" + query);
+		try {
+			searchResult = client.execute(search);
+			String resultString = IOUtils.toString(searchResult.getEntity().getContent());
+			Log.i(TAG, resultString);
+			Intent i = new Intent(DAO.DAOContext, SearchActivity.class);
+			i.putExtra(LollipopActivity.EXTRA_TITLE, resultString);
+			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			DAO.DAOContext.startActivity(i);
+			return resultString;
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 	
 	

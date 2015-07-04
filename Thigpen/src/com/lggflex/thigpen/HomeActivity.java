@@ -2,6 +2,8 @@ package com.lggflex.thigpen;
 
 import com.lggflex.thigpen.backend.DAO;
 import com.lggflex.thigpen.backend.DAOTask;
+import com.lggflex.thigpen.backend.NetDAO;
+import com.lggflex.thigpen.backend.SearchTask;
 import com.lggflex.thigpen.fragment.FavoriteCategoryFragment;
 import com.lggflex.thigpen.fragment.RecommendationsFragment;
 import com.lggflex.thigpen.fragment.RecyclerViewFragment;
@@ -13,8 +15,12 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.SearchView.OnQueryTextListener;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -50,7 +56,25 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.home, menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.home, menu);
+		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+		SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+		searchView.setOnQueryTextListener(new OnQueryTextListener(){
+
+			@Override
+			public boolean onQueryTextChange(String arg0) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+			@Override
+			public boolean onQueryTextSubmit(String arg0) {
+				new SearchTask().execute(arg0);
+				return false;
+			}
+			
+		});
 		return true;
 	}
 

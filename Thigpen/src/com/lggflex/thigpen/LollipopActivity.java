@@ -18,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,9 +35,10 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	protected int primary, accent, buildNumber;
 	protected GridLayoutManager recyclerLayoutManager;
 	protected NavigationView navigationView;
+	protected SearchView search;
 	
 	protected static final String EXTRA_IMAGE = "com.lggflex.thigpen.extraImage";
-	protected static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
+	public static final String EXTRA_TITLE = "com.lggflex.thigpen.extraTitle";
 	protected static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";
 	protected static final String EXTRA_ACCENT_COLOR = "com.lggflex.thigpen.extraAccent";
 	
@@ -45,7 +47,7 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		 setTheme(DAO.get(R.string.pref_black, false) ? R.style.AppBaseTheme_Dark : R.style.AppBaseTheme);
+		 setTheme(DAO.get(R.string.pref_black, false) ? R.style.AppBaseTheme_Dark : R.style.AppTheme);
 	}
 	
 	//Set up the UI stuff in the app. Needs to be called after view is initialized
