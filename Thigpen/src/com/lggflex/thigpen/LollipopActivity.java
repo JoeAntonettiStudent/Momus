@@ -98,7 +98,7 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	           });
 	       }
 	       navigationView = (NavigationView) findViewById(R.id.nav);
-	       setUsername();
+	      // setUsername();
 	       navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 	            @Override
 	            public boolean onNavigationItemSelected(MenuItem menuItem) {

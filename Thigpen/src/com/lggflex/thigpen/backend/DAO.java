@@ -15,11 +15,11 @@ public class DAO {
 	public static void initDAO(Context c){
 		
 		DAOContext = c;
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy);
-		FileDAO.init();
-		NetDAO.init();
-		SharedPrefsDAO.init();
+	//	StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+	//	StrictMode.setThreadPolicy(policy);
+	//	FileDAO.init();
+	//	NetDAO.init();
+	//	SharedPrefsDAO.init();
 
 
 	}

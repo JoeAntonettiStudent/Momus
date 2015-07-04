@@ -11,10 +11,10 @@ import android.view.View;
 public abstract class RecyclerViewFragment extends Fragment implements OnRecyclerViewClickListener{
 	
 	protected RecyclerView recyclerView;
-	protected RecyclerViewAdapter<?, ?> adapter;
+	public RecyclerViewAdapter<?, ?> adapter;
 	protected FloatingActionButton floatingActionButton;
 	protected int primary, accent, buildNumber;
-	protected GridLayoutManager recyclerLayoutManager;
+	public GridLayoutManager recyclerLayoutManager;
 	protected View view;
 	
 	protected static final String EXTRA_PRIMARY_COLOR = "com.lggflex.thigpen.extraPrimary";

@@ -35,7 +35,6 @@ public class LoginActivity extends Activity {
 		boolean alreadyLoggedIn = prefs.getBoolean("completed", false);
 		
 		if(alreadyLoggedIn){
-			DAO.initDAO(getBaseContext());
 			Intent home = new Intent(this, HomeActivity.class);
 			startActivity(home);
 		}
@@ -48,8 +47,8 @@ public class LoginActivity extends Activity {
 		
 		locationSpinner = (Spinner)findViewById(R.id.locations_spinner);
 		DAO.initDAO(getBaseContext());
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DAO.getStringsForID("locations"));
-		locationSpinner.setAdapter(adapter);
+		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DAO.getStringsForID("locations"));
+		//locationSpinner.setAdapter(adapter);
 		
 		loginButton = (LoginButton) findViewById(R.id.login_button);
 		loginButton.setReadPermissions("user_friends");
