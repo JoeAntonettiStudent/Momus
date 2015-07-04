@@ -1,10 +1,17 @@
 package com.lggflex.thigpen;
 
+import java.util.ArrayList;
+
+import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.backend.DAO;
+import com.lggflex.thigpen.backend.TVDAO;
 import com.lggflex.thigpen.fragment.RecommendationsFragment;
+import com.lggflex.thigpen.fragment.SimpleListFragment;
 import com.lggflex.thigpen.fragment.SportsCategoryFragment;
 import com.lggflex.thigpen.fragment.TVCategoryFragment;
+
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.Window;
@@ -18,14 +25,25 @@ public class TVActivity extends TabbedActivity{
 		DAO.initDAO(getBaseContext());
 		setContentView(LAYOUT);
 		initUIFlourishes(false, 1, 1);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+		Runnable r = new Runnable() {
+		     @Override
+		     public void run() {
+		    	 TVDAO.initAPI();
+		    	 TVDAO.getPopularTV();
+		    }
+		};
+		
+		r.run();
+		
 		Fragment[] tabs = {
-				new RecommendationsFragment(),
-				new SportsCategoryFragment(),
-				new TVCategoryFragment()
+				new PopularFragment(),
+				new LiveFragment(),
+				new GenreFragment()
 		};
 		initTabs(R.array.television_tabs, tabs);
         setUpNavDrawer();
-
 	}
 
 	@Override
@@ -33,4 +51,31 @@ public class TVActivity extends TabbedActivity{
 		// TODO Auto-generated method stub
 		
 	}
+}
+
+class LiveFragment extends SimpleListFragment{
+
+	@Override
+	protected ArrayList<ChatroomModel> getItems() {
+		return TVDAO.getLiveTV();
+	}
+	
+}
+
+class PopularFragment extends SimpleListFragment{
+
+	@Override
+	protected ArrayList<ChatroomModel> getItems() {
+		return TVDAO.getPopularTV();
+	}
+	
+}
+
+class GenreFragment extends SimpleListFragment{
+	
+	@Override
+	protected ArrayList<ChatroomModel> getItems() {
+		return TVDAO.getGenres();
+	}
+	
 }
