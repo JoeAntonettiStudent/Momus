@@ -25,9 +25,10 @@ public final class R {
         public static final int snackbar_out=0x7f04000d;
     }
     public static final class array {
-        public static final int home_screen_sports_list=0x7f0e0001;
+        public static final int home_screen_sports_list=0x7f0e0002;
         public static final int home_screen_tabs=0x7f0e0000;
-        public static final int home_screen_television_list=0x7f0e0002;
+        public static final int home_screen_television_list=0x7f0e0003;
+        public static final int television_tabs=0x7f0e0001;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -4494,7 +4495,7 @@ containing a value of this type.
         public static final int search_voice_btn=0x7f0b0071;
         public static final int select_dialog_listview=0x7f0b0072;
         public static final int send=0x7f0b0076;
-        public static final int settings_menu=0x7f0b00a9;
+        public static final int settings_menu=0x7f0b00ab;
         public static final int shortcut=0x7f0b005d;
         public static final int showCustom=0x7f0b0012;
         public static final int showHome=0x7f0b0013;
@@ -4503,6 +4504,7 @@ containing a value of this type.
         public static final int snackbar_action=0x7f0b0093;
         public static final int snackbar_text=0x7f0b0092;
         public static final int split_action_bar=0x7f0b0004;
+        public static final int sports_menu=0x7f0b00a9;
         public static final int src_atop=0x7f0b0018;
         public static final int src_in=0x7f0b0019;
         public static final int src_over=0x7f0b001a;
@@ -4525,6 +4527,7 @@ containing a value of this type.
         public static final int toolbar=0x7f0b0073;
         public static final int top=0x7f0b0034;
         public static final int topPanel=0x7f0b0052;
+        public static final int tv_menu=0x7f0b00aa;
         public static final int tv_row_color=0x7f0b0095;
         public static final int tv_title=0x7f0b0094;
         public static final int unknown=0x7f0b0042;
@@ -4604,44 +4607,45 @@ containing a value of this type.
         public static final int activity_login=0x7f03001b;
         public static final int activity_sport_list=0x7f03001c;
         public static final int activity_sports_category=0x7f03001d;
-        public static final int begin_fragment=0x7f03001e;
-        public static final int category_item=0x7f03001f;
-        public static final int chat_item_layout=0x7f030020;
-        public static final int com_facebook_activity_layout=0x7f030021;
-        public static final int com_facebook_login_fragment=0x7f030022;
-        public static final int com_facebook_tooltip_bubble=0x7f030023;
-        public static final int design_navigation_item=0x7f030024;
-        public static final int design_navigation_item_header=0x7f030025;
-        public static final int design_navigation_item_separator=0x7f030026;
-        public static final int design_navigation_item_subheader=0x7f030027;
-        public static final int design_navigation_menu=0x7f030028;
-        public static final int fragment_category=0x7f030029;
-        public static final int fragment_list=0x7f03002a;
-        public static final int fragment_start=0x7f03002b;
-        public static final int layout_snackbar=0x7f03002c;
-        public static final int layout_snackbar_include=0x7f03002d;
-        public static final int list_item=0x7f03002e;
-        public static final int messenger_button_send_blue_large=0x7f03002f;
-        public static final int messenger_button_send_blue_round=0x7f030030;
-        public static final int messenger_button_send_blue_small=0x7f030031;
-        public static final int messenger_button_send_white_large=0x7f030032;
-        public static final int messenger_button_send_white_round=0x7f030033;
-        public static final int messenger_button_send_white_small=0x7f030034;
-        public static final int nav_layout_top=0x7f030035;
-        public static final int notification_media_action=0x7f030036;
-        public static final int notification_media_cancel_action=0x7f030037;
-        public static final int notification_template_big_media=0x7f030038;
-        public static final int notification_template_big_media_narrow=0x7f030039;
-        public static final int notification_template_lines=0x7f03003a;
-        public static final int notification_template_media=0x7f03003b;
-        public static final int notification_template_part_chronometer=0x7f03003c;
-        public static final int notification_template_part_time=0x7f03003d;
-        public static final int select_dialog_item_material=0x7f03003e;
-        public static final int select_dialog_multichoice_material=0x7f03003f;
-        public static final int select_dialog_singlechoice_material=0x7f030040;
-        public static final int settings_layout=0x7f030041;
-        public static final int support_simple_spinner_dropdown_item=0x7f030042;
-        public static final int toolbar=0x7f030043;
+        public static final int activity_tabbed=0x7f03001e;
+        public static final int begin_fragment=0x7f03001f;
+        public static final int category_item=0x7f030020;
+        public static final int chat_item_layout=0x7f030021;
+        public static final int com_facebook_activity_layout=0x7f030022;
+        public static final int com_facebook_login_fragment=0x7f030023;
+        public static final int com_facebook_tooltip_bubble=0x7f030024;
+        public static final int design_navigation_item=0x7f030025;
+        public static final int design_navigation_item_header=0x7f030026;
+        public static final int design_navigation_item_separator=0x7f030027;
+        public static final int design_navigation_item_subheader=0x7f030028;
+        public static final int design_navigation_menu=0x7f030029;
+        public static final int fragment_category=0x7f03002a;
+        public static final int fragment_list=0x7f03002b;
+        public static final int fragment_start=0x7f03002c;
+        public static final int layout_snackbar=0x7f03002d;
+        public static final int layout_snackbar_include=0x7f03002e;
+        public static final int list_item=0x7f03002f;
+        public static final int messenger_button_send_blue_large=0x7f030030;
+        public static final int messenger_button_send_blue_round=0x7f030031;
+        public static final int messenger_button_send_blue_small=0x7f030032;
+        public static final int messenger_button_send_white_large=0x7f030033;
+        public static final int messenger_button_send_white_round=0x7f030034;
+        public static final int messenger_button_send_white_small=0x7f030035;
+        public static final int nav_layout_top=0x7f030036;
+        public static final int notification_media_action=0x7f030037;
+        public static final int notification_media_cancel_action=0x7f030038;
+        public static final int notification_template_big_media=0x7f030039;
+        public static final int notification_template_big_media_narrow=0x7f03003a;
+        public static final int notification_template_lines=0x7f03003b;
+        public static final int notification_template_media=0x7f03003c;
+        public static final int notification_template_part_chronometer=0x7f03003d;
+        public static final int notification_template_part_time=0x7f03003e;
+        public static final int select_dialog_item_material=0x7f03003f;
+        public static final int select_dialog_multichoice_material=0x7f030040;
+        public static final int select_dialog_singlechoice_material=0x7f030041;
+        public static final int settings_layout=0x7f030042;
+        public static final int support_simple_spinner_dropdown_item=0x7f030043;
+        public static final int toolbar=0x7f030044;
     }
     public static final class menu {
         public static final int chat=0x7f0f0000;
@@ -4718,13 +4722,13 @@ containing a value of this type.
         /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
          */
         public static final int appbar_scrolling_view_behavior=0x7f0c0012;
-        public static final int category_dev=0x7f0c0044;
-        public static final int category_info=0x7f0c0047;
-        public static final int category_ui=0x7f0c003c;
-        public static final int category_ui_des=0x7f0c003d;
-        public static final int category_user=0x7f0c0037;
-        public static final int category_user_des=0x7f0c0038;
-        public static final int chat_button_msg=0x7f0c002b;
+        public static final int category_dev=0x7f0c0042;
+        public static final int category_info=0x7f0c0045;
+        public static final int category_ui=0x7f0c003a;
+        public static final int category_ui_des=0x7f0c003b;
+        public static final int category_user=0x7f0c0035;
+        public static final int category_user_des=0x7f0c0036;
+        public static final int chat_button_msg=0x7f0c002e;
         public static final int com_facebook_image_download_unknown_error=0x7f0c0021;
         public static final int com_facebook_internet_permission_error_message=0x7f0c001f;
         public static final int com_facebook_internet_permission_error_title=0x7f0c001e;
@@ -4741,27 +4745,31 @@ containing a value of this type.
         public static final int com_facebook_send_button_text=0x7f0c0023;
         public static final int com_facebook_share_button_text=0x7f0c0022;
         public static final int com_facebook_tooltip_default=0x7f0c0020;
-        public static final int default_username=0x7f0c0031;
-        public static final int facebook_app_id=0x7f0c002d;
+        public static final int default_username=0x7f0c0034;
+        public static final int facebook_app_id=0x7f0c0030;
         public static final int hello_world=0x7f0c0025;
-        public static final int home_sentence=0x7f0c002a;
+        public static final int home_sentence=0x7f0c002d;
+        public static final int menu_home=0x7f0c0027;
+        public static final int menu_settings=0x7f0c002a;
+        public static final int menu_sports=0x7f0c0029;
+        public static final int menu_tv=0x7f0c0028;
         public static final int messenger_send_button_text=0x7f0c0013;
-        public static final int pref_about=0x7f0c0049;
-        public static final int pref_build=0x7f0c004a;
-        public static final int pref_facebook=0x7f0c003b;
-        public static final int pref_location=0x7f0c0039;
-        public static final int pref_location_des=0x7f0c003a;
-        public static final int pref_multicolored=0x7f0c003e;
-        public static final int pref_multicolored_des_neg=0x7f0c0040;
-        public static final int pref_multicolored_des_pos=0x7f0c003f;
-        public static final int pref_pallete=0x7f0c0045;
-        public static final int pref_pallete_des=0x7f0c0046;
-        public static final int pref_rate=0x7f0c0048;
-        public static final int pref_twocolumn=0x7f0c0041;
-        public static final int pref_twocolumn_des_neg=0x7f0c0042;
-        public static final int pref_twocolumn_des_pos=0x7f0c0043;
-        public static final int pref_username=0x7f0c0028;
-        public static final int sports_transition=0x7f0c002f;
+        public static final int pref_about=0x7f0c0047;
+        public static final int pref_build=0x7f0c0048;
+        public static final int pref_facebook=0x7f0c0039;
+        public static final int pref_location=0x7f0c0037;
+        public static final int pref_location_des=0x7f0c0038;
+        public static final int pref_multicolored=0x7f0c003c;
+        public static final int pref_multicolored_des_neg=0x7f0c003e;
+        public static final int pref_multicolored_des_pos=0x7f0c003d;
+        public static final int pref_pallete=0x7f0c0043;
+        public static final int pref_pallete_des=0x7f0c0044;
+        public static final int pref_rate=0x7f0c0046;
+        public static final int pref_twocolumn=0x7f0c003f;
+        public static final int pref_twocolumn_des_neg=0x7f0c0040;
+        public static final int pref_twocolumn_des_pos=0x7f0c0041;
+        public static final int pref_username=0x7f0c002b;
+        public static final int sports_transition=0x7f0c0032;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
@@ -4769,16 +4777,11 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f0c0011;
-        public static final int title_activity_chat=0x7f0c0029;
-        public static final int title_activity_list_view=0x7f0c0027;
-        public static final int title_activity_login=0x7f0c002c;
-        public static final int title_activity_sport_list=0x7f0c0030;
-        public static final int title_activity_start=0x7f0c0032;
-        public static final int title_activity_startup=0x7f0c0033;
-        public static final int title_section1=0x7f0c0034;
-        public static final int title_section2=0x7f0c0035;
-        public static final int title_section3=0x7f0c0036;
-        public static final int username=0x7f0c002e;
+        public static final int title_activity_chat=0x7f0c002c;
+        public static final int title_activity_login=0x7f0c002f;
+        public static final int title_activity_sport_list=0x7f0c0033;
+        public static final int title_activity_tv=0x7f0c0049;
+        public static final int username=0x7f0c0031;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0d0040;

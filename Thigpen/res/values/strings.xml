@@ -11,6 +11,17 @@
         <item>Television</item>
         <item>Favorites</item>
     </string-array>
+    <string-array name="television_tabs">
+        <item>Live</item>
+        <item>Popular</item>
+        <item>All Shows</item>
+    </string-array>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_tv">Television</string>
+    <string name="menu_sports">Sports</string>
+    <string name="menu_settings">Settings</string>
+
     <string-array name="home_screen_sports_list">
         <item>NFL</item>
         <item>NBA</item>
@@ -43,10 +54,7 @@
         <item>ER</item>
     </string-array>
 
-    <string name="title_activity_list_view">ListViewActivity</string>
-
     <string name="pref_username">Username</string>
-
     <string name="title_activity_chat">ChatActivity</string>
     <string name="home_sentence">Welcome to the Thunderdome</string>
     <string name="chat_button_msg">Send</string>
@@ -56,11 +64,6 @@
     <string name="sports_transition">Sports Header Transition</string>
     <string name="title_activity_sport_list">SportListActivity</string>
     <string name="default_username">User</string>
-    <string name="title_activity_start">StartActivity</string>
-    <string name="title_activity_startup">StartupActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
     <string name="category_user">User Information</string>
     <string name="category_user_des">User Information</string>
     <string name="pref_location">Location</string>
@@ -81,5 +84,6 @@
     <string name="pref_rate">Rate us on Google Play</string>
     <string name="pref_about">About the Team</string>
     <string name="pref_build">Build Number</string>
+    <string name="title_activity_tv">TVActivity</string>
 
 </resources>

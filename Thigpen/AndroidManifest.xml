@@ -28,10 +28,6 @@
             android:label="Settings" >
         </activity>
         <activity
-            android:name=".ListViewActivity"
-            android:label="@string/title_activity_list_view" >
-        </activity>
-        <activity
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat"
             android:noHistory="true"
@@ -60,9 +56,8 @@
                 android:value=".HomeActivity" />
         </activity>
         <activity
-            android:name=".StartupActivity"
-            android:label="@string/title_activity_startup" >
-            
+            android:name=".TVActivity"
+            android:label="@string/title_activity_tv" >
         </activity>
     </application>
 

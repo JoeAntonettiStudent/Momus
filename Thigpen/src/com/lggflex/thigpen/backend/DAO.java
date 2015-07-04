@@ -7,9 +7,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
+import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.R;
-import com.lggflex.thigpen.SettingsActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,7 +25,11 @@ public class DAO {
 	
 	private static HashMap<String, ArrayList<String>> fileDirectory;
 	
+	private static ArrayList<ChatroomModel> favorites;
+	private static ArrayList<ChatroomModel> tv;
+	
 	public static void initDAO(Context c){
+		
 		DAOContext = c;
 		AssetManager manager = DAOContext.getAssets();
 		fileDirectory = new HashMap<String, ArrayList<String>>();
@@ -37,8 +42,37 @@ public class DAO {
 		} catch (IOException e) {
 			Log.e(TAG, "Failed to create DAO object");
 		}
+		initFavorites();
+		initTV();
 	}
 	
+	private static void initFavorites(){
+		SharedPreferences prefs = DAOContext.getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
+        Map<String, ?> allFavs = prefs.getAll();  
+        favorites = new ArrayList<ChatroomModel>();
+        for(String key : allFavs.keySet()){
+        	if(prefs.getBoolean(key, false))
+        		favorites.add(new ChatroomModel(key));
+        }
+	}
+	
+	private static void initTV(){
+		 tv = new ArrayList<ChatroomModel>();
+		 String[] tvShowNames = DAOContext.getResources().getStringArray(R.array.home_screen_television_list);
+	     for(final String show : tvShowNames){
+	    	 tv.add(new ChatroomModel(show));
+	     }
+	}
+	
+	public static ArrayList<ChatroomModel> getTV(){
+		return tv;
+	}
+	
+	
+	public static ArrayList<ChatroomModel> getFavorites(){
+		return favorites;
+	}
+	 
 	public static String getUsername(){
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
 		return sharedPref.getString(DAOContext.getString(R.string.pref_username), DAOContext.getString(R.string.default_username));

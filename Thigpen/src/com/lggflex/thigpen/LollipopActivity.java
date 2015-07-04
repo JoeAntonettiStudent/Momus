@@ -71,12 +71,8 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	protected void setTitle(String title){
 		getSupportActionBar().setTitle(title);
 	}
-	public void openSettings(){
-		Intent settings = new Intent(this.getApplicationContext(), SettingsActivity.class);
-		startActivity(settings);
-	}
-	public void openHome(){
-		Intent settings = new Intent(this.getApplicationContext(), HomeActivity.class);
+	public void open(Class<?> cls){
+		Intent settings = new Intent(this.getApplicationContext(), cls);
 		startActivity(settings);
 	}
 	protected int getStatusBarHeight(){
@@ -109,11 +105,17 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	                menuItem.setChecked(true);
 	                switch (menuItem.getItemId()) {
 	                    case R.id.settings_menu:
-	                        openSettings();
+	                        open(SettingsActivity.class);
 	                        return true;
 	                    case R.id.home_menu:
-	                        openHome();
+	                        open(HomeActivity.class);
 	                        return true;
+	                    case R.id.tv_menu:
+	                    	open(TVActivity.class);
+	                    	return true;
+	                    case R.id.sports_menu:
+	                    	open(SportsActivity.class);
+	                    	return true;
 	                    default:
 	                        return true;
 	                }

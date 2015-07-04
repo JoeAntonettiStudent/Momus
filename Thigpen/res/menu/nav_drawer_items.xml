@@ -8,14 +8,20 @@
     <item
 		android:id="@+id/home_menu"
 		android:icon="@drawable/ic_home_black_18dp"
-		android:title="Home"/>
-    
+		android:title="@string/menu_home"/>
+    <item
+        android:id="@+id/sports_menu"
+        android:title="@string/menu_sports" />
+    <item
+		android:id="@+id/tv_menu"
+		android:title="@string/menu_tv"/>
     </menu>
 </item>
+
 <item
 	android:id="@+id/settings_menu"
 	android:icon="@drawable/ic_settings_applications_black_18dp"
-	android:title="Settings" 
+	android:title="@string/menu_settings" 
 	android:checkable="false"/>
 
 </menu>
