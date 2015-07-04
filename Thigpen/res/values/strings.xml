@@ -18,51 +18,34 @@
         <item>NHL</item>
     </string-array>
     <string-array name="home_screen_television_list">
-        <item >Walker, Texas Ranger</item>
-        <item >Entourage</item>
-        <item >Last Week Tonight with John Oliver</item>
-        <item >Cosby Show</item>
-        <item >One Upon a Time</item>
-        <item >Mad Men</item>
-        <item >Eureka</item>
-        <item >Tonight Show</item>
-        <item >Orange is the New Black</item>
-        <item >True Detective</item>
-        <item >Homeland</item>
-        <item >Everybody Loves Raymond</item>
-        <item >True Blood</item>
-        <item >Hard Knocks</item>
-        <item >Under the Dome</item>
-        <item >Nurse Jackie</item>
-        <item >Doogie Howser, M.D.</item>
-        <item >Everbody Hates Chris</item>
-        <item >Rizzoli &amp; Isles</item>
-        <item >Deal or No Deal</item>
-        <item >Odd Couple</item>
-        <item >MacGyver</item>
-        <item >ER</item>
+        <item>Walker, Texas Ranger</item>
+        <item>Entourage</item>
+        <item>Last Week Tonight with John Oliver</item>
+        <item>Cosby Show</item>
+        <item>One Upon a Time</item>
+        <item>Mad Men</item>
+        <item>Eureka</item>
+        <item>Tonight Show</item>
+        <item>Orange is the New Black</item>
+        <item>True Detective</item>
+        <item>Homeland</item>
+        <item>Everybody Loves Raymond</item>
+        <item>True Blood</item>
+        <item>Hard Knocks</item>
+        <item>Under the Dome</item>
+        <item>Nurse Jackie</item>
+        <item>Doogie Howser, M.D.</item>
+        <item>Everbody Hates Chris</item>
+        <item>Rizzoli &amp; Isles</item>
+        <item>Deal or No Deal</item>
+        <item>Odd Couple</item>
+        <item>MacGyver</item>
+        <item>ER</item>
     </string-array>
 
     <string name="title_activity_list_view">ListViewActivity</string>
 
-    <string-array name="nfl_list">
-        <item>Cleveland Browns</item>
-        <item>Detroit Lions</item>
-        <item>New England Patriots</item>
-        
-    </string-array>
-    
-    <string-array name="nba_list">
-        <item>Tebow is Love, Tebow is Life</item>
-    </string-array>
-    
-    <string-array name="mlb_list">
-        <item>Tebow is Love, Tebow is Life</item>
-    </string-array>
-    
-    <string-array name="nhl_list">
-        <item>Tebow is Love, Tebow is Life</item>
-    </string-array>
+    <string name="pref_username">Username</string>
 
     <string name="title_activity_chat">ChatActivity</string>
     <string name="home_sentence">Welcome to the Thunderdome</string>
@@ -72,7 +55,31 @@
     <string name="username">Barry Allen</string>
     <string name="sports_transition">Sports Header Transition</string>
     <string name="title_activity_sport_list">SportListActivity</string>
-    
     <string name="default_username">User</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_startup">StartupActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="category_user">User Information</string>
+    <string name="category_user_des">User Information</string>
+    <string name="pref_location">Location</string>
+    <string name="pref_location_des">Your current location</string>
+    <string name="pref_facebook">Log out</string>
+    <string name="category_ui">UI Settings</string>
+    <string name="category_ui_des">UI Settings</string>
+    <string name="pref_multicolored">Chat Colors</string>
+    <string name="pref_multicolored_des_pos">Each chat window will have it\'s own color</string>
+    <string name="pref_multicolored_des_neg">Every chat window will share the same color</string>
+    <string name="pref_twocolumn">Use Multiple Columns</string>
+    <string name="pref_twocolumn_des_neg">Display lists with one column</string>
+    <string name="pref_twocolumn_des_pos">Display lists with two columns</string>
+    <string name="category_dev">Experimental Settings</string>
+    <string name="pref_pallete">Use Pallete API</string>
+    <string name="pref_pallete_des">EXPERIMENTAL: Use Pallete API for grid views when possible. Might result in crashes.</string>
+    <string name="category_info">About Us</string>
+    <string name="pref_rate">Rate us on Google Play</string>
+    <string name="pref_about">About the Team</string>
+    <string name="pref_build">Build Number</string>
 
 </resources>

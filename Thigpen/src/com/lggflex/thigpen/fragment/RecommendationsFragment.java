@@ -6,8 +6,12 @@ import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.RecommendationsAdapter;
 import com.lggflex.thigpen.backend.Recommender;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +34,10 @@ public class RecommendationsFragment extends RecyclerViewFragment{
     	
         view = inflater.inflate(R.layout.fragment_category, container, false);
         view.setTag(TAG);
+        
+		SharedPreferences userInformationPreferences = getActivity().getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
+		city = userInformationPreferences.getString("location", "Cleveland");
+		Log.i("Facebook", city);
         
         Recommender myRecommendations = new Recommender(city);
         recommendations = myRecommendations.recommend();

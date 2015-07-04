@@ -47,12 +47,7 @@ public class SportListActivity extends LollipopActivity {
 		initUIFlourishes(false, -1, -1);
 		setTitle(name);
 		makeChildOfRoot();
-        
-        int resId = getResources().getIdentifier(name.toLowerCase(Locale.ENGLISH) + "_list", "array", getPackageName());
-	    if(resId == 0){
-	    	startChatActivity(name);
-	    	finish();
-	    }else{
+       
 	    	OnItemClickListener listener = new OnItemClickListener(){
 
 	    		@Override
@@ -64,12 +59,11 @@ public class SportListActivity extends LollipopActivity {
 			
 	    	};
 	    	ArrayList<ChatroomModel> teams = new ArrayList<ChatroomModel>();
-	    	for(String team : DAO.getListForSportName(name)){
+	    	for(String team : DAO.getStringsForID(name)){
 	    		teams.add(new ChatroomModel(team));
 	    	}
 	    	adapter = new ListAdapter(teams);
 			initRecyclerView(R.id.main_list, 1);
-	    }
         
 	    Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {

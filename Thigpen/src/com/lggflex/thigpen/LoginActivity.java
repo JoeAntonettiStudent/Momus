@@ -10,6 +10,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.lggflex.thigpen.backend.DAO;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,11 +18,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class LoginActivity extends Activity {
 	
 	public static LoginButton loginButton;
 	public static CallbackManager callbackManager;
+	public static Spinner locationSpinner;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,11 @@ public class LoginActivity extends Activity {
 		
 		setContentView(R.layout.activity_login);
 		
+		locationSpinner = (Spinner)findViewById(R.id.locations_spinner);
+		DAO.initDAO(getBaseContext());
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DAO.getStringsForID("locations"));
+		locationSpinner.setAdapter(adapter);
+		
 		loginButton = (LoginButton) findViewById(R.id.login_button);
 		loginButton.setReadPermissions("user_friends");
 		loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>(){
@@ -55,7 +64,7 @@ public class LoginActivity extends Activity {
 	                            	
 	                            	Log.v("Facebook", object.toString());
 	                            	Log.v("Facebook", response.toString());
-	                            	save(object.get("name").toString());
+	                            	save(object.get("name").toString(), locationSpinner.getSelectedItem().toString());
 	                            }
 	                        });
 	                Bundle parameters = new Bundle();
@@ -78,15 +87,17 @@ public class LoginActivity extends Activity {
 		
 	}
 	
-	public void save(String name){
+	public void save(String name, String location){
+		DAO.setLocation(location);
+		DAO.setUsername(name);
 		SharedPreferences prefs = this.getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
-		editor.putString("username", name);
 		editor.putBoolean("completed", true);
 		editor.commit();
 		Intent home = new Intent(this.getApplicationContext(), HomeActivity.class);
 		startActivity(home);
 	}
+	
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {

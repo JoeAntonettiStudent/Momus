@@ -6,6 +6,8 @@ import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.ListAdapter;
+import com.lggflex.thigpen.backend.DAO;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,7 +31,11 @@ public class TVCategoryFragment extends RecyclerViewFragment{
         }
  
         adapter = new ListAdapter(shows);
-        initRecyclerView(R.id.content, 1);
+        if(DAO.get(R.string.pref_twocolumn, false))
+        	initRecyclerView(R.id.content, 2);
+        else
+        	initRecyclerView(R.id.content, 1);
+        
         
         return view;
     }

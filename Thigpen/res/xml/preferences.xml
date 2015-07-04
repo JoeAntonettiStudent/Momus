@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+    <PreferenceCategory 
+        android:title="@string/category_user" 
+        android:key="@string/category_user" 
+        android:summary="@string/category_user_des" >
+        
+         <EditTextPreference
+              android:key="@string/pref_username" 
+              android:title="@string/pref_username" 
+              android:icon="@drawable/ic_account_circle_black_36dp"
+              android:shouldDisableView="true" 
+              android:defaultValue="@string/default_username"/>
+         <Preference
+             android:key="@string/pref_location"
+             android:title="@string/pref_location"
+             android:icon="@drawable/ic_language_black_36dp"/>
+          <Preference
+             android:key="@string/pref_facebook"
+             android:title="@string/pref_facebook"
+             android:icon="@drawable/ic_exit_to_app_black_36dp" />
+    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/category_ui" 
+        android:key="@string/category_ui" 
+        android:summary="@string/category_ui_des" >
+          
+        <CheckBoxPreference
+          android:title="@string/pref_multicolored"
+          android:defaultValue="true"
+          android:icon="@drawable/ic_invert_colors_black_36dp"
+          android:summary="@string/pref_multicolored_des_pos"
+          android:key="@string/pref_multicolored" />
+        
+        <CheckBoxPreference
+          android:title="@string/pref_twocolumn"
+          android:defaultValue="false"
+          android:icon="@drawable/ic_view_quilt_black_36dp"
+          android:summary="@string/pref_twocolumn_des_neg"
+          android:key="@string/pref_twocolumn" />   
+    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/category_dev" 
+        android:key="@string/category_dev" >
+          
+        <CheckBoxPreference
+          android:title="@string/pref_pallete"
+          android:defaultValue="false"
+          android:icon="@drawable/ic_dashboard_black_36dp"
+          android:summary="@string/pref_pallete_des"
+          android:key="@string/pref_pallete" />
+    
+    </PreferenceCategory>
+    
+        <PreferenceCategory 
+        android:title="@string/category_info" 
+        android:key="@string/category_info" >
+        
+         <Preference
+             android:key="@string/pref_rate"
+             android:title="@string/pref_rate"
+             android:icon="@drawable/ic_shop_black_36dp"/>
+          <Preference
+             android:key="@string/pref_about"
+             android:title="@string/pref_about"
+             android:icon="@drawable/ic_info_black_36dp" />
+          <Preference
+             android:key="@string/pref_build"
+             android:title="@string/pref_build"
+             android:icon="@drawable/ic_perm_device_information_black_36dp" />
+    
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

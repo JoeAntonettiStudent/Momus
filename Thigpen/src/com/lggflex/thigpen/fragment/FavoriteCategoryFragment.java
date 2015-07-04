@@ -8,6 +8,7 @@ import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.adapter.ListAdapter;
+import com.lggflex.thigpen.backend.DAO;
 
 import android.content.Context;
 import android.content.Intent;
@@ -37,7 +38,10 @@ public class FavoriteCategoryFragment extends RecyclerViewFragment{
         }
  
         adapter = new ListAdapter(favorites);
-        initRecyclerView(R.id.content, 1);
+        if(DAO.get(R.string.pref_twocolumn, false))
+        	initRecyclerView(R.id.content, 2);
+        else
+        	initRecyclerView(R.id.content, 1);
         
         return view;
     }

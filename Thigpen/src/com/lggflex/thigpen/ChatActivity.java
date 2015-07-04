@@ -9,6 +9,8 @@ import com.github.nkzawa.socketio.client.Socket;
 import com.lggflex.model.ChatItemModel;
 import com.lggflex.model.UserModel;
 import com.lggflex.thigpen.adapter.ChatAdapter;
+import com.lggflex.thigpen.backend.DAO;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -35,7 +37,7 @@ public class ChatActivity extends LollipopActivity {
 	private String username;
 	private String currentChatroom;
 	private boolean isFavoriteChatroom;
-	private SharedPreferences userInformationPreferences, favoriteChatroomsPreferences;
+	private SharedPreferences favoriteChatroomsPreferences;
 	private static HashMap<String, UserModel> currentUserMap;
 	
 	//Server Variables
@@ -65,8 +67,8 @@ public class ChatActivity extends LollipopActivity {
 		makeChildOfRoot();
 		setTitle(currentChatroom);
 		
-		userInformationPreferences = getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
-		username = userInformationPreferences.getString("username", getResources().getString(R.string.default_username));
+		username = DAO.getUsername();
+		Log.i("ChatActivity", username);
 		
 		favoriteChatroomsPreferences = getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
 		isFavoriteChatroom = favoriteChatroomsPreferences.getBoolean(currentChatroom, false);

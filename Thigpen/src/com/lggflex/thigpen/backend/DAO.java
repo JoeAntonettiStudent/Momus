@@ -1,151 +1,101 @@
 package com.lggflex.thigpen.backend;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
+
+import com.lggflex.thigpen.R;
+import com.lggflex.thigpen.SettingsActivity;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
 public class DAO {
 	
-	public static String[] NFL_TEAMS = {
-			"New England Patriots",
-			"New York Jets",
-			"Miami Dolphins",
-			"Buffalo Bills",
-			"Pittsburgh Steelers",
-			"Baltimore Ravens",
-			"Cincinnati Bengals",
-			"Cleveland Browns",
-			"Indianapolis Colts",
-			"Houston Texans",
-			"Tennessee Titans",
-			"Jacksonville Jaguars",
-			"Denver Broncos",
-			"Kansas City Chiefs",
-			"San Diego Chargers",
-			"Oakland Raiders",
-			"New York Giants",
-			"Philadelphia Eagles",
-			"Dallas Cowboys",
-			"Washington Redskins",
-			"Detroit Lions",
-			"Green Bay Packers",
-			"Minnesota Vikings",
-			"Chicago Bears",
-			"New Orleans Saints",
-			"Carolina Panthers",
-			"Atlanta Falcons",
-			"Tampa Bay Buccaneers",
-			"Seattle Seahawks",
-			"San Francisco 49ers",
-			"Arizona Cardinals",
-			"St. Louis Rams"
-	};
+	public static Context DAOContext;
+	public static String TAG = "DAO";
 	
-	public static String[] MLB_TEAMS = {
-			"New York Yankees",
-			"Boston Red Sox",
-			"Baltimore Orioles",
-			"Tampa Bay Rays",
-			"Toronto Blue Jays",
-			"Detroit Tigers",
-			"Minnesota Twins",
-			"Cleveland Indians",
-			"Chicago White Sox",
-			"Kansas City Royals",
-			"Houston Astros",
-			"Texas Rangers",
-			"Los Angeles Angels",
-			"Seattle Mariners",
-			"Oakland Athletics",
-			"New York Mets",
-			"Atlanta Braves",
-			"Washington Nationals",
-			"Miami Marlins",
-			"Philadelphia Phillies",
-			"St. Louis Cardinals",
-			"Pittsburgh Pirates",
-			"Chicago Cubs",
-			"Milwaukee Brewers",
-			"Cincinnati Reds",
-			"Los Angeles Dodgers",
-			"San Diego Padres",
-			"San Francisco Giants",
-			"Colorado Rockies",
-			"Arizona Diamondbacks"
-	};
-    
-	public static String[] NBA_TEAMS = {
-			"Toronto Raptors",
-			"Boston Celtics",
-			"Brooklyn Nets",
-			"Philadelphia 76ers",
-			"New York Knicks",
-			"Cleveland Cavaliers",
-			"Chicago Bulls",
-			"Miami Heat",
-			"Milwaukee Bucks",
-			"Indiana Pacers",
-			"Detroit Pistons",
-			"Atlanta Hawks",
-			"Washington Wizards",
-			"Charlotte Hornets",
-			"Orlando Magic",
-			"Portland Trailblazers",
-			"Oklahoma City Thunder",
-			"Utah Jazz",
-			"Denver Nuggets",
-			"Minnesota Timberwolves",
-			"Golden State Warriors",
-			"Los Angeles Clippers",
-			"Phoenix Suns",
-			"Sacramento Kings",
-			"Los Angeles Lakers",
-			"Houston Rockets",
-			"Memphis Grizzlies",
-			"San Antonio Spurs",
-			"Dallas Mavericks",
-			"New Orleans Pelicans"
-	};
+	private static HashMap<String, ArrayList<String>> fileDirectory;
 	
-	public static String[] NHL_TEAMS = {
-			"Montreal Canadiens",
-			"Tampa Bay Lightning",
-			"Detroit Red Wings",
-			"Ottowa Senators",
-			"Boston Bruins",
-			"Florida Panthers",
-			"Toronto Maple Leafs",
-			"Buffalo Bisons",
-			"New York Rangers",
-			"Washington Capitals",
-			"New York Islanders",
-			"Pittsburgh Penguins",
-			"Columbus Blue Jackets",
-			"Philadelphia Flyers",
-			"New Jersey Devils",
-			"Carolina Hurricanes",
-			"St. Louis Blues",
-			"Nashville Predators",
-			"Chicago Blackhawks",
-			"Minnesota Wild",
-			"Winnipeg Jets",
-			"Dallas Stars",
-			"Colorado Avalanche",
-			"Anahiem Ducks",
-			"Vancouver Canucks",
-			"Calgary Flames",
-			"Los Angeles Kings",
-			"San Jose Sharks",
-			"Edmonton Oilers",
-			"Arizona Coyotes"
-	};
-	
-	public static String[] getListForSportName(String name){
-		if(name.equalsIgnoreCase("nfl"))
-			return NFL_TEAMS;
-		if(name.equalsIgnoreCase("nba"))
-			return NBA_TEAMS;
-		if(name.equalsIgnoreCase("nhl"))
-			return NHL_TEAMS;
-		if(name.equalsIgnoreCase("mlb"))
-			return MLB_TEAMS;
-		return null;
+	public static void initDAO(Context c){
+		DAOContext = c;
+		AssetManager manager = DAOContext.getAssets();
+		fileDirectory = new HashMap<String, ArrayList<String>>();
+		try {
+			for(String asset : manager.list("Files")){
+				Log.i(TAG, asset);
+				ArrayList<String> rooms = getAssetsForFile(asset);
+				fileDirectory.put(asset.toLowerCase(Locale.US).replace(".txt", ""), rooms);
+			}
+		} catch (IOException e) {
+			Log.e(TAG, "Failed to create DAO object");
+		}
 	}
-
+	
+	public static String getUsername(){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
+		return sharedPref.getString(DAOContext.getString(R.string.pref_username), DAOContext.getString(R.string.default_username));
+	}
+	
+	public static String getLocation(){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
+		return sharedPref.getString(DAOContext.getString(R.string.pref_location), "Cleveland");
+	}
+	
+	public static boolean get(int id, boolean d){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
+		return sharedPref.getBoolean(DAOContext.getString(id), d);
+	}
+	
+	public static void setUsername(String username){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putString(DAOContext.getString(R.string.pref_username), username);
+		editor.commit();
+	}
+	
+	public static void setLocation(String loc){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAOContext);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putString(DAOContext.getString(R.string.pref_location), loc);
+		editor.commit();
+	}
+	
+	public static ArrayList<String> getStringsForID(String id){
+		ArrayList<String> recs = fileDirectory.get(id.toLowerCase(Locale.US));
+		if(recs != null)
+			return recs;
+		recs = new ArrayList<String>();
+		recs.add("No Recs Found");
+		return recs;
+	}
+	
+	private static ArrayList<String> getAssetsForFile(String name){
+		AssetManager manager = DAOContext.getAssets();
+		try {
+			InputStream input = manager.open("Files/" + name.toLowerCase(Locale.US));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+			ArrayList<String> items = new ArrayList<String>();
+			String line = "";
+			do{
+				line = reader.readLine();
+				if(line != null)
+					items.add(line);
+			}while(line != null);
+			reader.close();
+			return items;
+		} catch (IOException e) {
+			Log.e(TAG, e.toString());
+			Log.e(TAG, "Couldn't open resource for file " + name);
+			return null;
+		}
+		
+	}
 }

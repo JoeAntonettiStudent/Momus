@@ -8,10 +8,14 @@ import com.lggflex.model.CategoryModel;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.SportListActivity;
 import com.lggflex.thigpen.adapter.CategoryAdapter;
+import com.lggflex.thigpen.backend.DAO;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -40,19 +44,22 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
         for(final String category : categoryNames){
         	final int drawableID = getResources().getIdentifier(category.toLowerCase(Locale.ENGLISH), "drawable", packageName);
         	if(drawableID != 0){
-        		/*Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
-        		 Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+        		if(DAO.get(R.string.pref_pallete, false)){
+        			Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
+        			Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
         	            public void onGenerated(Palette p) {
         	            	applyPalleteToCard(p, drawableID, category);
         	            }
-        	        });	*/
-        		boolean isRepeat = false;
-            	for(CategoryModel model : categories){
-            		if(model.getTitle().equals(category))
-            			isRepeat = true;
-            	}
-            	if(!isRepeat)
-            		categories.add(new CategoryModel(category, getResources().getDrawable(drawableID), drawableID, getResources().getColor(R.color.primary)));
+        			});	
+        		}else{
+        			boolean isRepeat = false;
+        			for(CategoryModel model : categories){
+        				if(model.getTitle().equals(category))
+        					isRepeat = true;
+        			}
+        			if(!isRepeat)
+        				categories.add(new CategoryModel(category, getResources().getDrawable(drawableID), drawableID, getResources().getColor(R.color.primary)));
+        		}
         	}else{
         		categories.add(new CategoryModel(category, null, 0, 0));
         	}

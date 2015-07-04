@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ItemDecoration;
 import android.view.View;
 
 public abstract class RecyclerViewFragment extends Fragment implements OnRecyclerViewClickListener{
@@ -23,6 +24,7 @@ public abstract class RecyclerViewFragment extends Fragment implements OnRecycle
 	
 	protected void initRecyclerView(int id, int columns){
 		recyclerView = (RecyclerView) view.findViewById(id);
+
 		recyclerLayoutManager = new GridLayoutManager(getActivity().getApplicationContext(), columns);
     	recyclerView.setLayoutManager(recyclerLayoutManager);
     	adapter.setOnCategoryClickListener(this);
