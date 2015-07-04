@@ -25,9 +25,10 @@ public final class R {
         public static final int snackbar_out=0x7f04000d;
     }
     public static final class array {
-        public static final int home_screen_sports_list=0x7f0e0002;
+        public static final int home_screen_sports_list=0x7f0e0003;
         public static final int home_screen_tabs=0x7f0e0000;
-        public static final int home_screen_television_list=0x7f0e0003;
+        public static final int home_screen_television_list=0x7f0e0004;
+        public static final int sports_tabs=0x7f0e0002;
         public static final int television_tabs=0x7f0e0001;
     }
     public static final class attr {
@@ -4780,6 +4781,7 @@ containing a value of this type.
         public static final int title_activity_chat=0x7f0c002c;
         public static final int title_activity_login=0x7f0c002f;
         public static final int title_activity_sport_list=0x7f0c0033;
+        public static final int title_activity_sports=0x7f0c004a;
         public static final int title_activity_tv=0x7f0c0049;
         public static final int username=0x7f0c0031;
     }

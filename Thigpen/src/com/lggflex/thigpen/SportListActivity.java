@@ -64,13 +64,14 @@ public class SportListActivity extends LollipopActivity {
 	    	}
 	    	adapter = new ListAdapter(teams);
 			initRecyclerView(R.id.main_list, 1);
-        
-	    Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-            public void onGenerated(Palette palette) {
-                applyPalette(palette, getResources().getDrawable(drawableID));
-            }
-        });
+        if(drawableID != 0){
+        	Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(drawableID)).getBitmap();
+        	Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+        		public void onGenerated(Palette palette) {
+        			applyPalette(palette, getResources().getDrawable(drawableID));
+        		}
+        	});
+        }
         //ViewCompat.setTransitionName(image, "Sports Header Transition");
         ActivityCompat.startPostponedEnterTransition(this);
 	}

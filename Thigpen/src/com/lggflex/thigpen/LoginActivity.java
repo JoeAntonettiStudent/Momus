@@ -35,6 +35,7 @@ public class LoginActivity extends Activity {
 		boolean alreadyLoggedIn = prefs.getBoolean("completed", false);
 		
 		if(alreadyLoggedIn){
+			DAO.initDAO(getBaseContext());
 			Intent home = new Intent(this, HomeActivity.class);
 			startActivity(home);
 		}

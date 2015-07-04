@@ -11,10 +11,17 @@
         <item>Television</item>
         <item>Favorites</item>
     </string-array>
+    
     <string-array name="television_tabs">
         <item>Live</item>
         <item>Popular</item>
-        <item>All Shows</item>
+    </string-array>
+    
+    <string-array name="sports_tabs">
+        <item>NFL</item>
+        <item>NBA</item>
+        <item>MLB</item>
+        <item>NHL</item>
     </string-array>
 
     <string name="menu_home">Home</string>
@@ -84,6 +91,6 @@
     <string name="pref_rate">Rate us on Google Play</string>
     <string name="pref_about">About the Team</string>
     <string name="pref_build">Build Number</string>
-    <string name="title_activity_tv">TVActivity</string>
-
+    <string name="title_activity_tv">TV</string>
+	<string name="title_activity_sports">Sports</string>
 </resources>

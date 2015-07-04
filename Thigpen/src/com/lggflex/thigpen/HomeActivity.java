@@ -21,7 +21,6 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 		
 		getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 		super.onCreate(savedInstanceState);
-		DAO.initDAO(getBaseContext());
 		PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
 		setContentView(LAYOUT);
 		initUIFlourishes(false, 1, 1);

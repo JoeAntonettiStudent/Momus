@@ -59,6 +59,10 @@
             android:name=".TVActivity"
             android:label="@string/title_activity_tv" >
         </activity>
+        <activity
+            android:name=".SportsActivity"
+            android:label="@string/title_activity_sports" >
+        </activity>
     </application>
 
 </manifest>

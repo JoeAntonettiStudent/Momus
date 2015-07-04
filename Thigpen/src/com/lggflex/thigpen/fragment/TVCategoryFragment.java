@@ -11,7 +11,7 @@ public class TVCategoryFragment extends SimpleListFragment{
 
 	@Override
 	protected ArrayList<ChatroomModel> getItems() {
-		return DAO.getTV();
+		return DAO.getPopularTV();
 	}
 
 }
