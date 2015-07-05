@@ -12,16 +12,8 @@ public class DAO {
 	public static Context DAOContext;
 	public static String TAG = "DAO";
 	
-	public static void initDAO(Context c){
-		
+	public static void initDAO(Context c){	
 		DAOContext = c;
-	//	StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-	//	StrictMode.setThreadPolicy(policy);
-	//	FileDAO.init();
-	//	NetDAO.init();
-	//	SharedPrefsDAO.init();
-
-
 	}
 	
 	public static String getUsername(){

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.lggflex.thigpen.backend.DAO;
+import com.lggflex.thigpen.backend.SharedPrefsDAO;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -70,10 +71,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     }
     
 	private void clear(){
-		SharedPreferences prefs = this.getSharedPreferences("USER_DETAILS", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = prefs.edit();
-		editor.putBoolean("completed", false);
-		editor.commit();
+		SharedPrefsDAO.set("logged in", false);
 		Intent home = new Intent(this.getApplicationContext(), LoginActivity.class);
 		this.startActivity(home);
 	}
