@@ -31,20 +31,7 @@ public class DAOTask extends AsyncTask<Void, Void, Void>{
 				fragments[0].showSnackbar("1");
 			}
 		}
-		NetDAO.init();
-		if(fragments[2].adapter != null){
-			fragments[2].adapter.notifyDataSetChanged();
-			if(DAO.get(R.string.pref_loading_snackbar, false)){
-				fragments[0].showSnackbar("2");
-			}
-		}
 		SharedPrefsDAO.init();
-		if(fragments[3].adapter != null){
-			fragments[3].adapter.notifyDataSetChanged();
-			if(DAO.get(R.string.pref_loading_snackbar, false)){
-				fragments[0].showSnackbar("3");
-			}
-		}
 		return null;
 	}
 

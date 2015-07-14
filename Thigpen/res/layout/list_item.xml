@@ -19,7 +19,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:layout_toEndOf="@+id/tv_row_color"
                 android:layout_toRightOf="@+id/tv_row_color"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -39,6 +39,17 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/circle"
                 android:transitionName="@string/sports_transition" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+               	android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_title"
+                android:layout_below="@+id/tv_title"
+                android:text="This is an example description. Other descriptions will be of this length, and I am trying to measure out how it looks."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
             
         </RelativeLayout>
 

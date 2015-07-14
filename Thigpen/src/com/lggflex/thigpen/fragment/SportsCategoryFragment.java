@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Locale;
 
 import com.lggflex.model.CategoryModel;
+import com.lggflex.model.ChatroomModel;
+import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
 import com.lggflex.thigpen.SportListActivity;
 import com.lggflex.thigpen.adapter.CategoryAdapter;
@@ -29,6 +31,8 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
     protected static final String TAG = "SportsCategoryFragment";
     private static String packageName;
     private List<CategoryModel> categories = new ArrayList<CategoryModel>();
+    private int mutedPrimary = getResources().getColor(R.color.primary);
+    private int accent = getResources().getColor(R.color.accent);
     
  
     @SuppressWarnings("deprecation")
@@ -74,7 +78,8 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	public void applyPalleteToCard(Palette pallete, int drawableID, String name){
     	int primary = getResources().getColor(R.color.primary);
-    	int mutedPrimary = pallete.getMutedColor(primary);
+    	mutedPrimary = pallete.getMutedColor(primary);
+    	accent = pallete.getLightVibrantColor(primary);
     	boolean isRepeat = false;
     	for(CategoryModel model : categories){
     		if(model.getTitle().equals(name))
@@ -87,15 +92,11 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
 	@SuppressLint("NewApi")
 	@Override
 	public <T> void onItemClick(View view, T viewModel) {
-		Intent i = new Intent(getActivity(), SportListActivity.class);
-    	i.putExtra(EXTRA_IMAGE, ((CategoryModel) viewModel).getDrawableID());
-		i.putExtra(EXTRA_TITLE, ((CategoryModel) viewModel).getTitle());
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.category_image), "Sports Header Transition");
-			ActivityCompat.startActivity(getActivity(), i, transitionActivityOptions.toBundle());
-		}else{
-			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			getActivity().getApplicationContext().startActivity(i);
-		}
+		Intent i = new Intent(getActivity(), ChatActivity.class);
+		i.putExtra("name", ((CategoryModel) viewModel).getTitle());
+		i.putExtra(EXTRA_PRIMARY_COLOR, mutedPrimary);
+		i.putExtra(EXTRA_ACCENT_COLOR, accent);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		getActivity().startActivity(i);
 	}
 }

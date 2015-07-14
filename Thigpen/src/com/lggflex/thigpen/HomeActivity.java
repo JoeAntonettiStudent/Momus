@@ -35,10 +35,10 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 		setContentView(LAYOUT);
 		initUIFlourishes(false, 1, 1);
 		RecyclerViewFragment[] tabs = {
-				new RecommendationsFragment(),
+			//	new RecommendationsFragment(),
 				new SportsCategoryFragment(),
 				new TVCategoryFragment(),
-				new FavoriteCategoryFragment()
+			//	new FavoriteCategoryFragment()
 		};
 		initTabs(R.array.home_screen_tabs, tabs);
 		String[] tabNames = getResources().getStringArray(R.array.home_screen_tabs);

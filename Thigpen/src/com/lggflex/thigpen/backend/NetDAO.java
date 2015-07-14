@@ -34,9 +34,9 @@ public class NetDAO {
 	private static ArrayList<ChatroomModel> liveTV;
 
 	public static void init(){
-		client = new DefaultHttpClient();
-		liveTV = ChatroomModel.makeFromList(getFromResults("/3/tv/on_the_air"));
-		popularTV = ChatroomModel.makeFromList(getFromResults("/3/discover/tv"));
+		//client = new DefaultHttpClient();
+		//liveTV = ChatroomModel.makeFromList(getFromResults("/3/tv/on_the_air"));
+	//	popularTV = ChatroomModel.makeFromList(getFromResults("/3/discover/tv"));
 	}
 	
 	public static ArrayList<ChatroomModel> getLiveTV(){
