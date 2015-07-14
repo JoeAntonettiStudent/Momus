@@ -31,8 +31,8 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
     protected static final String TAG = "SportsCategoryFragment";
     private static String packageName;
     private List<CategoryModel> categories = new ArrayList<CategoryModel>();
-    private int mutedPrimary = getResources().getColor(R.color.primary);
-    private int accent = getResources().getColor(R.color.accent);
+    private int mutedPrimary = 0;
+    private int accent = 0;
     
  
     @SuppressWarnings("deprecation")
@@ -94,6 +94,10 @@ public class SportsCategoryFragment extends RecyclerViewFragment{
 	public <T> void onItemClick(View view, T viewModel) {
 		Intent i = new Intent(getActivity(), ChatActivity.class);
 		i.putExtra("name", ((CategoryModel) viewModel).getTitle());
+		if(mutedPrimary == 0){
+			mutedPrimary = getResources().getColor(R.color.primary);
+			accent =  getResources().getColor(R.color.accent);
+		}
 		i.putExtra(EXTRA_PRIMARY_COLOR, mutedPrimary);
 		i.putExtra(EXTRA_ACCENT_COLOR, accent);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -33,6 +33,8 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 		super.onCreate(savedInstanceState);
 		PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
 		setContentView(LAYOUT);
+		DAO.initDAO(getBaseContext());
+        new DAOTask().execute(null, null, null);
 		initUIFlourishes(false, 1, 1);
 		RecyclerViewFragment[] tabs = {
 			//	new RecommendationsFragment(),
@@ -44,8 +46,7 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 		String[] tabNames = getResources().getStringArray(R.array.home_screen_tabs);
 		
         setUpNavDrawer();
-		DAO.initDAO(getBaseContext());
-        new DAOTask((RecyclerViewFragment[]) tabs).execute(null, null, null);
+		
 	}
 
 	@Override
