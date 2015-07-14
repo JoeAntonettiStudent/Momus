@@ -54,36 +54,6 @@ public class HomeActivity extends TabbedActivity implements OnSharedPreferenceCh
 		
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.home, menu);
-		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-		SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
-		searchView.setOnQueryTextListener(new OnQueryTextListener(){
-
-			@Override
-			public boolean onQueryTextChange(String arg0) {
-				// TODO Auto-generated method stub
-				return false;
-			}
-
-			@Override
-			public boolean onQueryTextSubmit(String arg0) {
-				new SearchTask().execute(arg0);
-				return false;
-			}
-			
-		});
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		return super.onOptionsItemSelected(item);
-	}
-	
-	
     @Override
     protected void onResume() {
         super.onResume();

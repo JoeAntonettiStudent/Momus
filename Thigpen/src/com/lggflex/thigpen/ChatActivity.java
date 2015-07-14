@@ -41,7 +41,7 @@ public class ChatActivity extends LollipopActivity {
 	private static HashMap<String, UserModel> currentUserMap;
 	
 	//Server Variables
-	private final String SERVER_URL="http://52.26.146.218:3000";
+	private final String SERVER_URL="http://52.11.184.17:3000";
 	private Socket socket;
 	
 	//UI Variables
@@ -170,7 +170,7 @@ public class ChatActivity extends LollipopActivity {
 				public void call(Object... arg0) {
 					Log.i("SERVER", "Connected");
 					socket.emit("userConnected", username);
-					socket.emit("changeRoom", currentChatroom);
+					socket.emit("changeRoom", currentChatroom + DAO.getLocation());
 				}
 				
 			});

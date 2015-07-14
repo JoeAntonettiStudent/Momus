@@ -4764,6 +4764,9 @@ containing a value of this type.
         public static final int pref_black_des_neg=0x7f0c004f;
         public static final int pref_black_des_pos=0x7f0c004e;
         public static final int pref_build=0x7f0c0049;
+        public static final int pref_do_it=0x7f0c0053;
+        public static final int pref_do_it_des_neg=0x7f0c0055;
+        public static final int pref_do_it_des_pos=0x7f0c0054;
         public static final int pref_facebook=0x7f0c003a;
         public static final int pref_loading_snackbar=0x7f0c0052;
         public static final int pref_location=0x7f0c0038;

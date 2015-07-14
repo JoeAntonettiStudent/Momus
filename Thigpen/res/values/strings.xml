@@ -101,4 +101,7 @@
     <string name="title_activity_tv">TV</string>
 	<string name="title_activity_sports">Sports</string>
 	<string name="pref_loading_snackbar">Show Loading Snackbars</string>
+	<string name="pref_do_it">Motivation</string>
+	<string name="pref_do_it_des_pos">Nothing is Impossible</string>
+	<string name="pref_do_it_des_neg">Don\'t let your dreams be dreams</string>
 </resources>

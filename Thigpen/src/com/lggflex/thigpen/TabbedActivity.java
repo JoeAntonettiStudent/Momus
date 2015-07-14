@@ -1,10 +1,17 @@
 package com.lggflex.thigpen;
 
+import com.lggflex.thigpen.backend.SearchTask;
 import com.lggflex.thigpen.ui.SlidingTabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.SearchView.OnQueryTextListener;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public abstract class TabbedActivity extends LollipopActivity{
@@ -32,6 +39,35 @@ public abstract class TabbedActivity extends LollipopActivity{
             }
         });
         tabLayout.setViewPager(pager);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.home, menu);
+		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+		SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+		searchView.setOnQueryTextListener(new OnQueryTextListener(){
+
+			@Override
+			public boolean onQueryTextChange(String arg0) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+			@Override
+			public boolean onQueryTextSubmit(String arg0) {
+				new SearchTask().execute(arg0);
+				return false;
+			}
+			
+		});
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
 	}
 
 

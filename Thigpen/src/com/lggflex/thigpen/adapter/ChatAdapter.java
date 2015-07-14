@@ -29,7 +29,7 @@ public class ChatAdapter extends RecyclerViewAdapter<ChatViewHolder, ChatItemMod
 	public void onBindViewHolder(ChatViewHolder holder, int position) {
 		ChatItemModel item = items.get(items.size() - position - 1);
 		holder.userField.setText(item.user);
-		holder.messageField.setTag(item.message);
+		holder.messageField.setText(item.message);
 		GradientDrawable shape = (GradientDrawable) holder.messageField.getBackground();
 		shape.setColor(item.color);
 	}

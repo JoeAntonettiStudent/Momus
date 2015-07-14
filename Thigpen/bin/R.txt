@@ -2430,6 +2430,9 @@ int string pref_black 0x7f0c004d
 int string pref_black_des_neg 0x7f0c004f
 int string pref_black_des_pos 0x7f0c004e
 int string pref_build 0x7f0c0049
+int string pref_do_it 0x7f0c0053
+int string pref_do_it_des_neg 0x7f0c0055
+int string pref_do_it_des_pos 0x7f0c0054
 int string pref_facebook 0x7f0c003a
 int string pref_loading_snackbar 0x7f0c0052
 int string pref_location 0x7f0c0038

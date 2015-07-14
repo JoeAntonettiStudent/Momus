@@ -71,6 +71,11 @@
           android:defaultValue="false"
           android:summary="@string/pref_black_des_neg"
           android:key="@string/pref_black" />   
+           <SwitchPreference
+          android:title="@string/pref_do_it"
+          android:defaultValue="false"
+          android:summary="@string/pref_do_it_des_neg"
+          android:key="@string/pref_do_it" />   
     
     </PreferenceCategory>
     
