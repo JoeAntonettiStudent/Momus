@@ -10,14 +10,6 @@
 		android:icon="@drawable/ic_home_black_18dp"
 		android:title="@string/menu_home"/>
     <item
-        android:id="@+id/sports_menu"
-        android:icon="@drawable/ic_stars_black_18dp"
-        android:title="@string/menu_sports" />
-    <item
-		android:id="@+id/tv_menu"
-		android:icon="@drawable/ic_visibility_black_18dp"
-		android:title="@string/menu_tv"/>
-    <item
         android:id="@+id/favorites_menu"
         android:icon="@drawable/ic_favorite_black_18dp"
         android:title="@string/menu_favorites" />

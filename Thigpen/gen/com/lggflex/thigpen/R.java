@@ -4436,7 +4436,7 @@ containing a value of this type.
         public static final int exitUntilCollapsed=0x7f0b0037;
         public static final int expand_activities_button=0x7f0b004b;
         public static final int expanded_menu=0x7f0b005b;
-        public static final int favorites_menu=0x7f0b00ad;
+        public static final int favorites_menu=0x7f0b00ab;
         public static final int fill=0x7f0b0029;
         public static final int fill_horizontal=0x7f0b002f;
         public static final int fill_vertical=0x7f0b0030;
@@ -4499,7 +4499,7 @@ containing a value of this type.
         public static final int search_voice_btn=0x7f0b0071;
         public static final int select_dialog_listview=0x7f0b0072;
         public static final int send=0x7f0b0076;
-        public static final int settings_menu=0x7f0b00ae;
+        public static final int settings_menu=0x7f0b00ac;
         public static final int shortcut=0x7f0b005d;
         public static final int showCustom=0x7f0b0012;
         public static final int showHome=0x7f0b0013;
@@ -4508,7 +4508,6 @@ containing a value of this type.
         public static final int snackbar_action=0x7f0b0094;
         public static final int snackbar_text=0x7f0b0093;
         public static final int split_action_bar=0x7f0b0004;
-        public static final int sports_menu=0x7f0b00ab;
         public static final int src_atop=0x7f0b0018;
         public static final int src_in=0x7f0b0019;
         public static final int src_over=0x7f0b001a;
@@ -4531,7 +4530,6 @@ containing a value of this type.
         public static final int toolbar=0x7f0b0073;
         public static final int top=0x7f0b0034;
         public static final int topPanel=0x7f0b0052;
-        public static final int tv_menu=0x7f0b00ac;
         public static final int tv_row_color=0x7f0b0096;
         public static final int tv_title=0x7f0b0095;
         public static final int unknown=0x7f0b0042;

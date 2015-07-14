@@ -128,12 +128,6 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	                    case R.id.home_menu:
 	                        open(HomeActivity.class);
 	                        return true;
-	                    case R.id.tv_menu:
-	                    	open(TVActivity.class);
-	                    	return true;
-	                    case R.id.sports_menu:
-	                    	open(SportsActivity.class);
-	                    	return true;
 	                    default:
 	                        return true;
 	                }

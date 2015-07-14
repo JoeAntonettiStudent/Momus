@@ -17,9 +17,8 @@ public class ChatroomModel {
 			{"#FF7043", "#4DB6AC"}
 	};
 	
-	private String title;
-	private int primary;
-	private int accent;
+	private String title, description;
+	private int primary, accent;
 	
 	public ChatroomModel(String t){
 		title = t;
