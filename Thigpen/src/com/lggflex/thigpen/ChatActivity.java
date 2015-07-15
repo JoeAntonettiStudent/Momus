@@ -98,39 +98,7 @@ public class ChatActivity extends LollipopActivity {
 		
 		configureSocket();
 	}
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.chat, menu);
-		favoriteButton = menu.findItem(R.id.action_favorite);
-		if(isFavoriteChatroom)
-			favoriteButton.setIcon(R.drawable.ic_favorite_white_36dp);
-		return true;
-	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == R.id.action_favorite)
-			favorite();
-		return super.onOptionsItemSelected(item);
-	}
-	
-	public void favorite(){
-		if(!isFavoriteChatroom){
-			favoriteButton.setIcon(FAVORITED_ICON);
-			isFavoriteChatroom = true;
-			showSnackbar("Favorited");
-		}else{
-			favoriteButton.setIcon(UNFAVORITED_ICON);
-			isFavoriteChatroom = false;
-			showSnackbar("Unfavorited");
-		}
-		SharedPreferences.Editor editor = favoriteChatroomsPreferences.edit();
-		editor.putBoolean(currentChatroom, isFavoriteChatroom);
-		editor.commit();
-	}
-	
 	public void sendMessage(String message){
 		socket.emit("messageSent", message);
 	}

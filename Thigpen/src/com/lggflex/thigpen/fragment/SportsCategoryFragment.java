@@ -3,24 +3,18 @@ package com.lggflex.thigpen.fragment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import com.lggflex.model.CategoryModel;
-import com.lggflex.model.ChatroomModel;
 import com.lggflex.thigpen.ChatActivity;
 import com.lggflex.thigpen.R;
-import com.lggflex.thigpen.SportListActivity;
 import com.lggflex.thigpen.adapter.CategoryAdapter;
 import com.lggflex.thigpen.backend.DAO;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.graphics.Palette;
 import android.view.LayoutInflater;
 import android.view.View;

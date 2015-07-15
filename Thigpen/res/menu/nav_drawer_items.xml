@@ -9,10 +9,6 @@
 		android:id="@+id/home_menu"
 		android:icon="@drawable/ic_home_black_18dp"
 		android:title="@string/menu_home"/>
-    <item
-        android:id="@+id/favorites_menu"
-        android:icon="@drawable/ic_favorite_black_18dp"
-        android:title="@string/menu_favorites" />
     </menu>
 </item>
 

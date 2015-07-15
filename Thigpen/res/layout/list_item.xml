@@ -37,8 +37,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerInside"
-                android:src="@drawable/circle"
-                android:transitionName="@string/sports_transition" />
+                android:src="@drawable/circle" />
 
             <TextView
                 android:id="@+id/tv_description"

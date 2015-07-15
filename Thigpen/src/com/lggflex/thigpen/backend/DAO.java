@@ -32,14 +32,6 @@ public class DAO {
 		return SharedPrefsDAO.getFavorites();
 	}
 	
-	public static ArrayList<ChatroomModel> getLiveTV(){
-		return NetDAO.getLiveTV();
-	}
-	
-	public static ArrayList<ChatroomModel> getPopularTV(){
-		return NetDAO.getPopularTV();
-	}
-	
 	public static ArrayList<String> getStringsForID(String id){
 		return FileDAO.getFromDirectory(id);
 	}
