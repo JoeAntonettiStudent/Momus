@@ -54,7 +54,7 @@ public class ChatActivity extends LollipopActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
 		setupChatButton();
-		//Get Intent Extras
+		
 		currentChatroom = getIntent().getStringExtra(EXTRA_CHATROOM_NAME);
 		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
 		int accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, -1);
@@ -64,11 +64,8 @@ public class ChatActivity extends LollipopActivity {
 		setTitle(currentChatroom);
 		
 		username = DAO.getUsername();
-		Log.i("ChatActivity", username);
-		
 		currentUserMap = new HashMap<String, UserModel>();
 		currentUserMap.put(username, new UserModel(username));
-		
 		chatHistory = new ArrayList<ChatItemModel>();
 		
 		adapter = new ChatAdapter(chatHistory, this);
@@ -77,9 +74,9 @@ public class ChatActivity extends LollipopActivity {
 		textEntry = (EditText) findViewById(R.id.entry );
 		themeToColors();	
 		configureSocket();
-		ArrayList<String> titles = DAO.getStringsForID("titles");
-		int rand = (int) (Math.random() * titles.size());
-		addMessage("Momus", "Momus: " + titles.get(rand));
+		//ArrayList<String> titles = DAO.getStringsForID("titles");
+		//int rand = (int) (Math.random() * titles.size());
+		//addMessage("Momus", "Momus: " + titles.get(rand));
 	}
 	
 	private void setupChatButton(){
@@ -146,43 +143,45 @@ public class ChatActivity extends LollipopActivity {
 		try {
 			Log.i("ChatActivity", "Registering Socket Actions");
 			socket = IO.socket(SERVER_URL);
+			
 			socket.on(Socket.EVENT_CONNECT, new Emitter.Listener(){
 
 				@Override
 				public void call(Object... arg0) {
 					Log.i("SERVER", "Connected");
-					socket.emit("userConnected", username);
-					socket.emit("changeRoom", currentChatroom + DAO.getLocation());
-
+					socket.emit("userConnected", username, currentChatroom, "");
 				}
 				
 			});
+			
 			socket.on("update", new Emitter.Listener() {
 				
 				@Override
 				public void call(final Object... args) {
-					Log.i("SERVER", (String)args[0] + ": " + (String)args[1]);
+					Log.i("SERVER", (String)args[0] + ": " + (String)args[2]);
 					runOnUiThread(new Runnable() {
 					     @Override
 					     public void run() {
-					    	 addMessage((String)args[0], (String)args[1]);
+					    	 addMessage((String)args[0], (String)args[2]);
 					    }
 					});
 					
 				}
 			});
 			socket.on("pastMessages", new Emitter.Listener(){
+				
+				
 
 				@Override
 				public void call(final Object... arg0) {
-				
+					Log.i("ChatActivity", "past");
 						
 						runOnUiThread(new Runnable(){
 
 							@Override
 							public void run() {
-								arr = new JSONArray((String) arg0[0]);
 								if(!(arg0[0].equals(""))){
+									arr = new JSONArray((String) arg0[0]);
 									for(int i = 0; i < arr.length(); i++){
 										String str = (String) arr.get(i);
 										JSONObject obj = new JSONObject(str);
