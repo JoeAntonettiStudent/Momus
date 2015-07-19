@@ -3,6 +3,7 @@ package com.lggflex.thigpen;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -16,11 +17,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
@@ -41,11 +45,10 @@ public class ChatActivity extends LollipopActivity {
 	private static HashMap<String, UserModel> currentUserMap;
 	
 	//Server Variables
-	private final String SERVER_URL="http://52.11.184.17:3000";
+	private final String SERVER_URL="http://52.25.255.158:3000";
 	private Socket socket;
 	
 	//UI Variables
-	MenuItem favoriteButton;
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<ChatItemModel> chatHistory;
 	private EditText textEntry;
@@ -53,11 +56,12 @@ public class ChatActivity extends LollipopActivity {
 	private static final int FAVORITED_ICON = R.drawable.ic_favorite_white_36dp;
 	private static final int UNFAVORITED_ICON = R.drawable.ic_favorite_border_white_36dp;
 
+	MenuItem favoriteButton;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
-		
+		setupChatButton();
 		//Get Intent Extras
 		currentChatroom = getIntent().getStringExtra(EXTRA_CHATROOM_NAME);
 		int primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, -1);
@@ -81,22 +85,37 @@ public class ChatActivity extends LollipopActivity {
 		adapter = new ChatAdapter(chatHistory);
 		initRecyclerView(R.id.chat, 1);
 		recyclerLayoutManager.setReverseLayout(true);
+		textEntry = (EditText) findViewById(R.id.entry );
 		
-		textEntry = (EditText) findViewById(R.id.entry);
+		themeToColors();
+		
+		configureSocket();
+		
+		ArrayList<String> titles = DAO.getStringsForID("titles");
+		int rand = (int) (Math.random() * titles.size());
+		addMessage("Momus", "Momus: " + titles.get(rand));
+	}
+	
+	private void setupChatButton(){
+		
+		final Animation FABInit = AnimationUtils.loadAnimation(this, R.anim.fab_in);
+		FABInit.setDuration(750);
+		FABInit.setInterpolator(this, android.R.anim.accelerate_decelerate_interpolator);
+		final Animation FABSpin = AnimationUtils.loadAnimation(this, R.anim.fab_spin);
+		FABSpin.setInterpolator(this, android.R.anim.accelerate_decelerate_interpolator);
 		
 		initFAB(R.id.send, new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
+				v.startAnimation(FABSpin);
 				sendMessage(textEntry.getText().toString());
 				textEntry.setText("");
 			}
 			
 		});
 		
-		themeToColors();
-		
-		configureSocket();
+		floatingActionButton.startAnimation(FABInit);
 	}
 
 	public void sendMessage(String message){

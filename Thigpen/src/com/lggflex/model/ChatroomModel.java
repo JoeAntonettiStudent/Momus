@@ -61,9 +61,11 @@ public class ChatroomModel {
 	public static ArrayList<ChatroomModel> makeFromList(ArrayList<String> entries){
 		ArrayList<ChatroomModel> models = new ArrayList<ChatroomModel>();
 		for(String entry : entries){
-			String name = entry.substring(0, entry.indexOf('\t'));
-			String des = entry.substring(entry.indexOf('\t') + 1, entry.length());
-			models.add(new ChatroomModel(name, des));
+			if(entry.length() > 0){
+				String name = entry.substring(0, entry.indexOf('\t'));
+				String des = entry.substring(entry.indexOf('\t') + 1, entry.length());
+				models.add(new ChatroomModel(name, des));
+			}
 		}
 		if(models.size() == 0){
 			models.add(new ChatroomModel("Loading..."));

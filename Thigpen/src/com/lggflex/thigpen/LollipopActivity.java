@@ -100,10 +100,6 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 			result = getResources().getDimensionPixelSize(resId);
 		return result;
 	}
-	protected void setUsername(){
-		TextView nameField = (TextView) findViewById(R.id.username);
-		nameField.setText(DAO.getUsername());
-	}
 	protected void setUpNavDrawer() {
 	       if (toolbar != null) {
 	           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
