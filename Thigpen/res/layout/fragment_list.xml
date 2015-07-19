@@ -4,24 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
- 	<android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/main_card"
-        app:elevation="6dp"
-      	app:pressedTranslationZ="12dp"
-      	android:foreground="?android:attr/selectableItemBackground"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
         
     	<android.support.v7.widget.RecyclerView
         	android:id="@+id/content"
         	android:layout_width="match_parent"
         	android:layout_height="match_parent"/>	
         	
-	</android.support.v7.widget.CardView>
 </LinearLayout>
