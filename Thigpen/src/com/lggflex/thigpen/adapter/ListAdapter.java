@@ -27,7 +27,8 @@ public class ListAdapter extends RecyclerViewAdapter<ListViewHolder, ChatroomMod
 	public void onBindViewHolder(ListViewHolder holder, int position) {
 		ChatroomModel item = items.get(position);
 		holder.title.setText(item.getTitle());
-		holder.description.setText(item.getDescription());
+	//	holder.description.setText(item.getDescription());
+		holder.description.setText("");
 		holder.itemView.setTag(item);
 		GradientDrawable shape = (GradientDrawable) holder.color.getDrawable();
 		shape.setColor(item.getColor()[0]);

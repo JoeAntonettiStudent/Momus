@@ -132,7 +132,7 @@ public class LoginActivity extends Activity {
 	private void showLocationPicker(){
 		FileDAO.init();
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Select a City");
+		builder.setTitle("Select a Location");
 		final ArrayList<String> cities = DAO.getStringsForID("locations");
 		String[] locs = new String[cities.size()];
 		for(int i = 0; i < cities.size(); i++){

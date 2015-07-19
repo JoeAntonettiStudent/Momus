@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_question_answer_white_36dp"
+            android:src="@drawable/ic_plus"
             card_view:borderWidth="0dp"
             card_view:elevation="6dp"
             card_view:fabSize="mini"

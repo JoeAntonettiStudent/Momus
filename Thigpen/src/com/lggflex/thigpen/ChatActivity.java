@@ -3,7 +3,8 @@ package com.lggflex.thigpen;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -11,20 +12,14 @@ import com.lggflex.model.ChatItemModel;
 import com.lggflex.model.UserModel;
 import com.lggflex.thigpen.adapter.ChatAdapter;
 import com.lggflex.thigpen.backend.DAO;
-
 import android.annotation.TargetApi;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
@@ -40,9 +35,9 @@ public class ChatActivity extends LollipopActivity {
 	//Internal State Variables
 	private String username;
 	private String currentChatroom;
-	private boolean isFavoriteChatroom;
-	private SharedPreferences favoriteChatroomsPreferences;
 	private static HashMap<String, UserModel> currentUserMap;
+	
+	private JSONArray arr;
 	
 	//Server Variables
 	private final String SERVER_URL="http://52.25.255.158:3000";
@@ -52,11 +47,7 @@ public class ChatActivity extends LollipopActivity {
 	ArrayAdapter<String> chatHistoryAdapter;
 	ArrayList<ChatItemModel> chatHistory;
 	private EditText textEntry;
-	
-	private static final int FAVORITED_ICON = R.drawable.ic_favorite_white_36dp;
-	private static final int UNFAVORITED_ICON = R.drawable.ic_favorite_border_white_36dp;
 
-	MenuItem favoriteButton;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -74,23 +65,17 @@ public class ChatActivity extends LollipopActivity {
 		username = DAO.getUsername();
 		Log.i("ChatActivity", username);
 		
-		favoriteChatroomsPreferences = getSharedPreferences("FAVORITE_ITEMS", Context.MODE_PRIVATE);
-		isFavoriteChatroom = favoriteChatroomsPreferences.getBoolean(currentChatroom, false);
-		
 		currentUserMap = new HashMap<String, UserModel>();
 		currentUserMap.put(username, new UserModel(username));
 		
 		chatHistory = new ArrayList<ChatItemModel>();
 		
-		adapter = new ChatAdapter(chatHistory);
+		adapter = new ChatAdapter(chatHistory, this);
 		initRecyclerView(R.id.chat, 1);
 		recyclerLayoutManager.setReverseLayout(true);
 		textEntry = (EditText) findViewById(R.id.entry );
-		
-		themeToColors();
-		
+		themeToColors();	
 		configureSocket();
-		
 		ArrayList<String> titles = DAO.getStringsForID("titles");
 		int rand = (int) (Math.random() * titles.size());
 		addMessage("Momus", "Momus: " + titles.get(rand));
@@ -108,9 +93,12 @@ public class ChatActivity extends LollipopActivity {
 
 			@Override
 			public void onClick(View v) {
-				v.startAnimation(FABSpin);
-				sendMessage(textEntry.getText().toString());
-				textEntry.setText("");
+				if(FABSpin.hasEnded() || !FABSpin.hasStarted()){
+					v.startAnimation(FABSpin);
+			
+					sendMessage(textEntry.getText().toString());
+					textEntry.setText("");
+				}
 			}
 			
 		});
@@ -158,6 +146,7 @@ public class ChatActivity extends LollipopActivity {
 					Log.i("SERVER", "Connected");
 					socket.emit("userConnected", username);
 					socket.emit("changeRoom", currentChatroom + DAO.getLocation());
+
 				}
 				
 			});
@@ -175,6 +164,32 @@ public class ChatActivity extends LollipopActivity {
 					
 				}
 			});
+			socket.on("pastMessages", new Emitter.Listener(){
+
+				@Override
+				public void call(final Object... arg0) {
+				
+						
+						runOnUiThread(new Runnable(){
+
+							@Override
+							public void run() {
+								arr = new JSONArray((String) arg0[0]);
+								if(!(arg0[0].equals(""))){
+									for(int i = 0; i < arr.length(); i++){
+										String str = (String) arr.get(i);
+										JSONObject obj = new JSONObject(str);
+										addMessage((String) obj.get("user"), (String) obj.get("msg"));
+									}
+								}
+								
+								
+							}
+							
+						});
+				}
+				
+			});
 			socket.connect();
 			Log.i("SERVER", "Connecting...");
 		} catch (URISyntaxException e) {
@@ -188,3 +203,5 @@ public class ChatActivity extends LollipopActivity {
 		
 	}
 }
+
+

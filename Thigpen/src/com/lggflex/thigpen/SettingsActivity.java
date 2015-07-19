@@ -107,7 +107,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     
     private void showLocationPicker(){
     	AlertDialog.Builder builder = new Builder(this);
-		builder.setTitle("Select a City");
+		builder.setTitle("Select a Location");
 		final ArrayList<String> cities = DAO.getStringsForID("locations");
 		String[] locs = new String[cities.size()];
 		for(int i = 0; i < cities.size(); i++){
@@ -127,15 +127,15 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     
     private void setDescriptions(){
     	setSummary(R.string.pref_build, genBuildNumber());
-    	filterDrawable(R.string.pref_build, R.drawable.ic_perm_device_information_black_24dp);
-    	filterDrawable(R.string.pref_location, R.drawable.ic_language_black_24dp);
-    	filterDrawable(R.string.pref_facebook, R.drawable.ic_exit_to_app_black_24dp);
-    	filterDrawable(R.string.pref_multicolored, R.drawable.ic_invert_colors_black_24dp);
-    	filterDrawable(R.string.pref_twocolumn, R.drawable.ic_view_quilt_black_24dp);
-    	filterDrawable(R.string.pref_pallete, R.drawable.ic_dashboard_black_24dp);
-    	filterDrawable(R.string.pref_rate, R.drawable.ic_shop_black_24dp);
-    	filterDrawable(R.string.pref_about, R.drawable.ic_info_black_24dp);
-    	filterDrawable(R.string.pref_username, R.drawable.ic_account_circle_black_24dp);
+    	filterDrawable(R.string.pref_build, R.drawable.ic_perm_device_information_black_36dp);
+    	filterDrawable(R.string.pref_location, R.drawable.ic_language_black_36dp);
+    	filterDrawable(R.string.pref_facebook, R.drawable.ic_exit_to_app_black_36dp);
+    	filterDrawable(R.string.pref_multicolored, R.drawable.ic_invert_colors_black_36dp);
+    	filterDrawable(R.string.pref_twocolumn, R.drawable.ic_view_quilt_black_36dp);
+    	filterDrawable(R.string.pref_pallete, R.drawable.ic_dashboard_black_36dp);
+    	filterDrawable(R.string.pref_rate, R.drawable.ic_shop_black_36dp);
+    	filterDrawable(R.string.pref_about, R.drawable.ic_info_black_36dp);
+    	filterDrawable(R.string.pref_username, R.drawable.ic_account_circle_black_36dp);
         setSummary(R.string.pref_username, "Current Username: " + DAO.getUsername());
         setSummary(R.string.pref_location, "Current Location: " + DAO.getLocation());
         setTrueFalseSummary(R.string.pref_multicolored, R.string.pref_multicolored_des_pos, R.string.pref_multicolored_des_neg, true);

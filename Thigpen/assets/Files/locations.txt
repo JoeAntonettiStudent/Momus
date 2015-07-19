@@ -1,158 +1,50 @@
-Montgomery, Alabama
-Birmingham, Alabama
-Mobile, Alabama
-Northern Area, Alaska
-Southern Area, Alaska
-Russian Border, Alaska
-Phoenix, Arizona
-Tucson, Arizona
-Flagstaff, Arizona
-Little Rock, Arkansas
-El Dorado, Arkansas
-Jonesboro, Arkansas
-San Diego, California
-Los Angeles, California
-Fresno, California
-San Francisco, California
-Yolo, California
-Redding, California
-Denver, Colorado
-El Paso, Colorado
-Montezuma, Colorado
-Garfield, Colorado
-New Haven, Connecticut
-Hartford, Connecticut
-Bridgeport, Connecticut
-New London, Connecticut
-Dover, Delaware
-Seaford, Delaware
-Wilmington, Delaware
-Tallahassee, Florida
-Orlando, Florida
-Tampa, Florida
-Miami, Florida
-Jacksonville, Florida
-Atlanta, Georgia
-Columbus, Georgia
-Rome, Georgia
-Savannah, Georgia
-Valdosta, Georgia
-Honolulu, Hawaii
-Hilo, Hawaii
-Niihau, Hawaii
-Kauai, Hawaii
-Molokai, Hawaii
-Boise, Idaho
-Idaho, Falls
-Moscow, Idaho
-Chicago, Illinois
-Springfield, Illinois
-Bloomington, Illinois
-Urbana Champaign, Illinois
-Carbondale, Illinois
-Indianapolis, Indiana
-South Bend, Indiana
-Columbus, Indiana
-Dear Moines, Iowa
-Cedar Rapids, Iowa
-Creston, Iowa
-Topeka, Kansas
-Kansas City, Kansas
-Wichita, Kansas
-Dodge City, Kansas
-Frankfort, Kentucky
-Bowling Green, Kentucky
-Louisville, Kentucky
-Baton Rouge, Louisiana 
-New Orleans, Louisiana
-Shreveport, Louisiana 
-Lake Charles, Louisiana 
-Augusta, Maine
-Bangor, Maine
-Northern Maine, Maine
-Washington DC, Maryland
-Baltimore, Maryland
-Annapolis, Maryland
-Springfield, Massachusetts
-Worcester, Massachusetts
-Boston, Massachusetts
-Detroit, Michigan
-Lansing, Michigan
-Traverse City, Michigan
-Grand Rapids, Michigan
-Grand Rapids, Minnesota
-Moorhead, Minnesota
-Minneapolis, Minnesota
-Rochester, Minnesota
-Starkville, Mississippi
-Hattiesburg, Mississippi
-Jackson, Mississippi
-Jefferson City, Missouri
-St. Louis, Missouri
-Independence, Missouri
-Springfield, Missouri
-Helena, Montana
-Great Falls, Montana
-Billings, Montana
-North Platte, Nebraska
-Lincoln, Nebraska
-Omaha, Nebraska
-Carson City, Nevada
-Las Vegas, Nevada
-Reno, Nevada
-Spring Creek, Nevada
-Berlin, New Hampshire
-Concord, New Hampshire
-Manchester, New Hampshire
-Camden, New Jersey
-Trenton, New Jersey
-Newark, New Jersey
-Las Cruces, New Mexico
-Albuquerque, New Mexico
-Sante Fe, New Mexico
-Albany, New York
-New York City, New York
-Buffalo, New York
-Raleigh, North Carolina
-Charlotte, North Carolina
-Bismark, North Dakota
-Dickinson, North Carolina
-Cleveland, Ohio
-Columbus, Ohio
-Cincinnati, Ohio
-Oklahoma City, Oklahoma
-Tulsa, Oklahoma
-Burns, Oregon
-Salem, Oregon
-Portland, Oregon
-Harrisburg, Pennsylvania
-Pittsburgh, Pennsylvania
-Philadelphia, Pennsylvania
-Providence, Rhode Island
-Newport, Rhode Island
-Columbia, South Carolina
-Charleston, South Carolina
-Greenville, South Carolina
-Pierre, South Dakota
-Nashville, Tennessee
-Memphis, Tennessee
-Knoxville, Tennessee
-El Paso, Texas
-Austin, Texas
-Dallas, Texas
-Houston, Texas
-San Antonio, Texas
-Salt Lake City, Utah
-St. George, Utah
-Rutland, Vermont
-Montpelier, Vermont
-Richmond, Virginia
-Portsmouth, Virginia
-Seattle, Washington
-Spokane, Washington
-Charleston, West Virginia
-Clarksburg, West Virginia
-Madison, Wisconsin
-Milwaukee, Wisconsin
-Green Bay, Wisconsin
-Cheyenne, Wyoming
+Alabama 
+Alaska 
+Arizona 
+Arkansas 
+California 
+Colorado 
+Connecticut 
+Delaware 
+Florida 
+Georgia 
+Hawaii 
+Idaho 
+Illinois 
+Indiana 
+Iowa 
+Kansas 
+Kentucky 
+Louisiana 
+Maine 
+Maryland 
+Massachusetts 
+Michigan 
+Minnesota 
+Mississippi 
+Missouri 
+Montana 
+Nebraska 
+Nevada 
+New Hampshire 
+New Jersey 
+New Mexico 
+New York 
+North Carolina 
+North Dakota 
+Ohio 
+Oklahoma 
+Oregon 
+Pennsylvania 
+Rhode Island 
+South Carolina 
+South Dakota 
+Tennessee 
+Texas 
+Utah 
+Vermont 
+Virginia 
+Washington 
+West Virginia 
+Wisconsin 
+Wyoming
