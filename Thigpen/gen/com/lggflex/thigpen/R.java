@@ -28,6 +28,7 @@ public final class R {
     public static final class array {
         public static final int home_screen_sports_list=0x7f0e0001;
         public static final int home_screen_tabs=0x7f0e0000;
+        public static final int user_bubble_colors=0x7f0e0002;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 

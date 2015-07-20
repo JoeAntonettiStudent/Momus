@@ -12,7 +12,10 @@ import com.lggflex.model.ChatItemModel;
 import com.lggflex.model.UserModel;
 import com.lggflex.thigpen.adapter.ChatAdapter;
 import com.lggflex.thigpen.backend.DAO;
+import com.lggflex.thigpen.backend.SharedPrefsDAO;
+
 import android.annotation.TargetApi;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -113,6 +116,12 @@ public class ChatActivity extends LollipopActivity {
 		adapter.notifyDataSetChanged();
 	}
 	
+	public void addMessage(String username, String message, int color){
+		Log.i("ChatActivity", "" + color);
+		chatHistory.add(new ChatItemModel(username, message, color));
+		adapter.notifyDataSetChanged();
+	}
+	
 	private int getUserColor(String username){
 		UserModel model = currentUserMap.get(username);
 		if(model != null)
@@ -149,7 +158,7 @@ public class ChatActivity extends LollipopActivity {
 				@Override
 				public void call(Object... arg0) {
 					Log.i("SERVER", "Connected");
-					socket.emit("userConnected", username, currentChatroom, "");
+					socket.emit("userConnected", username, currentChatroom, SharedPrefsDAO.get("bubbleColor", Color.BLUE));
 				}
 				
 			});
@@ -162,7 +171,7 @@ public class ChatActivity extends LollipopActivity {
 					runOnUiThread(new Runnable() {
 					     @Override
 					     public void run() {
-					    	 addMessage((String)args[0], (String)args[2]);
+					    	 addMessage((String)args[0], (String)args[2], (Integer)args[1]);
 					    }
 					});
 					

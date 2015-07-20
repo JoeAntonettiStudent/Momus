@@ -18,6 +18,7 @@
              android:icon="@drawable/ic_language_black_36dp"/>
          <Preference
               android:key="@string/pref_user_color" 
+              android:icon="@drawable/circle"
               android:title="@string/pref_user_color" 
               android:shouldDisableView="true" />
           <Preference

@@ -48,10 +48,22 @@ public class SharedPrefsDAO {
 		return sharedPref.getBoolean(id, d);
 	}
 	
+	public static int get(String id, int d){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAO.DAOContext);
+		return sharedPref.getInt(id, d);
+	}
+	
 	public static void setUsername(String username){
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAO.DAOContext);
 		SharedPreferences.Editor editor = sharedPref.edit();
 		editor.putString(DAO.DAOContext.getString(R.string.pref_username), username);
+		editor.commit();
+	}
+	
+	public static void set(String id, int data){
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(DAO.DAOContext);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putInt(id, data);
 		editor.commit();
 	}
 	

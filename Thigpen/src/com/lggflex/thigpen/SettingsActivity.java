@@ -6,6 +6,7 @@ import com.android.colorpicker.ColorPickerDialog;
 import com.android.colorpicker.ColorPickerSwatch;
 import com.lggflex.thigpen.backend.DAO;
 import com.lggflex.thigpen.backend.SharedPrefsDAO;
+import com.lggflex.thigpen.ui.BubblePicker;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -48,20 +49,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				int[] colors = {Color.BLACK, Color.BLUE, Color.RED};
-				ColorPickerDialog col = ColorPickerDialog.newInstance(R.string.pref_user_color_popup, colors, Color.RED, 5, ColorPickerDialog.SIZE_SMALL);
-
-			  //Implement listener to get selected color value
-			  col.setOnColorSelectedListener(new ColorPickerSwatch.OnColorSelectedListener(){
-
-			                @Override
-			                public void onColorSelected(int color) {
-
-			                }
-
-			    });
-
-			  col.show(getFragmentManager(),"cal");
+				BubblePicker picker = new BubblePicker(getResources().getStringArray(R.array.user_bubble_colors));
+				picker.show(getFragmentManager());
 			  return true;
 			}
     		
@@ -126,6 +115,23 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     	pref.setIcon(draw);
     }
     
+    private void filterDrawable(int id, int drawableID, int color){
+    	Preference pref = (Preference) findPreference(getString(id));
+        int red = (color & 0xFF0000) / 0xFFFF;
+        int green = (color & 0xFF00) / 0xFF;
+        int blue = color & 0xFF;
+
+        float[] matrix = { 0, 0, 0, 0, red
+                         , 0, 0, 0, 0, green
+                         , 0, 0, 0, 0, blue
+                         , 0, 0, 0, 1, 0 };
+
+        ColorFilter colorFilter = new ColorMatrixColorFilter(matrix);
+    	Drawable draw = getResources().getDrawable(drawableID);
+    	draw.setColorFilter(colorFilter);
+    	pref.setIcon(draw);
+    }
+    
     private void showLocationPicker(){
     	AlertDialog.Builder builder = new Builder(this);
 		builder.setTitle("Select a Location");
@@ -156,6 +162,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     	filterDrawable(R.string.pref_rate, R.drawable.ic_shop_black_36dp);
     	filterDrawable(R.string.pref_about, R.drawable.ic_info_black_36dp);
     	filterDrawable(R.string.pref_username, R.drawable.ic_account_circle_black_36dp);
+    	filterDrawable(R.string.pref_user_color, R.drawable.circle, SharedPrefsDAO.get("bubbleColor", Color.CYAN));
         setSummary(R.string.pref_username, "Current Username: " + DAO.getUsername());
         setSummary(R.string.pref_location, "Current Location: " + DAO.getLocation());
         setTrueFalseSummary(R.string.pref_multicolored, R.string.pref_multicolored_des_pos, R.string.pref_multicolored_des_neg, true);
