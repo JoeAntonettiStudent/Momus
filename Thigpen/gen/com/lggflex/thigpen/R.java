@@ -2867,30 +2867,31 @@ containing a value of this type.
         public static final int ic_info_black_36dp=0x7f02005d;
         public static final int ic_invert_colors_black_36dp=0x7f02005e;
         public static final int ic_language_black_36dp=0x7f02005f;
-        public static final int ic_perm_device_information_black_36dp=0x7f020060;
-        public static final int ic_plus=0x7f020061;
-        public static final int ic_question_answer_white_36dp=0x7f020062;
-        public static final int ic_settings_applications_black_18dp=0x7f020063;
-        public static final int ic_shop_black_36dp=0x7f020064;
-        public static final int ic_view_quilt_black_36dp=0x7f020065;
-        public static final int icon=0x7f020066;
-        public static final int iconcircle=0x7f020067;
-        public static final int messenger_bubble_large_blue=0x7f020068;
-        public static final int messenger_bubble_large_white=0x7f020069;
-        public static final int messenger_bubble_small_blue=0x7f02006a;
-        public static final int messenger_bubble_small_white=0x7f02006b;
-        public static final int messenger_button_blue_bg_round=0x7f02006c;
-        public static final int messenger_button_blue_bg_selector=0x7f02006d;
-        public static final int messenger_button_send_round_shadow=0x7f02006e;
-        public static final int messenger_button_white_bg_round=0x7f02006f;
-        public static final int messenger_button_white_bg_selector=0x7f020070;
-        public static final int mlb=0x7f020071;
-        public static final int nba=0x7f020072;
-        public static final int nfl=0x7f020073;
-        public static final int nhl=0x7f020074;
-        public static final int notification_template_icon_bg=0x7f020077;
-        public static final int puck=0x7f020075;
-        public static final int snackbar_background=0x7f020076;
+        public static final int ic_markunread_mailbox_black_18dp=0x7f020060;
+        public static final int ic_perm_device_information_black_36dp=0x7f020061;
+        public static final int ic_plus=0x7f020062;
+        public static final int ic_question_answer_white_36dp=0x7f020063;
+        public static final int ic_settings_applications_black_18dp=0x7f020064;
+        public static final int ic_shop_black_36dp=0x7f020065;
+        public static final int ic_view_quilt_black_36dp=0x7f020066;
+        public static final int icon=0x7f020067;
+        public static final int iconcircle=0x7f020068;
+        public static final int messenger_bubble_large_blue=0x7f020069;
+        public static final int messenger_bubble_large_white=0x7f02006a;
+        public static final int messenger_bubble_small_blue=0x7f02006b;
+        public static final int messenger_bubble_small_white=0x7f02006c;
+        public static final int messenger_button_blue_bg_round=0x7f02006d;
+        public static final int messenger_button_blue_bg_selector=0x7f02006e;
+        public static final int messenger_button_send_round_shadow=0x7f02006f;
+        public static final int messenger_button_white_bg_round=0x7f020070;
+        public static final int messenger_button_white_bg_selector=0x7f020071;
+        public static final int mlb=0x7f020072;
+        public static final int nba=0x7f020073;
+        public static final int nfl=0x7f020074;
+        public static final int nhl=0x7f020075;
+        public static final int notification_template_icon_bg=0x7f020078;
+        public static final int puck=0x7f020076;
+        public static final int snackbar_background=0x7f020077;
     }
     public static final class id {
         public static final int action0=0x7f0d009d;
@@ -2967,6 +2968,7 @@ containing a value of this type.
         public static final int exitUntilCollapsed=0x7f0d0037;
         public static final int expand_activities_button=0x7f0d004b;
         public static final int expanded_menu=0x7f0d005b;
+        public static final int feedback_menu=0x7f0d00ae;
         public static final int fill=0x7f0d0029;
         public static final int fill_horizontal=0x7f0d002f;
         public static final int fill_vertical=0x7f0d0030;
@@ -3251,13 +3253,13 @@ containing a value of this type.
         /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
          */
         public static final int appbar_scrolling_view_behavior=0x7f080015;
-        public static final int category_dev=0x7f08003e;
-        public static final int category_info=0x7f080041;
-        public static final int category_ui=0x7f080039;
-        public static final int category_ui_des=0x7f08003a;
-        public static final int category_user=0x7f080034;
-        public static final int category_user_des=0x7f080035;
-        public static final int chat_button_msg=0x7f08002f;
+        public static final int category_dev=0x7f08003f;
+        public static final int category_info=0x7f080042;
+        public static final int category_ui=0x7f08003a;
+        public static final int category_ui_des=0x7f08003b;
+        public static final int category_user=0x7f080035;
+        public static final int category_user_des=0x7f080036;
+        public static final int chat_button_msg=0x7f080030;
         /**  Default title for color picker dialog [CHAR LIMIT=30] 
          */
         public static final int color_picker_default_title=0x7f080000;
@@ -3283,30 +3285,31 @@ containing a value of this type.
         public static final int com_facebook_send_button_text=0x7f080026;
         public static final int com_facebook_share_button_text=0x7f080025;
         public static final int com_facebook_tooltip_default=0x7f080023;
-        public static final int default_username=0x7f080033;
-        public static final int facebook_app_id=0x7f080031;
+        public static final int default_username=0x7f080034;
+        public static final int facebook_app_id=0x7f080032;
         public static final int hello_world=0x7f080028;
         public static final int menu_favorites=0x7f08002c;
+        public static final int menu_feedback=0x7f08002d;
         public static final int menu_home=0x7f08002a;
         public static final int menu_settings=0x7f08002b;
         public static final int messenger_send_button_text=0x7f080016;
-        public static final int pref_about=0x7f080043;
-        public static final int pref_build=0x7f080044;
-        public static final int pref_facebook=0x7f080038;
-        public static final int pref_location=0x7f080036;
-        public static final int pref_location_des=0x7f080037;
-        public static final int pref_multicolored=0x7f08003b;
-        public static final int pref_multicolored_des_neg=0x7f08003d;
-        public static final int pref_multicolored_des_pos=0x7f08003c;
-        public static final int pref_pallete=0x7f08003f;
-        public static final int pref_pallete_des=0x7f080040;
-        public static final int pref_rate=0x7f080042;
-        public static final int pref_trans_nav=0x7f080045;
-        public static final int pref_trans_nav_des_neg=0x7f080047;
-        public static final int pref_trans_nav_des_pos=0x7f080046;
-        public static final int pref_user_color=0x7f080048;
-        public static final int pref_user_color_popup=0x7f080049;
-        public static final int pref_username=0x7f08002d;
+        public static final int pref_about=0x7f080044;
+        public static final int pref_build=0x7f080045;
+        public static final int pref_facebook=0x7f080039;
+        public static final int pref_location=0x7f080037;
+        public static final int pref_location_des=0x7f080038;
+        public static final int pref_multicolored=0x7f08003c;
+        public static final int pref_multicolored_des_neg=0x7f08003e;
+        public static final int pref_multicolored_des_pos=0x7f08003d;
+        public static final int pref_pallete=0x7f080040;
+        public static final int pref_pallete_des=0x7f080041;
+        public static final int pref_rate=0x7f080043;
+        public static final int pref_trans_nav=0x7f080046;
+        public static final int pref_trans_nav_des_neg=0x7f080048;
+        public static final int pref_trans_nav_des_pos=0x7f080047;
+        public static final int pref_user_color=0x7f080049;
+        public static final int pref_user_color_popup=0x7f08004a;
+        public static final int pref_username=0x7f08002e;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
@@ -3314,9 +3317,9 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f080014;
-        public static final int title_activity_chat=0x7f08002e;
-        public static final int title_activity_login=0x7f080030;
-        public static final int username=0x7f080032;
+        public static final int title_activity_chat=0x7f08002f;
+        public static final int title_activity_login=0x7f080031;
+        public static final int username=0x7f080033;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f090042;

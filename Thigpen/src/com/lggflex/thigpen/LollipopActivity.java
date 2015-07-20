@@ -123,6 +123,9 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	                    case R.id.home_menu:
 	                        open(HomeActivity.class);
 	                        return true;
+	                    case R.id.feedback_menu:
+	                    	sendEmail();
+	                    	return true;
 	                    default:
 	                        return true;
 	                }
@@ -156,6 +159,16 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+	}
+	
+	public void sendEmail(){
+		 Intent intent = new Intent(Intent.ACTION_SEND);
+		 intent.setType("*/*");
+		 intent.putExtra(Intent.EXTRA_EMAIL, "momuscompany@gmail.com");
+		 intent.putExtra(Intent.EXTRA_SUBJECT, "Momus Feedback");
+		 if (intent.resolveActivity(getPackageManager()) != null) {
+			 startActivity(intent);
+		 }
 	}
 	
 	@Override
