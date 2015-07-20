@@ -16,6 +16,10 @@
              android:key="@string/pref_location"
              android:title="@string/pref_location"
              android:icon="@drawable/ic_language_black_36dp"/>
+         <Preference
+              android:key="@string/pref_user_color" 
+              android:title="@string/pref_user_color" 
+              android:shouldDisableView="true" />
           <Preference
              android:key="@string/pref_facebook"
              android:title="@string/pref_facebook"

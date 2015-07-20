@@ -48,4 +48,6 @@
     <string name="pref_trans_nav">Navigation Bar</string>
     <string name="pref_trans_nav_des_pos">Will use a translucent navigation bar</string>
     <string name="pref_trans_nav_des_neg">Will use a solid navigation bar</string>
+    <string name="pref_user_color">Chat Bubble Color</string>
+    <string name="pref_user_color_popup">Pick a Color</string>
 </resources>

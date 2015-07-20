@@ -1,22 +1,21 @@
 package com.lggflex.thigpen;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
+import com.android.colorpicker.ColorPickerDialog;
+import com.android.colorpicker.ColorPickerSwatch;
 import com.lggflex.thigpen.backend.DAO;
 import com.lggflex.thigpen.backend.SharedPrefsDAO;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
@@ -45,6 +44,28 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         setSupportActionBar(toolbar);
         addPreferencesFromResource(R.xml.preferences);
         setDescriptions();
+        setOnClickListener(R.string.pref_user_color, new OnPreferenceClickListener(){
+
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				int[] colors = {Color.BLACK, Color.BLUE, Color.RED};
+				ColorPickerDialog col = ColorPickerDialog.newInstance(R.string.pref_user_color_popup, colors, Color.RED, 5, ColorPickerDialog.SIZE_SMALL);
+
+			  //Implement listener to get selected color value
+			  col.setOnColorSelectedListener(new ColorPickerSwatch.OnColorSelectedListener(){
+
+			                @Override
+			                public void onColorSelected(int color) {
+
+			                }
+
+			    });
+
+			  col.show(getFragmentManager(),"cal");
+			  return true;
+			}
+    		
+    	});
     	setOnClickListener(R.string.pref_location, new OnPreferenceClickListener(){
 
 			@Override
@@ -61,7 +82,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 				clear();
 				return true;
 			}
-    		
     	});
     }
     
