@@ -187,6 +187,10 @@ public class ChatActivity extends LollipopActivity {
 										JSONObject obj = new JSONObject(str);
 										addMessage((String) obj.get("user"), (String) obj.get("msg"));
 									}
+								}else{
+									ArrayList<String> titles = DAO.getStringsForID("titles");
+									int rand = (int) (Math.random() * titles.size());
+									addMessage("Momus", "Momus: " + titles.get(rand));
 								}
 								
 								

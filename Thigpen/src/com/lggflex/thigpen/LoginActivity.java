@@ -72,6 +72,7 @@ public class LoginActivity extends Activity {
 	                            	Log.v("Facebook", object.toString());
 	                            	Log.v("Facebook", response.toString());
 	                            	 DAO.setUsername(object.get("name").toString());
+	                            	 SharedPrefsDAO.set("logged in", true);
 	                 		       // showLocationPicker();
 	                            	 goHome();
 	                            }
@@ -117,6 +118,7 @@ public class LoginActivity extends Activity {
 		    public void onClick(DialogInterface dialog, int which) {
 		        String text = input.getText().toString();
 		        DAO.setUsername(text);
+		        SharedPrefsDAO.set("logged in", true);
 		       // showLocationPicker();
 		        goHome();
 		    }

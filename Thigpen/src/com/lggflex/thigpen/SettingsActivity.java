@@ -16,6 +16,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
@@ -160,9 +161,11 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     }
     
     private String genBuildNumber(){
-    	DateFormat dateFormat = new SimpleDateFormat("HHMMddmm-ss");
-    	Date date = new Date();
-    	return dateFormat.format(date);
+    	try {
+			return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			return "1.0";
+		}
     }
     
 	private void setPadding(){
