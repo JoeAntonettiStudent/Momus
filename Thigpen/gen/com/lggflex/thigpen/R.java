@@ -2647,12 +2647,6 @@ containing a value of this type.
  Default text size for action bar title.
          */
         public static final int abc_text_size_title_material_toolbar=0x7f090024;
-        /** 
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    
-         */
         public static final int activity_horizontal_margin=0x7f090076;
         public static final int activity_vertical_margin=0x7f090077;
         public static final int appbar_elevation=0x7f09005e;
@@ -3245,8 +3239,8 @@ containing a value of this type.
         /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
          */
         public static final int appbar_scrolling_view_behavior=0x7f0c0012;
-        public static final int category_dev=0x7f0c003e;
-        public static final int category_info=0x7f0c0041;
+        public static final int category_dev=0x7f0c003b;
+        public static final int category_info=0x7f0c003e;
         public static final int category_ui=0x7f0c0036;
         public static final int category_ui_des=0x7f0c0037;
         public static final int category_user=0x7f0c0031;
@@ -3275,30 +3269,20 @@ containing a value of this type.
         public static final int menu_home=0x7f0c0027;
         public static final int menu_settings=0x7f0c0028;
         public static final int messenger_send_button_text=0x7f0c0013;
-        public static final int pref_about=0x7f0c0043;
-        public static final int pref_black=0x7f0c0048;
-        public static final int pref_black_des_neg=0x7f0c004a;
-        public static final int pref_black_des_pos=0x7f0c0049;
-        public static final int pref_build=0x7f0c0044;
-        public static final int pref_do_it=0x7f0c004e;
-        public static final int pref_do_it_des_neg=0x7f0c0050;
-        public static final int pref_do_it_des_pos=0x7f0c004f;
+        public static final int pref_about=0x7f0c0040;
+        public static final int pref_build=0x7f0c0041;
         public static final int pref_facebook=0x7f0c0035;
-        public static final int pref_loading_snackbar=0x7f0c004d;
         public static final int pref_location=0x7f0c0033;
         public static final int pref_location_des=0x7f0c0034;
         public static final int pref_multicolored=0x7f0c0038;
         public static final int pref_multicolored_des_neg=0x7f0c003a;
         public static final int pref_multicolored_des_pos=0x7f0c0039;
-        public static final int pref_pallete=0x7f0c003f;
-        public static final int pref_pallete_des=0x7f0c0040;
-        public static final int pref_rate=0x7f0c0042;
-        public static final int pref_trans_nav=0x7f0c0045;
-        public static final int pref_trans_nav_des_neg=0x7f0c0047;
-        public static final int pref_trans_nav_des_pos=0x7f0c0046;
-        public static final int pref_twocolumn=0x7f0c003b;
-        public static final int pref_twocolumn_des_neg=0x7f0c003c;
-        public static final int pref_twocolumn_des_pos=0x7f0c003d;
+        public static final int pref_pallete=0x7f0c003c;
+        public static final int pref_pallete_des=0x7f0c003d;
+        public static final int pref_rate=0x7f0c003f;
+        public static final int pref_trans_nav=0x7f0c0042;
+        public static final int pref_trans_nav_des_neg=0x7f0c0044;
+        public static final int pref_trans_nav_des_pos=0x7f0c0043;
         public static final int pref_username=0x7f0c002a;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
@@ -3308,10 +3292,7 @@ containing a value of this type.
          */
         public static final int status_bar_notification_info_overflow=0x7f0c0011;
         public static final int title_activity_chat=0x7f0c002b;
-        public static final int title_activity_favorites=0x7f0c0051;
         public static final int title_activity_login=0x7f0c002d;
-        public static final int title_activity_sports=0x7f0c004c;
-        public static final int title_activity_tv=0x7f0c004b;
         public static final int username=0x7f0c002f;
     }
     public static final class style {

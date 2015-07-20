@@ -132,7 +132,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     	filterDrawable(R.string.pref_location, R.drawable.ic_language_black_36dp);
     	filterDrawable(R.string.pref_facebook, R.drawable.ic_exit_to_app_black_36dp);
     	filterDrawable(R.string.pref_multicolored, R.drawable.ic_invert_colors_black_36dp);
-    	filterDrawable(R.string.pref_twocolumn, R.drawable.ic_view_quilt_black_36dp);
     	filterDrawable(R.string.pref_pallete, R.drawable.ic_dashboard_black_36dp);
     	filterDrawable(R.string.pref_rate, R.drawable.ic_shop_black_36dp);
     	filterDrawable(R.string.pref_about, R.drawable.ic_info_black_36dp);
@@ -140,10 +139,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         setSummary(R.string.pref_username, "Current Username: " + DAO.getUsername());
         setSummary(R.string.pref_location, "Current Location: " + DAO.getLocation());
         setTrueFalseSummary(R.string.pref_multicolored, R.string.pref_multicolored_des_pos, R.string.pref_multicolored_des_neg, true);
-        setTrueFalseSummary(R.string.pref_twocolumn, R.string.pref_twocolumn_des_pos, R.string.pref_twocolumn_des_neg, false);
         setTrueFalseSummary(R.string.pref_trans_nav, R.string.pref_trans_nav_des_pos, R.string.pref_trans_nav_des_neg, false);
-        setTrueFalseSummary(R.string.pref_black, R.string.pref_black_des_pos, R.string.pref_black_des_neg, false);
-        setTrueFalseSummary(R.string.pref_do_it, R.string.pref_do_it_des_pos, R.string.pref_do_it_des_neg, false);
     }
     
     private void setTrueFalseSummary(int id, int pos, int neg, boolean d){

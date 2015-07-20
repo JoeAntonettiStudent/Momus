@@ -22,10 +22,7 @@ abstract public class SimpleListFragment extends RecyclerViewFragment{
     	view = inflater.inflate(R.layout.fragment_list, container, false);
         view.setTag(TAG);
         adapter = new ListAdapter(getItems());
-        if(DAO.get(R.string.pref_twocolumn, false))
-        	initRecyclerView(R.id.content, 2);
-        else
-        	initRecyclerView(R.id.content, 1);
+        initRecyclerView(R.id.content, 1);
         
         return view;
     }

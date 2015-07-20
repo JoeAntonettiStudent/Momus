@@ -47,7 +47,6 @@ public abstract class LollipopActivity extends AppCompatActivity implements OnRe
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		 setTheme(DAO.get(R.string.pref_black, false) ? R.style.AppBaseTheme_Dark : R.style.AppTheme);
 	}
 	
 	//Set up the UI stuff in the app. Needs to be called after view is initialized

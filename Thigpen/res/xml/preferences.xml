@@ -35,20 +35,7 @@
           android:summary="@string/pref_multicolored_des_pos"
           android:key="@string/pref_multicolored" />
         
-        <CheckBoxPreference
-          android:title="@string/pref_twocolumn"
-          android:defaultValue="false"
-          android:icon="@drawable/ic_view_quilt_black_36dp"
-          android:summary="@string/pref_twocolumn_des_neg"
-          android:key="@string/pref_twocolumn" />   
-    
-    </PreferenceCategory>
-    
-    <PreferenceCategory 
-        android:title="@string/category_dev" 
-        android:key="@string/category_dev" >
-          
-        <CheckBoxPreference
+         <CheckBoxPreference
           android:title="@string/pref_pallete"
           android:defaultValue="false"
           android:icon="@drawable/ic_dashboard_black_36dp"
@@ -60,22 +47,6 @@
           android:defaultValue="false"
           android:summary="@string/pref_trans_nav_des_neg"
           android:key="@string/pref_trans_nav" />
-        
-          <CheckBoxPreference
-          android:title="@string/pref_loading_snackbar"
-          android:defaultValue="false"
-          android:key="@string/pref_loading_snackbar" />
-        
-         <SwitchPreference
-          android:title="@string/pref_black"
-          android:defaultValue="false"
-          android:summary="@string/pref_black_des_neg"
-          android:key="@string/pref_black" />   
-           <SwitchPreference
-          android:title="@string/pref_do_it"
-          android:defaultValue="false"
-          android:summary="@string/pref_do_it_des_neg"
-          android:key="@string/pref_do_it" />   
     
     </PreferenceCategory>
     
